@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2023-04-14 21:13:46 by Eclipse SUMO GUI Version 1.16.0
+<!-- generated on 2023-04-15 21:49:00 by Eclipse SUMO GUI Version 1.16.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
-        <net-file value="cross.net.xml"/>
+        <net-file value="cross1.net.xml"/>
         <route-files value="cross.rou.xml"/>
-        <additional-files value="cross.det.xml"/>
     </input>
 
     <output>
@@ -15,6 +14,7 @@
 
     <time>
         <begin value="0"/>
+        <end value="10000"/>
     </time>
 
     <report>
@@ -23,7 +23,7 @@
     </report>
 
     <traci_server>
-        <remote-port value="54118"/>
+        <remote-port value="60401"/>
     </traci_server>
 
     <gui_only>

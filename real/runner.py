@@ -88,17 +88,17 @@ def run():
     """execute the TraCI control loop"""
     step = 0
     # we start with phase 2 where EW has green
-    traci.trafficlight.setPhase("0", 2)
+    traci.trafficlight.setPhase("09", 0)
     while traci.simulation.getMinExpectedNumber() > 0:
         traci.simulationStep()
-        if traci.trafficlight.getPhase("0") == 2:
+        if traci.trafficlight.getPhase("09") == 2:
             # we are not already switching
-            if traci.inductionloop.getLastStepVehicleNumber("0") > 0:
+            if traci.inductionloop.getLastStepVehicleNumber("09") > 0:
                 # there is a vehicle from the north, switch
-                traci.trafficlight.setPhase("0", 3)
+                traci.trafficlight.setPhase("09", 3)
             else:
                 # otherwise try to keep green for EW
-                traci.trafficlight.setPhase("0", 2)
+                traci.trafficlight.setPhase("09", 2)
         step += 1
     traci.close()
     sys.stdout.flush()
@@ -124,9 +124,9 @@ if __name__ == "__main__":
         sumoBinary = checkBinary('sumo-gui')
 
     # first, generate the route file for this simulation
-    generate_routefile()
+    #generate_routefile()
 
     # this is the normal way of using traci. sumo is started as a
     # subprocess and then the python script connects and runs
-    traci.start([sumoBinary, "-c", "cross.sumocfg","--tripinfo-output", "tripinfo.xml"])
+    traci.start([sumoBinary, "-c", "cross1.sumocfg","--tripinfo-output", "tripinfo.xml"])
     run()

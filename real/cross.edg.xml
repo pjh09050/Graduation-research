@@ -1,0 +1,121 @@
+<edges>
+
+    <edge from="013" id="013to01" to="01" />
+    <edge from="014" id="014to02" to="02" />
+    <edge from="015" id="015to03" to="03" />
+    <edge from="016" id="016to0121" to="0121" />
+    <edge from="0171" id="0171to016" to="016" />
+    
+
+    <edge from="023" id="023to013" to="013" />
+    <edge from="024" id="024to014" to="014" />
+    <edge from="025" id="025to015" to="015" />
+    <edge from="026" id="026to0221" to="0221" />
+    <edge from="0271" id="0271to026" to="026" />
+
+    <edge from="034" id="034to023" to="023" />
+    <edge from="035" id="035to024" to="024" />
+    <edge from="036" id="036to025" to="025" />
+    <edge from="037" id="037to0331" to="0331" />
+
+    <edge from="038" id="038to034" to="034" />
+    <edge from="039" id="039to035" to="035" />
+    <edge from="040" id="040to036" to="036" />
+    <edge from="041" id="041to037" to="037" />
+
+
+
+    <edge from="04" id="04to08" to="08" />
+    <edge from="05" id="05to09" to="09" />
+    <edge from="06" id="06to010" to="010" />
+    <edge from="07" id="07to011" to="011" />
+    <edge from="08" id="08to012" to="012" />
+
+    <edge from="012" id="012to11" to="5" />
+    <edge from="0121" id="0121to19" to="19" />
+    <edge from="07" id="07to24" to="24" />
+
+
+    <edge from="09" id="09to019" to="019" />
+    <edge from="010" id="010to020" to="020" />
+    <edge from="011" id="011to021" to="021" />
+
+    <edge from="017" id="017to018" to="018" />
+
+    <edge from="018" id="018to022" to="022" />
+    <edge from="019" id="019to029" to="029" />
+    <edge from="020" id="020to030" to="030" />
+    <edge from="021" id="021to031" to="031" />
+
+    <edge from="045" id="045to032" to="032" />
+
+    <edge from="029" id="029to042" to="042" />
+    <edge from="030" id="030to043" to="043" />
+    <edge from="031" id="031to044" to="044" />
+
+
+
+
+    <edge from="1" id="1to8" to="8" />
+    <edge from="2" id="2to9" to="9" />
+    <edge from="3" id="3to10" to="10" />
+    <edge from="4" id="4to11" to="11" />
+
+    <edge from="8" id="8to17" to="17" />
+    <edge from="9" id="9to18" to="18" />
+    <edge from="10" id="10to19" to="19" />
+    <edge from="11" id="11to12_" to="12_" />
+
+    <edge from="20" id="20to13" to="13" />
+    <edge from="21" id="21to14" to="14" />
+    <edge from="22" id="22to15" to="15" />
+    <edge from="23" id="23to16" to="16" />
+
+    <edge from="13" id="13to12" to="12" />
+    <edge from="14" id="14to5" to="5" />
+    <edge from="15" id="15to6" to="6" />
+    <edge from="16" id="16to7" to="7" />
+
+    <edge from="24" id="24to26" to="26" />
+    <edge from="27" id="27to25" to="25" />
+
+    <edge from="28" id="28to32" to="32" />
+    <edge from="29" id="29to33" to="33" />
+    <edge from="32" id="32to37" to="37" />
+    <edge from="33" id="33to38" to="38" />
+    <edge from="33" id="33to34" to="34" />
+
+    <edge from="39" id="39to35" to="35" />
+    <edge from="40" id="40to36" to="36" />
+    <edge from="36" id="36to31" to="31" />
+    <edge from="35" id="35to30" to="30" />
+    <edge from="35" id="35to34" to="34" />
+
+    <edge from="41" id="41to43" to="43" />
+    <edge from="44" id="44to42" to="42" />
+
+    <edge from="45" id="45to54" to="54" />
+    <edge from="46" id="46to55" to="55" />
+    <edge from="47" id="47to56" to="56" />
+    <edge from="48" id="48to57" to="57" />
+    <edge from="49" id="49to58" to="58" />
+
+    <edge from="54" id="54to65" to="65" />
+    <edge from="55" id="55to66" to="66" />
+    <edge from="56" id="56to67" to="67" />
+    <edge from="57" id="57to68" to="68" />
+    <edge from="58" id="58to59_" to="59_" />
+
+    <edge from="69" id="69to60" to="60" />
+    <edge from="70" id="70to61" to="61" />
+    <edge from="71" id="71to62" to="62" />
+    <edge from="72" id="72to63" to="63" />
+    <edge from="73" id="73to64" to="64" />
+
+    <edge from="60" id="60to59" to="59" />
+    <edge from="61" id="61to50" to="50" />
+    <edge from="62" id="62to51" to="51" />
+    <edge from="63" id="63to52" to="52" />
+    <edge from="64" id="64to53" to="53" />
+
+</edges>
