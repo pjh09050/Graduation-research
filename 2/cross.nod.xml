@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nodes>
+    <!-- 01-->
+    <node id="01" x="0.0" y="0.0" />
+    <node id="02" x="0.0" y="0.0" />
+    <node id="03" x="0.0" y="-3.2" />
+
+    <!-- 02-->
+    <node id="04" x="100.0" y="0.0" />
+    <node id="05" x="100.0" y="0.0" type="traffic_light"/>
+    <node id="06" x="100.0" y="-3.2" type="traffic_light"/>
+
+    <!-- 03-->
+    <node id="07" x="132.4" y="0.0" type="traffic_light"/>
+    <node id="08" x="132.4" y="-3.2" type="traffic_light"/>
+    <node id="09" x="132.4" y="-3.2" />
+    
+    <!-- 03와 04 중간 교차지점-->
+    <node id="001" x="198.8" y="-3.2" />
+    <node id="002" x="200.0" y="0.0" />
+
+    <!-- 04-->
+    <node id="010" x="280" y="0.0" />
+    <node id="011" x="280" y="0.0" type="traffic_light"/>
+    <node id="012" x="280" y="-3.2" type="traffic_light"/>
+
+    <!-- 02 03 2 3 좌회전-->
+    <node id="02_left" x="117.8" y="0.0" />
+    <node id="03_left" x="114.6" y="-3.2" />
+    <node id="3_left" x="114.6" y="0.0" />
+    <node id="2_left" x="117.8" y="-3.2" />
+    
+
+    <!-- 1-->
+    <node id="1" x="114.6" y="64.6" />
+    <node id="2" x="117.8" y="64.6" />
+    <node id="3" x="117.8" y="64.6" />
+
+    <!-- 2-->
+    <node id="4" x="114.6" y="14.6" type="traffic_light"/>
+    <node id="5" x="117.8" y="14.6" type="traffic_light"/>
+    <node id="6" x="117.8" y="14.6" />
+
+    <!-- 3-->
+    <node id="7" x="114.6" y="-17.8" />
+    <node id="8" x="114.6" y="-17.8" type="traffic_light"/>
+    <node id="9" x="117.8" y="-17.8" type="traffic_light"/>
+
+    <!-- 4-->
+    <node id="10" x="114.6" y="-67.8" />
+    <node id="11" x="114.6" y="-67.8" />
+    <node id="12" x="117.8" y="-67.8" />
+
+    <!-- spillback 1-->
+    <node id="0001" x="165.6" y="-12.8" />
+    <node id="0002" x="165.6" y="-12.8" />
+    <node id="0003" x="165.6" y="-62.8" />
+    <node id="0004" x="165.6" y="-62.8" />
+
+</nodes>

@@ -1,0 +1,10 @@
+<routes>
+        <vType id="typeWE" accel="0.8" decel="4.5" sigma="0.5" length="5" minGap="2.5" maxSpeed="16.67" guiShape="passenger"/>
+        <vType id="typeNS" accel="0.8" decel="4.5" sigma="0.5" length="7" minGap="3" maxSpeed="25" guiShape="bus"/>
+        
+        <route id="route0" edges="04to011 011to1111 1111to13 13to6"/>
+
+    
+    <vehicle id="veh0" route="route0" type="typeWE" depart="0" color="1,0,0"/>
+
+</routes>
