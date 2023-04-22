@@ -1,0 +1,41 @@
+<routes>
+        <vType id="typeWE" length="5" minGap="1" sigma='0' maxSpeed="5" guiShape="passenger"/>
+        <vType id="typeES" length="5" minGap="1" sigma='0' maxSpeed="5" guiShape="passenger"/>
+        <!--
+        <route id="route0" edges="02to05 05to02_left 02_leftto3 "/>
+        <route id="route1" edges="001to08 08to03_left 03_leftto10"/>
+        <route id="route2" edges="2to5 5to2_left 2_leftto012"/>  
+        <route id="route3" edges="11to8 8to3_left 3_leftto01"/> 
+        <route id="route4" edges="03to06 06to012 012to017 " />
+        <route id="route5" edges="002to011 011to04_left 04_leftto14"/>
+        <route id="route6" edges="021to018 018to013"/>
+        <route id="route7" edges="022to019 019to07_left 07_leftto27"/>-->
+        <route id="route1" edges="13to15 15to19"/>
+        <route id="route2" edges="13to15 15to6_left 6_leftto017"/>
+        <route id="route3" edges="20to18 18to7_left 7_leftto07"/>
+        <route id="route4" edges="20to18 18to14"/>
+
+        <route id="route5" edges="011to04_left 04_leftto14"/>
+        <route id="route6" edges="03to06 06to012 012to017"/>
+        <route id="route7" edges="018to013 013to07"/>
+        <route id="route8" edges="014to05_left 05_leftto19"/>
+
+
+    <!--<vehicle id="veh1" route="route1" type="typeWE" depart="0"  departLane='1' color="1,0,0" />
+    <vehicle id="veh2" route="route" type="typeWE" depart="5"  color="1,0,0" />
+    <vehicle id="veh3" route="route3" type="typeWE" depart="10"  departLane='0' color="1,0,0" />
+    <vehicle id="veh4" route="route4" type="typeWE" depart="15"  departLane='0' color="1,0,0" />
+    <vehicle id="veh5" route="route5" type="typeWE" depart="30"  departLane='0' color="1,0,0" />-->
+
+    <vehicle id="veh7" route="route6" type="typeES" depart="0" departLane='0' arrivalLane='0' color="1,0,0" />
+    <vehicle id="veh8" route="route6" type="typeES" depart="0" departLane='1' arrivalLane='1' color="1,0,0" />
+    <vehicle id="veh9" route="route6" type="typeES" depart="0" departLane='2' arrivalLane='2' color="1,0,0" />
+    <vehicle id="veh10" route="route6" type="typeES" depart="0.5" departLane='0' arrivalLane='0' color="1,0,0" />
+    <vehicle id="veh11" route="route6" type="typeES" depart="0.5" departLane='1' arrivalLane='1' color="1,0,0" />
+    <vehicle id="veh12" route="route6" type="typeES" depart="0.5" departLane='2' arrivalLane='2' color="1,0,0" />
+    <vehicle id="veh13" route="route6" type="typeES" depart="1" departLane='0' arrivalLane='0' color="1,0,0" />
+
+    <!--<vehicle id="veh7" route="route7" type="typeWE" depart="0"  departLane='1' color="1,0,0" />
+    <vehicle id="veh8" route="route8" type="typeWE" depart="30"  color="1,0,0" />-->
+
+</routes>
