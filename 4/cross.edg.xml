@@ -34,11 +34,11 @@
 
     <!-- 06 07 10 11 좌회전-->
     <edge from="28" id="28to11_left" to="11_left" numLanes="1"/>
-    <edge from="11_left" id="11_leftto016" to="016" numLanes="1"/>
+    <edge from="11_left" id="11_leftto013" to="013" numLanes="1"/>
     <edge from="019" id="019to07_left" to="07_left" numLanes="1"/>
-    <edge from="07_left" id="07_leftto27" to="27" numLanes="1"/>
+    <edge from="07_left" id="07_leftto30" to="30" numLanes="1"/>
     <edge from="25" id="25to10_left" to="10_left" numLanes="1"/>
-    <edge from="10_left" id="10_leftto020" to="020" numLanes="1"/>
+    <edge from="10_left" id="10_leftto023" to="023" numLanes="1"/>
 
 
     <!-- 교차지점-->

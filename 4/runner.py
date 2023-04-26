@@ -6,7 +6,8 @@ import sys
 import optparse
 import random
 from sumolib import checkBinary  
-import traci  
+import traci
+from TrafficGenerator import TrafficGenerator
 
 # we need to import python modules from the $SUMO_HOME/tools directory
 if 'SUMO_HOME' in os.environ:
@@ -28,17 +29,17 @@ def run():
     """execute the TraCI control loop"""
     step = 0
     # we start with phase 2 where EW has green
-    traci.trafficlight.setPhase("06", 0)
+    traci.trafficlight.setPhase("4", 0)
     while traci.simulation.getMinExpectedNumber() > 0:
         traci.simulationStep()
-        if traci.trafficlight.getPhase("06") == 2:
+        if traci.trafficlight.getPhase("4") == 2:
             # we are not already switching
-            if traci.inductionloop.getLastStepVehicleNumber("06") > 0:
+            if traci.inductionloop.getLastStepVehicleNumber("4") > 0:
                 # there is a vehicle from the north, switch
-                traci.trafficlight.setPhase("06", 3)
+                traci.trafficlight.setPhase("4", 3)
             else:
                 # otherwise try to keep green for EW
-                traci.trafficlight.setPhase("06", 2)
+                traci.trafficlight.setPhase("4", 2)
         step += 1
     traci.close()
     sys.stdout.flush()
@@ -54,8 +55,8 @@ if __name__ == "__main__":
         sumoBinary = checkBinary('sumo-gui')
 
     # first, generate the route file for this simulation
-    #generate_routefile()
-
+    #TrafficGenerator.generate_routefile(3600)
+    
     # this is the normal way of using traci. sumo is started as a subprocess and then the python script connects and runs
     traci.start([sumoBinary, "-c", "cross1.sumocfg","--tripinfo-output", "tripinfo.xml"])
     run()
