@@ -46,6 +46,7 @@ def run():
     
 if __name__ == "__main__":
     options = get_options()
+    max_steps = 3600
 
     # this script has been called from the command line. It will start sumo as a
     # server, then connect and run
@@ -55,7 +56,7 @@ if __name__ == "__main__":
         sumoBinary = checkBinary('sumo-gui')
 
     # first, generate the route file for this simulation
-    #TrafficGenerator.generate_routefile(3600)
+    TrafficGenerator(max_steps)
     
     # this is the normal way of using traci. sumo is started as a subprocess and then the python script connects and runs
     traci.start([sumoBinary, "-c", "cross1.sumocfg","--tripinfo-output", "tripinfo.xml"])

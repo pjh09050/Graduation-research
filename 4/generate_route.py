@@ -32,7 +32,7 @@ class TrafficGenerator:
         # produce the file for cars generation, one car per line
         with open("routes.rou.xml", "w") as routes:
             print("""<routes>
-            <vType accel="1.0" decel="4.5" id="standard_car" length="5.0" minGap="2.5" maxSpeed="25" sigma="0.5" />
+            <vType accel="1.0" decel="4.5" id="standard_car" length="5.0" minGap="2.5" maxSpeed="25" allowLaneChange='false' sigma="0.5" />
 
             <route id="W_N" edges="WtoC CtoN"/>
             <route id="W_E" edges="WtoC CtoE"/>
