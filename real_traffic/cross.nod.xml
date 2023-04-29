@@ -11,7 +11,7 @@
     <node id="06" x="100.0" y="-3.2" type="traffic_light"/>
 
     <!-- 03-->
-    <node id="07" x="128.4" y="0.0" type="traffic_light"/>
+    <node id="07" x="132.4" y="0.0" type="traffic_light"/>
     <node id="08" x="132.4" y="-3.2" type="traffic_light"/>
     <node id="09" x="132.4" y="-3.2" />
     

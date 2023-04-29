@@ -1,0 +1,27 @@
+<edges>
+    <!-- 왼쪽에서 오른쪽-->
+    <edge from="02" id="02to00" to="00" numLanes="4"/>
+    <!--<edge from="00" id="00to04" to="04" numLanes="4"/>-->
+    <edge from="00" id="00to000" to="000" numLanes="4"/>
+    <edge from="000" id="000to0000" to="0000" numLanes="4"/>
+
+    <!-- 오른쪽에서 왼쪽-->
+    <edge from="03" id="03to00" to="00" numLanes="4"/>
+    <edge from="00" id="00to01" to="01" numLanes="4"/>
+    <edge from="0000" id="0000to000" to="000" numLanes="4"/>
+
+    <!-- 위에서 아래-->
+    <edge from="1" id="1to00" to="00" numLanes="4"/>
+    <edge from="00" id="00to3" to="3" numLanes="4"/>
+    <edge from="5" id="5to000" to="000" numLanes="2"/>
+    <edge from="000" id="000to7" to="7" numLanes="2"/>
+
+
+    <!-- 아래에서 위-->
+    <edge from="4" id="4to00" to="00" numLanes="4"/>
+    <edge from="00" id="00to2" to="2" numLanes="4"/>
+    <edge from="8" id="8to000" to="000" numLanes="2"/>
+    <edge from="000" id="000to6" to="6" numLanes="2"/>
+
+
+</edges>

@@ -1,0 +1,128 @@
+ <routes>
+        <vType id="typeCAR" length="5" minGap="1" sigma='0' maxSpeed="10" allowLaneChange='false' guiShape="passenger"/>
+        
+        <!-- W1 출발-->
+        <route id='routeW1_N1' edges='02to00 00to2'/>
+        <route id='routeW1_S1' edges='02to00 00to3'/>
+        <route id='routeW1_E3' edges='02to00 00to000'/>
+        <!--
+        <route id='routeW1_B1' edges=''/>
+        <route id='routeW1_N2' edges=''/>
+        <route id='routeW1_S2' edges=''/>
+        <route id='routeW1_B2' edges=''/>
+        <route id='routeW1_S3' edges=''/> -->
+
+        <!-- N1 출발-->
+        <route id='routeN1_W1' edges='1to00 00to01'/>
+        <route id='routeN1_S1' edges='1to00 00to3'/>
+        <route id='routeN1_E3' edges='1to00 00to000'/>
+        <!--
+        <route id='routeN1_B1' edges=''/>
+        <route id='routeN1_N2' edges=''/>
+        <route id='routeN1_S2' edges=''/>
+        <route id='routeN1_B2' edges=''/>
+        <route id='routeN1_S3' edges=''/>
+        -->
+
+        <!-- S1 출발-->
+        <route id='routeS1_W1' edges='4to00 00to01'/>
+        <route id='routeS1_N1' edges='4to00 00to2'/>
+        <route id='routeS1_E3' edges='4to00 00to000'/>
+    <!--<route id='routeS1_B1' edges=''/>
+        <route id='routeS1_N2' edges=''/>
+        <route id='routeS1_S2' edges=''/>
+        <route id='routeS1_B2' edges=''/>
+        <route id='routeS1_S3' edges=''/>-->
+
+        <!-- E1 출발-->
+        <route id='routeE1_W1' edges='03to00 00to01'/>
+        <route id='routeE1_N1' edges='03to00 00to2'/>
+        <route id='routeE1_S1' edges='03to00 00to3'/>
+
+        <!-- N2 출발-->
+        <!--
+        <route id='routeN2_S2' edges=''/>
+        <route id='routeN2_N1' edges=''/>
+        <route id='routeN2_S1' edges=''/>
+        <route id='routeN2_W1' edges=''/>
+        <route id='routeN2_B2' edges=''/>
+        <route id='routeN2_S3' edges=''/>
+        <route id='routeN2_E3' edges=''/>-->
+
+        <!-- S2 출발-->
+        <!--
+        <route id='routeS2_N2' edges=''/>
+        <route id='routeS2_W1' edges=''/>
+        <route id='routeS2_N1' edges=''/>
+        <route id='routeS2_S1' edges=''/>
+        <route id='routeS2_B2' edges=''/>
+        <route id='routeS2_S3' edges=''/>
+        <route id='routeS2_E3' edges=''/>-->
+
+        <!-- N3 출발-->
+        <!--
+        <route id='routeN3_S3' edges=''/>
+        <route id='routeN3_E3' edges=''/>
+        <route id='routeN3_N2' edges=''/>
+        <route id='routeN3_S2' edges=''/>
+        <route id='routeN3_N1' edges=''/>
+        <route id='routeN3_S1' edges=''/>
+        <route id='routeN3_W1' edges=''/>-->
+
+        <!-- S3 출발-->
+        <!--
+        <route id='routeS3_N3' edges=''/>
+        <route id='routeS3_E3' edges=''/>
+        <route id='routeS3_N2' edges=''/>
+        <route id='routeS3_S2' edges=''/>
+        <route id='routeS3_N1' edges=''/>
+        <route id='routeS3_S3' edges=''/>
+        <route id='routeS3_W1' edges=''/>-->
+
+        <!-- E3 출발-->
+        <!--
+        <route id='routeE3_S3' edges=''/>
+        <route id='routeE3_N3' edges=''/>
+        <route id='routeE3_S2' edges=''/>
+        <route id='routeE3_N2' edges=''/>
+        <route id='routeE3_S1' edges=''/>
+        <route id='routeE3_N1' edges=''/>
+        <route id='routeE3_W1' edges=''/>-->
+
+
+        <!-- B1 출발
+        <route id='routeB1_N2' edges=''/>
+        <route id='routeB1_S2' edges=''/>
+        <route id='routeB1_B2' edges=''/>
+        <route id='routeB1_S3' edges=''/>
+        <route id='routeB1_E3' edges=''/>-->
+
+        <!-- B2 출발
+        <route id='routeB2_S3' edges=''/>
+        <route id='routeB2_E3' edges=''/>-->
+
+    <!-- W1 출발-->
+    <vehicle id="LeftW1_N1" route="routeW1_N1" type="typeCAR" depart="0" departLane='3' arrivalLane='2' color="1,0,0" />
+    <vehicle id="RightW1_S1" route="routeW1_S1" type="typeCAR" depart="0" departLane='0' arrivalLane='0' color="1,0,0" />
+    <vehicle id="StraightW1_E3_0" route="routeW1_E3" type="typeCAR" depart="0" departLane='1' arrivalLane='1' color="1,0,0" />
+    <vehicle id="StraightW1_E3_1" route="routeW1_E3" type="typeCAR" depart="0" departLane='0' arrivalLane='0' color="1,0,0" />
+    <!-- N1 출발-->
+    <vehicle id="LeftN1_E3" route="routeN1_E3" type="typeCAR" depart="50" departLane='3' arrivalLane='2' color="1,0,0" />
+    <vehicle id="RightN1_W1" route="routeN1_W1" type="typeCAR" depart="50" departLane='0' arrivalLane='0' color="1,0,0" />
+    <vehicle id="StraightN1_S1_0" route="routeN1_S1" type="typeCAR" depart="50" departLane='1' arrivalLane='1' color="1,0,0" />
+    <vehicle id="StraightN1_S1_1" route="routeN1_S1" type="typeCAR" depart="50" departLane='0' arrivalLane='0' color="1,0,0" />
+    <!-- S1 출발-->
+    <vehicle id="LeftS1_W1" route="routeS1_W1" type="typeCAR" depart="100" departLane='3' arrivalLane='2' color="1,0,0" />
+    <vehicle id="RightS1_E3" route="routeS1_E3" type="typeCAR" depart="100" departLane='0' arrivalLane='0' color="1,0,0" />
+    <vehicle id="StraightS1_N1_0" route="routeS1_N1" type="typeCAR" depart="100" departLane='1' arrivalLane='1' color="1,0,0" />
+    <vehicle id="StraightS1_N1_1" route="routeS1_N1" type="typeCAR" depart="100" departLane='0' arrivalLane='0' color="1,0,0" />
+    <!-- E1 출발-->
+    <vehicle id="LeftE1_S1" route="routeE1_S1" type="typeCAR" depart="150" departLane='3' arrivalLane='2' color="1,0,0" />
+    <vehicle id="RightE1_N1" route="routeE1_N1" type="typeCAR" depart="150" departLane='0' arrivalLane='0' color="1,0,0" />
+    <vehicle id="StraightE1_W1_0" route="routeE1_W1" type="typeCAR" depart="150" departLane='1' arrivalLane='1' color="1,0,0" />
+    <vehicle id="StraightE1_W1_1" route="routeE1_W1" type="typeCAR" depart="150" departLane='0' arrivalLane='0' color="1,0,0" />
+
+
+
+
+ </routes>

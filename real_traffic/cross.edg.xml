@@ -105,6 +105,17 @@
     <!-- 11에서 9-->
     <edge from="29" id="29to23" to="23" numLanes="4"/>
 
+    <!-- 우회전-->
+    <edge from="06" id="06to7" to="7" numLanes="1"/>
+    <edge from="7" id="7to10" to="10" numLanes="3"/>
 
+    <edge from="4" id="4to04" to="04" numLanes="1"/>
+    <edge from="04" id="04to01" to="01" numLanes="3"/>
+
+    <edge from="9" id="9to09" to="09" numLanes="1"/>
+    <edge from="09" id="09to012" to="012" numLanes="3"/>
+
+    <edge from="07" id="07to6" to="6" numLanes="1"/>
+    <edge from="6" id="6to3" to="3" numLanes="3"/>
 
 </edges>
