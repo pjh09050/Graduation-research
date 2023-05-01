@@ -34,7 +34,7 @@ def run():
 
 if __name__ == "__main__":
     options = get_options()
-    max_steps = 100
+    max_steps = 500
 
     # this script has been called from the command line. It will start sumo as a
     # server, then connect and run
