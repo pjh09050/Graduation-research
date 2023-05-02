@@ -49,9 +49,27 @@
     </edge>
 
     <!-- 교차 지점-->
+    <!-- 오른쪽에서 왼쪽-->
     <edge from="00" id="00to009" to="009" numLanes="1">
         <lane index="0" shape="0.0,-4.8 78.8,-4.8"/>
     </edge>
     <edge from="009" id="009to010" to="010" numLanes="1"/>
     <edge from="010" id="010to000" to="000" numLanes="1"/>
+
+    <!-- 왼쪽에서 오른쪽1 -->
+    <edge from="000" id="000to011" to="011" numLanes="1">
+        <lane index="0" shape="165.6,4.8 78.8,4.8"/>
+    </edge>
+    <edge from="011" id="011to012" to="012" numLanes="1"/>
+    <edge from="012" id="012to00" to="00" numLanes="1"/>
+
+    <!-- 왼쪽에서 오른쪽2 -->
+    <edge from="0000" id="0000to013" to="013" numLanes="1">
+        <lane index="0" shape="343.3,4.8 265.0,4.8"/>
+    </edge>
+    <edge from="013" id="013to014" to="014" numLanes="1"/>
+    <edge from="014" id="014to000" to="000" numLanes="1"/>
+
+
+
 </edges>
