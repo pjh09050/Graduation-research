@@ -31,12 +31,12 @@
         <!--<route id='routeS1_B1' edges=''/>
         <route id='routeS1_N2' edges=''/>-->
 
-        <!-- N2 출발-->
+        <!-- N2 출발
         <route id='routeN2_S2' edges='5to000 000to7'/>
         <route id='routeN2_W1' edges='5to000 '/>
         <route id='routeN2_B2' edges='5to000 '/>
         <route id='routeN2_S3' edges='5to000 '/>
-        <route id='routeN2_E3' edges='5to000 '/>
+        <route id='routeN2_E3' edges='5to000 '/>-->
         <!--<route id='routeN2_N1' edges=''/>
         <route id='routeN2_S1' edges=''/>-->
 
