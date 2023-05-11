@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2023-05-11 15:54:45 by Eclipse SUMO netedit Version 1.16.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumocfg-file value="C:\Users\wrete\OneDrive\바탕 화면\test1\tt.sumocfg"/>
+        <sumo-net-file value="c.net.xml"/>
+    </input>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="0"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.50"/>
+        <rectangular-lane-cut value="0"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="0"/>
+    </pedestrian>
+
+</configuration>
+-->
+
+<nodes version="1.16" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/nodes_file.xsd">
+    <location netOffset="112.80,62.40" convBoundary="0.00,0.00,542.20,124.80" origBoundary="-112.80,-62.40,429.40,62.40" projParameter="!"/>
+
+    <node id="00" x="112.80" y="62.40" type="traffic_light" tl="00"/>
+    <node id="000" x="278.40" y="62.40" type="traffic_light" tl="000"/>
+    <node id="0000" x="456.20" y="62.40" type="traffic_light" tl="0000"/>
+    <node id="001" x="158.40" y="52.80" type="dead_end"/>
+    <node id="002" x="158.40" y="52.80" type="dead_end"/>
+    <node id="003" x="158.40" y="12.40" type="dead_end"/>
+    <node id="004" x="158.40" y="12.40" type="dead_end"/>
+    <node id="005" x="387.00" y="52.80" type="dead_end"/>
+    <node id="006" x="387.00" y="52.80" type="dead_end"/>
+    <node id="007" x="387.00" y="12.40" type="dead_end"/>
+    <node id="008" x="387.00" y="12.40" type="dead_end"/>
+    <node id="009" x="191.60" y="59.20" type="dead_end"/>
+    <node id="01" x="0.00" y="62.40" type="dead_end"/>
+    <node id="010" x="196.60" y="62.40" type="priority"/>
+    <node id="011" x="196.60" y="65.60" type="dead_end"/>
+    <node id="012" x="191.60" y="62.40" type="priority"/>
+    <node id="013" x="377.80" y="65.60" type="dead_end"/>
+    <node id="014" x="372.80" y="62.40" type="priority"/>
+    <node id="02" x="0.00" y="62.40" type="dead_end"/>
+    <node id="03" x="542.20" y="62.40" type="dead_end"/>
+    <node id="04" x="542.20" y="62.40" type="dead_end"/>
+    <node id="1" x="112.80" y="124.80" type="dead_end"/>
+    <node id="10" x="456.20" y="124.80" type="dead_end"/>
+    <node id="11" x="456.20" y="0.00" type="dead_end"/>
+    <node id="12" x="456.20" y="0.00" type="dead_end"/>
+    <node id="2" x="112.80" y="124.80" type="dead_end"/>
+    <node id="3" x="112.80" y="0.00" type="dead_end"/>
+    <node id="4" x="112.80" y="0.00" type="dead_end"/>
+    <node id="5" x="278.40" y="124.80" type="dead_end"/>
+    <node id="6" x="278.40" y="124.80" type="dead_end"/>
+    <node id="7" x="278.40" y="0.00" type="dead_end"/>
+    <node id="8" x="278.40" y="0.00" type="dead_end"/>
+    <node id="9" x="456.20" y="124.80" type="dead_end"/>
+</nodes>

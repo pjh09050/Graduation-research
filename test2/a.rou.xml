@@ -5,10 +5,10 @@
         <route id='routeW1_N1' edges='02to00 00to2'/>
         <route id='routeW1_S1' edges='02to00 00to3'/>
         <route id='routeW1_E3' edges='02to00 00to000 000to0000 0000to04'/>
-        <!-- 경로 연결 차선 없음
-        <route id='routeW1_B1' edges='02to00 00to001 001to003'/>
-        <route id='routeW1_B2' edges='02to00 00to000 000to005 005to007'/>
-        <route id='routeW1_N2' edges='02to00 00to009 009to010 010to000 000to6'/>-->
+        <!-- 
+        <route id='routeW1_B1' edges=''/>
+        <route id='routeW1_B2' edges=''/>
+        <route id='routeW1_N2' edges=''/>-->
         <route id='routeW1_S2' edges='02to00 00to000 000to7'/>
         <route id='routeW1_S3' edges='02to00 00to000 000to0000 0000to11'/>
 
@@ -17,32 +17,24 @@
         <route id='routeN1_S1' edges='1to00 00to3'/>
         <route id='routeN1_E3' edges='1to00 00to000 000to0000 0000to04'/>
         <route id='routeN1_S2' edges='1to00 00to000 000to7'/>
-        <!-- 경로 연결 차선 없음
-        <route id='routeN1_B2' edges='1to00 00to000 000to005 005to007'/>-->
+        <!-- 
+        <route id='routeN1_B2' edges=''/>-->
         <route id='routeN1_S3' edges='1to00 00to000 000to0000 0000to11'/>
-        <!-- 불필요한 경로
-        <route id='routeN1_B1' edges=''/>
-        <route id='routeN1_N2' edges=''/>-->
 
         <!-- S1 출발-->
         <route id='routeS1_W1' edges='4to00 00to01'/>
         <route id='routeS1_N1' edges='4to00 00to2'/>
         <route id='routeS1_E3' edges='4to00 00to000 000to0000 0000to04'/>
-        <route id='routeS1_S2' edges='4to00 00to000 000to7'/>
-        <!-- 경로 연결 차선 없음
-        <route id='routeS1_B2' edges='4to00 00to000 000to005 005to007'/>-->
+        <!-- 
+        <route id='routeS1_B2' edges=''/>-->
         <route id='routeS1_S3' edges='4to00 00to000 000to0000 0000to11'/>
-        <!-- 불필요한 경로
-        <route id='routeS1_B1' edges=''/>
-        <route id='routeS1_N2' edges=''/>-->
 
         <!-- N2 출발-->
         <route id='routeN2_S2' edges='5to000 000to7'/>
-        <route id='routeN2_N1' edges='5to000 000to00 00to2'/>
-        <!-- 경로 연결 차선 없음
+        <!-- 
         <route id='routeN2_S1' edges=''/>-->
         <route id='routeN2_W1' edges='5to000 000to00 00to01'/>
-        <!-- 경로 연결 차선 없음
+        <!-- 
         <route id='routeN2_B2 edges=''/>-->
         <route id='routeN2_S3' edges='5to000 000to0000 0000to11'/>
         <route id='routeN2_E3' edges='5to000 000to0000 0000to04'/>
@@ -51,8 +43,7 @@
         <route id='routeS2_N2' edges='8to000 000to6'/>
         <route id='routeS2_W1' edges='8to000 000to00 00to01'/>
         <route id='routeS2_N1' edges='8to000 000to00 00to2'/>
-        <!-- 경로 연결 차선 없음
-        <route id='routeS2_S1' edges='8to000'/>
+        <!-- 
         <route id='routeS2_B2' edges=''/>-->
         <route id='routeS2_S3' edges='8to000 000to0000 0000to11'/>
         <route id='routeS2_E3' edges='8to000 000to0000 0000to04'/>
@@ -61,7 +52,7 @@
         <route id='routeN3_S3' edges='9to0000 0000to11'/>
         <route id='routeN3_E3' edges='9to0000 0000to04'/>
         <route id='routeN3_N2' edges='9to0000 0000to000 000to6'/>
-        <!-- 경로 연결 차선 없음
+        <!-- 
         <route id='routeN3_S2' edges=''/>
         <route id='routeN3_S1' edges=''/>-->
         <route id='routeN3_N1' edges='9to0000 0000to000 000to00 00to2'/>
@@ -71,8 +62,7 @@
         <route id='routeS3_N3' edges='12to0000 0000to10'/>
         <route id='routeS3_E3' edges='12to0000 0000to04'/>
         <route id='routeS3_N2' edges='12to0000 0000to000 000to6'/>
-        <!-- 경로 연결 차선 없음
-        <route id='routeS3_S2' edges=''/>
+        <!-- 
         <route id='routeS3_S1' edges=''/>-->
         <route id='routeS3_N1' edges='12to0000 0000to000 000to00 00to2'/>
         <route id='routeS3_W1' edges='12to0000 0000to000 000to00 00to01'/>
@@ -80,7 +70,7 @@
         <!-- E3 출발 -->
         <route id='routeE3_S3' edges='03to0000 0000to11'/>
         <route id='routeE3_N3' edges='03to0000 0000to10'/>
-        <!-- 경로 연결 차선 없음
+        <!-- 
         <route id='routeE3_S2' edges='03to0000 0000to013 013to014 014to000 000to7'/>
         <route id='routeE3_S1' edges='03to0000 0000to000 000to011 011to012 012to00 00to3'/> -->
         <route id='routeE3_N2' edges='03to0000 0000to000 000to6'/>
@@ -88,8 +78,6 @@
         <route id='routeE3_W1' edges='03to0000 0000to000 000to00 00to01'/>
 
         <!-- B1 출발
-        <route id='routeB1_N2' edges=''/>
-        <route id='routeB1_S2' edges=''/>
         <route id='routeB1_B2' edges=''/>
         <route id='routeB1_S3' edges=''/>
         <route id='routeB1_E3' edges=''/>-->

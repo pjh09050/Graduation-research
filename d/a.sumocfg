@@ -3,7 +3,7 @@
 <configuration>
 
     <input>
-        <net-file value="c.net.xml"/>
+        <net-file value="a.net.xml"/>
         <route-files value="a.rou.xml"/>
     </input>
 

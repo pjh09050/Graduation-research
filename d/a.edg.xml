@@ -39,9 +39,9 @@
     </edge>
     <edge from="002" id="002to000" to="000" numLanes="1">
         <lane index="0" shape="45.6,-11.2 165.6,-11.2"/>
-    </edge>
+    </edge>-->
 
-    <edge from="000" id="000to005" to="005" numLanes="1">
+    <!--<edge from="000" id="000to005" to="005" numLanes="1">
         <lane index="0" shape="165.6,-11.2 274.2,-11.2"/>
     </edge>
     <edge from="006" id="006to0000" to="0000" numLanes="1">
