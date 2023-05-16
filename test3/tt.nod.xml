@@ -37,8 +37,8 @@
     <node id="2" x="0.0" y="62.4" type="dead_end"/>
     <node id="3" x="0.0" y="-62.4" type="dead_end"/>
     <node id="4" x="0.0" y="-62.4" type="dead_end"/>
-    <node id="01" x="-112.8" y="0.0" type="dead_end"/>
-    <node id="02" x="-112.8" y="0.0" type="dead_end"/>
+    <node id="01" x="-250.8" y="0.0" type="dead_end"/>
+    <node id="02" x="-250.8" y="0.0" type="dead_end"/>
 
     <node id="000" x="165.6" y="0.0" type="traffic_light" tl="000"/>
     <node id="5" x="165.6" y="62.4" type="dead_end"/>
@@ -51,8 +51,8 @@
     <node id="10" x="343.4" y="62.4" type="dead_end"/>
     <node id="11" x="343.4" y="-62.4" type="dead_end"/>
     <node id="12" x="343.4" y="-62.4" type="dead_end"/>
-    <node id="03" x="429.4" y="0.0" type="dead_end"/>
-    <node id="04" x="429.4" y="0.0" type="dead_end"/>
+    <node id="03" x="600.4" y="0.0" type="dead_end"/>
+    <node id="04" x=".4" y="0.0" type="dead_end"/>
 
     <!--차선변경 1-->
     <node id="009" x="78.8" y="-3.2" type="dead_end"/>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2023-05-11 15:53:11 by Eclipse SUMO netedit Version 1.16.0
+<!-- generated on 2023-05-16 13:58:32 by Eclipse SUMO netedit Version 1.16.0
 -->
 
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
-        <sumo-net-file value="a.net.xml"/>
+        <sumo-net-file value="b.net.xml"/>
     </input>
 
     <processing>

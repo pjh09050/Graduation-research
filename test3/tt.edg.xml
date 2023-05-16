@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2023-05-11 15:54:45 by Eclipse SUMO netedit Version 1.16.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumocfg-file value="C:\Users\wrete\OneDrive\바탕 화면\test1\tt.sumocfg"/>
+        <sumo-net-file value="c.net.xml"/>
+    </input>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="0"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.50"/>
+        <rectangular-lane-cut value="0"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="0"/>
+    </pedestrian>
+
+</configuration>
+-->
+
+<edges version="1.16" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/edges_file.xsd">
+    <!-- 왼쪽에서 오른쪽-->
+    <edge id="02to00" from="02" to="00" priority="-1" numLanes="4" speed="13.89"/>
+    <edge id="00to000" from="00" to="000" priority="-1" numLanes="4" speed="13.89"/>
+    <edge id="000to0000" from="000" to="0000" priority="-1" numLanes="4" speed="13.89"/>
+    <edge id="0000to04" from="0000" to="04" priority="-1" numLanes="4" speed="13.89">
+        <lane index="0"/>
+        <lane index="1"/>
+        <lane index="2"/>
+        <lane index="3" disallow="all"/>
+    </edge>
+
+    <!-- 오른쪽에서 왼쪽-->
+    <edge id="03to0000" from="03" to="0000" priority="-1" numLanes="4" speed="13.89"/>
+    <edge id="0000to000" from="0000" to="000" priority="-1" numLanes="4" speed="13.89"/>
+    <edge id="000to00" from="000" to="00" priority="-1" numLanes="4" speed="13.89"/>
+    <edge id="00to01" from="00" to="01" priority="-1" numLanes="4" speed="13.89"/>
+
+    <!--위에서 아래-->
+    <edge id="1to00" from="1" to="00" priority="-1" numLanes="4" speed="13.89"/>
+    <edge id="00to3" from="00" to="3" priority="-1" numLanes="4" speed="13.89"/>
+    <edge id="5to000" from="5" to="000" priority="-1" numLanes="2" speed="13.89"/>
+    <edge id="000to7" from="000" to="7" priority="-1" numLanes="2" speed="13.89"/>
+    <edge id="9to0000" from="9" to="0000" priority="-1" numLanes="5" speed="13.89"/>
+    <edge id="0000to11" from="0000" to="11" priority="-1" numLanes="5" speed="13.89">
+        <lane index="0"/>
+        <lane index="1"/>
+        <lane index="2"/>
+        <lane index="3"/>
+        <lane index="4" disallow="all"/>
+    </edge>
+
+    <!--아래에서 위-->
+    <edge id="4to00" from="4" to="00" priority="-1" numLanes="4" speed="13.89"/>
+    <edge id="00to2" from="00" to="2" priority="-1" numLanes="4" speed="13.89"/>
+    <edge id="8to000" from="8" to="000" priority="-1" numLanes="2" speed="13.89"/>
+    <edge id="000to6" from="000" to="6" priority="-1" numLanes="2" speed="13.89"/>
+    <edge id="12to0000" from="12" to="0000" priority="-1" numLanes="5" speed="13.89"/>
+    <edge id="0000to10" from="0000" to="10" priority="-1" numLanes="5" speed="13.89">
+        <lane index="0"/>
+        <lane index="1"/>
+        <lane index="2"/>
+        <lane index="3"/>
+        <lane index="4" disallow="all"/>
+    </edge>
+
+    <!-- 교차지점-->
+    <!-- 왼쪽에서 오른쪽-->
+    <edge from="00" id="00to009" to="009" numLanes="1">
+        <lane index="0" shape="0.0,-4.8 78.8,-4.8"/>
+    </edge> 
+    <edge id="009to010" from="009" to="010" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="010to000" from="010" to="000" priority="-1" numLanes="1" speed="13.89"/>
+
+    <!-- 오른쪽에서 왼쪽1 -->
+    <edge from="000" id="000to011" to="011" numLanes="1">
+        <lane index="0" shape="165.6,4.8 78.8,4.8"/>
+    </edge>
+    <edge id="011to012" from="011" to="012" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="012to00" from="012" to="00" priority="-1" numLanes="1" speed="13.89"/>
+
+    <!-- 오른쪽에서 왼쪽2 -->
+    <edge from="0000" id="0000to013" to="013" numLanes="1">
+        <lane index="0" shape="343.3,4.8 265.0,4.8"/>
+    </edge>
+    <edge id="013to014" from="013" to="014" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="014to000" from="014" to="000" priority="-1" numLanes="1" speed="13.89"/>
+
+    <!-- spillback 안에서 일어남-->
+    <edge id="001to003" from="001" to="003" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="004to002" from="004" to="002" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="005to007" from="005" to="007" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="008to006" from="008" to="006" priority="-1" numLanes="1" speed="13.89"/>
+
+    
+
+    
+    
+
+    
+
+
+    
+
+
+
+</edges>
