@@ -9,7 +9,7 @@
         <route id='routeW1_E3' edges='02to00 00to000 000to0000 0000to04'/>
         <route id='routeW1_N2' edges='02to00 00to009 009to010 010to000 000to6'/>
         <route id='routeW1_S2' edges='02to00 00to000 000to7'/>
-        <route id='routeW1_S3' edges='02to00 00to000 000to0000 0000to11'/>
+        <route id='routeW1_S3' edges='02to00 00to000 000to015 015to016 016to0000 0000to11'/>
 
         <!-- N1 출발-->
         <!--<route id='routeN1_B2' edges=''/>-->
@@ -17,21 +17,21 @@
         <route id='routeN1_S1' edges='1to00 00to3'/>
         <route id='routeN1_E3' edges='1to00 00to000 000to0000 0000to04'/>
         <route id='routeN1_S2' edges='1to00 00to000 000to7'/>
-        <route id='routeN1_S3' edges='1to00 00to000 000to0000 0000to11'/>
+        <route id='routeN1_S3' edges='1to00 00to000 000to015 015to016 016to0000 0000to11'/>
 
         <!-- S1 출발-->
         <!-- <route id='routeS1_B2' edges=''/>-->
         <route id='routeS1_W1' edges='4to00 00to01'/>
         <route id='routeS1_N1' edges='4to00 00to2'/>
         <route id='routeS1_E3' edges='4to00 00to000 000to0000 0000to04'/>
-        <route id='routeS1_S3' edges='4to00 00to000 000to0000 0000to11'/>
+        <route id='routeS1_S3' edges='4to00 00to000 000to015 015to016 016to0000 0000to11'/>
 
         <!-- N2 출발-->
         <!-- <route id='routeN2_B2 edges=''/>-->
         <route id='routeN2_S2' edges='5to000 000to7'/>
         <route id='routeN2_S1' edges='5to000 000to011 011to012 012to00 00to3 '/>
         <route id='routeN2_W1' edges='5to000 000to00 00to01'/>
-        <route id='routeN2_S3' edges='5to000 000to0000 0000to11'/>
+        <route id='routeN2_S3' edges='5to000 000to015 015to016 016to0000 0000to11'/>
         <route id='routeN2_E3' edges='5to000 000to0000 0000to04'/>
 
         <!-- S2 출발-->
@@ -39,7 +39,7 @@
         <route id='routeS2_N2' edges='8to000 000to6'/>
         <route id='routeS2_W1' edges='8to000 000to00 00to01'/>
         <route id='routeS2_N1' edges='8to000 000to00 00to2'/>
-        <route id='routeS2_S3' edges='8to000 000to0000 0000to11'/>
+        <route id='routeS2_S3' edges='8to000 000to015 015to016 016to0000 0000to11'/>
         <route id='routeS2_E3' edges='8to000 000to0000 0000to04'/>
 
         <!-- N3 출발-->
@@ -89,8 +89,8 @@
     <vehicle id="routeN1_W1" route="routeN1_W1" type="typeCAR" depart="0" color="1,0,0" />
     <vehicle id="routeN1_S1" route="routeN1_S1" type="typeCAR" depart="0" color="1,0,0" />
     <vehicle id="routeN1_E3" route="routeN1_E3" type="typeCAR" depart="0" color="1,0,0" />
-    <vehicle id="routeN1_S2" route="routeN1_S2" type="typeCAR" depart="0" color="1,0,0" />
-    <vehicle id="routeN1_S3" route="routeN1_S3" type="typeCAR" depart="0" color="1,0,0" />-->
+    <vehicle id="routeN1_S2" route="routeN1_S2" type="typeCAR" depart="0" color="1,0,0" />-->
+    <vehicle id="routeN1_S3" route="routeN1_S3" type="typeCAR" depart="0" color="1,0,0" />
     
     <!-- S1 출발
     <vehicle id="routeS1_W1" route="routeS1_W1" type="typeCAR" depart="0" color="1,0,0" />
