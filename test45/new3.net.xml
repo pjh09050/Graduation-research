@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2023-05-18 01:07:21 by Eclipse SUMO netedit Version 1.16.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="b.net.xml"/>
+    </input>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="0"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.50"/>
+        <rectangular-lane-cut value="0"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="0"/>
+    </pedestrian>
+
+</configuration>
+-->
+
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <tlLogic id="0000" type="static" programID="0" offset="0">
+        <phase duration="25" state="GrrrrrrrrrrrGGGGGgGrrrr"/>
+        <!-- <phase duration="25" state="GGrrrrrGrrrrrGGGGGrGGrrrrrGrrrr"/> -->
+        <phase duration="3" state="GrrrrrGrrrrGyyyyygGrrrr"/>
+        <!-- <phase duration="3" state="yyrrrrryrrrrryyyyyryyrrrrryrrrr"/> -->
+        <phase duration="47" state="rGGGGrrrrrrrGGGGrgrrrrr"/>
+        <!-- <phase duration="47" state="rrGGGGrrrrrrrrGGGGrrrrrrrrrrrrr"/> -->
+        <phase duration="3" state="GyyyyrGrrrrGyyyyrgGrrrr"/>
+        <!-- <phase duration="3" state="ryyyyyryrrrrryyyyyrryrrrrryrrrr"/> -->
+        <phase duration="18" state="rGGGGGGrrrrGrrrrrGrrrrr"/>
+        <!-- <phase duration="18" state="GGGGGGGGrrrrrGrrrrrrGrrrrrGrrrr"/> -->
+        <phase duration="3" state="GyyyyyGrrrrGrrrrryGrrrr"/>
+        <!-- <phase duration="3" state="ryyyyyyyrrrrryrrrrrryrrrrryrrrr"/> -->
+        <phase duration="51" state="rrrrrrrGGGrrrrrrrrrGGGG"/>
+        <!-- <phase duration="51" state="rrrrrrrrGGGGrrrrrrrrrrrrrrrGGGr"/> -->
+        <phase duration="3" state="GrrrrrGyyyrGrrrrrrGyyyy"/>
+        <!-- <phase duration="3" state="rrrrrrrryyyyrrrrrrrrrrrrrrryyyr"/> -->
+        <phase duration="24" state="rrrrrrrGGGGGrrrrrrGrrrr"/>
+        <!-- <phase duration="24" state="rrrrrrrrGGGGGrrrrrrrrrrrrrrrrrr"/> -->
+        <phase duration="3" state="GrrrrrGyyyyGrrrrrrGrrrr"/>
+        <!-- <phase duration="3" state="yyrrrrryyyyyyyrrrrrryrrrrryrrrr"/> -->
+    </tlLogic>
+</additional>
