@@ -21,7 +21,7 @@
     </report>
 
     <gui_only>
-        <gui-settings-file value="a.view.xml"/>
+        <gui-settings-file value="final.view.xml"/>
     </gui_only>
 
 </configuration>

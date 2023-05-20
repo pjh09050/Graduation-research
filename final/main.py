@@ -7,8 +7,7 @@ import optparse
 import random
 from sumolib import checkBinary  
 import traci
-from TrafficGenerator import TrafficGenerator
-from practiceTraffic import practiceTraffic
+from TrafficGenerator import generate_routefile
 
 # we need to import python modules from the $SUMO_HOME/tools directory
 if 'SUMO_HOME' in os.environ:
@@ -36,7 +35,6 @@ def run():
 
 if __name__ == "__main__":
     options = get_options()
-    max_steps = 3600
 
     # this script has been called from the command line. It will start sumo as a
     # server, then connect and run
@@ -53,9 +51,9 @@ if __name__ == "__main__":
     #     sumoBinary = checkBinary('sumo-gui')
 
     # first, generate the route file for this simulation
-    TrafficGenerator(max_steps)
-    #practiceTraffic(max_steps)
+    generate_routefile()
     
     # this is the normal way of using traci. sumo is started as a subprocess and then the python script connects and runs
     traci.start([sumoBinary, "-c", "tt.sumocfg","--tripinfo-output", "tripinfo.xml"])
+
     run()
