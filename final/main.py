@@ -29,6 +29,8 @@ def run():
     max_step = 3600
     while step < max_step+1:
         traci.simulationStep()
+        #min_expected_number = traci.simulation.getMinExpectedNumber()
+        #print(f"Step {step}: Min Expected Number: {min_expected_number}")
         step += 1
     traci.close()
 
@@ -52,7 +54,7 @@ if __name__ == "__main__":
 
     # first, generate the route file for this simulation
     generate_routefile()
-    
+
     # this is the normal way of using traci. sumo is started as a subprocess and then the python script connects and runs
     traci.start([sumoBinary, "-c", "tt.sumocfg","--tripinfo-output", "tripinfo.xml"])
 
