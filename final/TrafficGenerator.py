@@ -1,6 +1,6 @@
 import numpy as np
 import random
-from total_traffic import total_traffic
+from asdf import total_traffic
 
 
 def generate_routefile():
@@ -8,7 +8,7 @@ def generate_routefile():
 
     sorted_list = total_traffic()
 
-    with open("b.rou.xml", 'w') as routes:
+    with open("final.rou.xml", 'w') as routes:
         print("""<routes>
         <vType id="typeCAR" length="5" minGap="2.5" maxSpeed="10" allowLaneChange="False" guiShape="passenger"/>
 
@@ -45,7 +45,6 @@ def generate_routefile():
         <route id='routeN3_W1' edges='9to0000 0000to000 000to00 00to01'/>
         <route id='routeN3_N1' edges='9to0000 0000to000 000to00 00to2'/>
         <route id='routeN3_S1' edges='9to0000 0000to000 000to011 011to012 012to00 00to3'/>
-        <route id='routeN3_N2' edges='9to0000 0000to000 000to6'/>
         <route id='routeN3_S2' edges='9to0000 0000to013 013to014 014to000 000to7'/>
         <route id='routeN3_S3' edges='9to0000 0000to11'/>
         <route id='routeN3_E3' edges='9to0000 0000to04'/>

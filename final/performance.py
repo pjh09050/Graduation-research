@@ -17,7 +17,8 @@ def calculate_efficiency_index():
 
     # 효율성 지수 계산
     scaled_waiting_time = average_waiting_time / max(waiting_times)
-    efficiency_index = passing_vehicle_ratio / (scaled_waiting_time + waiting_vehicle_ratio)
+    #efficiency_index = passing_vehicle_ratio / (scaled_waiting_time + waiting_vehicle_ratio)
+    efficiency_index = passing_vehicle_ratio /  waiting_vehicle_ratio
 
     return efficiency_index
 

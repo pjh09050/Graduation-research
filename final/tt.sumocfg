@@ -6,15 +6,16 @@
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
-        <net-file value="b.net.xml"/>
-        <route-files value="b.rou.xml"/>
+        <net-file value="final.net.xml"/>
+        <route-files value="final.rou.xml"/>
+        <!--<scale value="2.0"/>-->
     </input>
 
     <time>
         <begin value="0"/>
         <end value="3600"/>
     </time>
-
+    
     <report>
         <verbose value="true"/>
         <no-step-log value="true"/>

@@ -11,7 +11,7 @@ def total_traffic():
     W1_cumulative_interval = 0
     for i, interval in enumerate(W1_arrival_intervals):
         # W1출발부터 모든 경로에 대한 확률 가중치 부여 후 경로 선택
-        car_direction = random.choices(population=["routeW1_N1", "routeW1_S1", "routeW1_N2", "routeW1_S2", "routeW1_S3", "routeW1_E3"], weights=[0.1,0.1,0.08,0.05,0.07,0.6], k=1)[0]
+        car_direction = random.choices(population=["routeW1_N1", "routeW1_S1", "routeW1_N2", "routeW1_S2", "routeW1_S3", "routeW1_E3"], weights=[0.1,0.1, 0.08, 0.05, 0.07, 0.6], k=1)[0]
         W1_cumulative_interval += interval
         if W1_cumulative_interval > 3600:
             break
@@ -36,7 +36,7 @@ def total_traffic():
                 departLane = random.randint(1,2)
             else:
                 departLane = random.randint(0,2)
-            arrivalLane = random.randint(1,3)
+            arrivalLane = random.randint(1,3)        
         W1_time_list.append((car_direction, np.round(W1_cumulative_interval,1), departLane, arrivalLane))
 
     N1_arrival_rate = 455 / 3600  # 차량 도착율 계산
@@ -50,23 +50,23 @@ def total_traffic():
             break
         if car_direction == "routeN1_W1":
             departLane = 0
-            arrivalLane = random.randint(0,1)
+            arrivalLane = random.randint(0,1) 
         elif car_direction == "routeN1_S1":
             a = random.random()
             if a < 0.8:
                 departLane = random.randint(1,2)
             else:
                 departLane = random.randint(0,2)
-            arrivalLane = random.randint(0,2)
+            arrivalLane = random.randint(0,2) 
         elif car_direction == "routeN1_S2":
             departLane = 3
-            arrivalLane = random.randint(0,1)
+            arrivalLane = random.randint(0,1) 
         elif car_direction == "routeN1_S3":
             departLane = 3
             arrivalLane = 0
         elif car_direction == "routeN1_E3":
             departLane = 3
-            arrivalLane = random.randint(2,3)
+            arrivalLane = random.randint(0,1) 
         N1_time_list.append((car_direction, np.round(N1_cumulative_interval,1), departLane, arrivalLane))
 
     S1_arrival_rate = 358 / 3600  # 차량 도착율 계산
@@ -87,13 +87,13 @@ def total_traffic():
                 departLane = random.randint(1,2)
             else:
                 departLane = random.randint(0,1)
-            arrivalLane = random.randint(0,2) 
+            arrivalLane = random.randint(0,1) 
         elif car_direction == "routeS1_S3":
             departLane = 0
-            arrivalLane = random.randint(0,1)
+            arrivalLane = random.randint(0,1) 
         elif car_direction == "routeS1_E3":
             departLane = 0
-            arrivalLane = random.randint(1,2)
+            arrivalLane = random.randint(0,1)
         S1_time_list.append((car_direction, np.round(S1_cumulative_interval,1), departLane, arrivalLane))
 
     N2_arrival_rate = 128 / 3600  # 차량 도착율 계산
@@ -113,18 +113,17 @@ def total_traffic():
             arrivalLane = random.randint(1,2)
         elif car_direction == "routeN2_S2":
             a = random.random()
-            if a < 0.6:
-                departLane = 1
-                arrivalLane = 1
+            if a < 0.8:
+                departLane = random.randint(0,1)
             else:
                 departLane = 0
-                arrivalLane = 0
+            arrivalLane = 0
         elif car_direction == "routeN2_S3":
             departLane = 1
             arrivalLane = 0
         elif car_direction == "routeN2_E3":
             departLane = 1
-            arrivalLane = random.randint(2,3)
+            arrivalLane = random.randint(1,2)
         N2_time_list.append((car_direction, np.round(N2_cumulative_interval,1), departLane, arrivalLane))
 
     S2_arrival_rate = 153 / 3600  # 차량 도착율 계산
@@ -144,18 +143,17 @@ def total_traffic():
             arrivalLane = 0
         elif car_direction == "routeS2_N2":
             a = random.random()
-            if a < 0.6:
-                departLane = 1
-                arrivalLane = 1
+            if a < 0.8:
+                departLane = random.randint(0,1)
             else:
                 departLane = 0
-                arrivalLane = 0
+            arrivalLane = 0
         elif car_direction == "routeS2_S3":
-            departLane = 0
+            departLane = random.randint(0,1)
             arrivalLane = 0
         elif car_direction == "routeS2_E3":
             departLane = 0
-            arrivalLane = random.randint(1,2)
+            arrivalLane = random.randint(0,1)
         S2_time_list.append((car_direction, np.round(S2_cumulative_interval,1), departLane, arrivalLane))
 
     N3_arrival_rate = 1147 / 3600  # 차량 도착율 계산
@@ -163,7 +161,7 @@ def total_traffic():
     N3_arrival_intervals = np.random.exponential(scale=1/N3_arrival_rate, size=1147)
     N3_cumulative_interval = 0
     for i, interval in enumerate(N3_arrival_intervals):
-        car_direction = random.choices(population=["routeN3_W1", "routeN3_N1", "routeN3_S1", "routeN3_S2", "routeN3_S3", "routeN3_E3"], weights=[0.1, 0.07, 0.06, 0.07, 0.65, 0.05], k=1)[0]
+        car_direction = random.choices(population=["routeN3_W1", "routeN3_N1", "routeN3_S1","routeN3_S2", "routeN3_S3", "routeN3_E3"], weights=[0.1, 0.07, 0.06, 0.07, 0.65, 0.05], k=1)[0]
         N3_cumulative_interval += interval
         if N3_cumulative_interval > 3600:
             break
@@ -202,26 +200,26 @@ def total_traffic():
             break
         if car_direction == "routeS3_W1":
             departLane = 4
-            arrivalLane = random.randint(1,2)
+            arrivalLane = random.randint(0,1)
         elif car_direction == "routeS3_N1":
             departLane= 4
             arrivalLane = random.randint(0,1)
         elif car_direction == "routeS3_S1":
             departLane = 4
-            arrivalLane = random.randint(1,2)
+            arrivalLane = random.randint(0,1)
         elif car_direction == "routeS3_N2":
             departLane = 4
             arrivalLane = random.randint(0,1)
         elif car_direction == "routeS3_N3":
             a = random.random()
             if a < 0.8:
-                departLane = random.randint(1,3)
+                departLane = random.randint(1,2)
             else:
-                departLane = random.randint(0,3)
-            arrivalLane = random.randint(0,3) 
+                departLane = random.randint(0,2)
+            arrivalLane = random.randint(0,2) 
         elif car_direction == "routeS3_E3":
             departLane = 0
-            arrivalLane = 1
+            arrivalLane = 0
         S3_time_list.append((car_direction, np.round(S3_cumulative_interval,1), departLane, arrivalLane))
     
     E3_arrival_rate = 720 / 3600  # 차량 도착율 계산
@@ -261,8 +259,11 @@ def total_traffic():
         E3_time_list.append((car_direction, np.round(E3_cumulative_interval,1), departLane, arrivalLane))
 
     total_list = W1_time_list + N1_time_list + S1_time_list + N2_time_list + S2_time_list + N3_time_list + S3_time_list + E3_time_list
+    #total_list = W1_time_list
     sorted_list = sorted(total_list, key=lambda x: x[1])
     print(len(sorted_list))
-    print(sorted_list[6233])
+    #print(sorted_list[6233])
 
     return sorted_list
+
+total_traffic()

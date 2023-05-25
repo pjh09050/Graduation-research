@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2023-05-18 18:05:39 by Eclipse SUMO netedit Version 1.16.0
+<!-- generated on 2023-05-25 20:43:14 by Eclipse SUMO netedit Version 1.16.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
@@ -309,11 +309,11 @@
         <lane id="0000to013_0" index="0" speed="13.89" length="58.40" customShape="1" shape="524.20,92.20 465.80,92.20"/>
     </edge>
     <edge id="0000to04" from="0000" to="04" priority="-1">
-        <lane id="0000to04_0" index="0" speed="13.89" length="187.00" shape="564.20,73.00 751.20,73.00"/>
-        <lane id="0000to04_1" index="1" speed="13.89" length="187.00" shape="564.20,76.20 751.20,76.20"/>
-        <lane id="0000to04_2" index="2" speed="13.89" length="187.00" shape="564.20,79.40 751.20,79.40"/>
-        <lane id="0000to04_3" index="3" speed="13.89" length="187.00" shape="564.20,82.60 751.20,82.60"/>
-        <lane id="0000to04_4" index="4" speed="13.89" length="187.00" shape="564.20,85.80 751.20,85.80"/>
+        <lane id="0000to04_0" index="0" speed="13.89" length="187.00" shape="564.20,73.00 701.20,73.00"/>
+        <lane id="0000to04_1" index="1" speed="13.89" length="187.00" shape="564.20,76.20 701.20,76.20"/>
+        <lane id="0000to04_2" index="2" speed="13.89" length="187.00" shape="564.20,79.40 701.20,79.40"/>
+        <lane id="0000to04_3" index="3" speed="13.89" length="187.00" shape="564.20,82.60 701.20,82.60"/>
+        <lane id="0000to04_4" index="4" speed="13.89" length="187.00" shape="564.20,85.80 701.20,85.80"/>
     </edge>
     <edge id="0000to10" from="0000" to="10" priority="-1">
         <lane id="0000to10_0" index="0" speed="13.89" length="70.60" shape="558.60,104.20 558.60,174.80"/>
@@ -381,10 +381,10 @@
         <lane id="00to009_0" index="0" speed="13.89" length="62.00" customShape="1" shape="217.60,82.60 279.60,82.60"/>
     </edge>
     <edge id="00to01" from="00" to="01" priority="-1">
-        <lane id="00to01_0" index="0" speed="13.89" length="184.00" shape="184.00,98.60 0.00,98.60"/>
-        <lane id="00to01_1" index="1" speed="13.89" length="184.00" shape="184.00,95.40 0.00,95.40"/>
-        <lane id="00to01_2" index="2" speed="13.89" length="184.00" shape="184.00,92.20 0.00,92.20"/>
-        <lane id="00to01_3" index="3" speed="13.89" length="184.00" shape="184.00,89.00 0.00,89.00"/>
+        <lane id="00to01_0" index="0" speed="13.89" length="184.00" shape="184.00,98.60 50.00,98.60"/>
+        <lane id="00to01_1" index="1" speed="13.89" length="184.00" shape="184.00,95.40 50.00,95.40"/>
+        <lane id="00to01_2" index="2" speed="13.89" length="184.00" shape="184.00,92.20 50.00,92.20"/>
+        <lane id="00to01_3" index="3" speed="13.89" length="184.00" shape="184.00,89.00 50.00,89.00"/>
     </edge>
     <edge id="00to2" from="00" to="2" priority="-1">
         <lane id="00to2_0" index="0" speed="13.89" length="70.60" shape="212.00,104.20 212.00,174.80"/>
@@ -420,16 +420,16 @@
         <lane id="016to0000_0" index="0" speed="13.89" length="28.40" customShape="1" shape="495.80,73.00 524.20,73.00"/>
     </edge>
     <edge id="02to00" from="02" to="00" priority="-1">
-        <lane id="02to00_0" index="0" speed="13.89" length="184.00" shape="0.00,76.20 184.00,76.20"/>
-        <lane id="02to00_1" index="1" speed="13.89" length="184.00" shape="0.00,79.40 184.00,79.40"/>
-        <lane id="02to00_2" index="2" speed="13.89" length="184.00" shape="0.00,82.60 184.00,82.60"/>
-        <lane id="02to00_3" index="3" speed="13.89" length="184.00" shape="0.00,85.80 184.00,85.80"/>
+        <lane id="02to00_0" index="0" speed="13.89" length="184.00" shape="50.00,76.20 184.00,76.20"/>
+        <lane id="02to00_1" index="1" speed="13.89" length="184.00" shape="50.00,79.40 184.00,79.40"/>
+        <lane id="02to00_2" index="2" speed="13.89" length="184.00" shape="50.00,82.60 184.00,82.60"/>
+        <lane id="02to00_3" index="3" speed="13.89" length="184.00" shape="50.00,85.80 184.00,85.80"/>
     </edge>
     <edge id="03to0000" from="03" to="0000" priority="-1">
-        <lane id="03to0000_0" index="0" speed="13.89" length="187.00" shape="751.20,98.60 564.20,98.60"/>
-        <lane id="03to0000_1" index="1" speed="13.89" length="187.00" shape="751.20,95.40 564.20,95.40"/>
-        <lane id="03to0000_2" index="2" speed="13.89" length="187.00" shape="751.20,92.20 564.20,92.20"/>
-        <lane id="03to0000_3" index="3" speed="13.89" length="187.00" shape="751.20,89.00 564.20,89.00"/>
+        <lane id="03to0000_0" index="0" speed="13.89" length="187.00" shape="701.20,98.60 564.20,98.60"/>
+        <lane id="03to0000_1" index="1" speed="13.89" length="187.00" shape="701.20,95.40 564.20,95.40"/>
+        <lane id="03to0000_2" index="2" speed="13.89" length="187.00" shape="701.20,92.20 564.20,92.20"/>
+        <lane id="03to0000_3" index="3" speed="13.89" length="187.00" shape="701.20,89.00 564.20,89.00"/>
     </edge>
     <edge id="12to0000" from="12" to="0000" priority="-1">
         <lane id="12to0000_0" index="0" speed="13.89" length="67.40" shape="558.60,-0.00 558.60,67.40"/>
@@ -471,8 +471,8 @@
         <phase duration="3"  state="GyyyrrGrrrrrrrrrrrGyyyrGrrrrr"/>
         <phase duration="17" state="GrrrrGGrrrrrrrrrrrGrrrGGrrrrr"/>
         <phase duration="3"  state="GrrrryGrrrrrrrrrrrGrrryGrrrrr"/>
-        <phase duration="27" state="GrrrrrGGGGGrrrrrrrGrrrrGrrrrr"/>
-        <phase duration="3"  state="GrrrrrGyyyyrrrrrrrGrrrrGrrrrr"/>
+        <phase duration="27" state="GrrrrrGGGGGrrrGrrrGrrrrGrrrrr"/>
+        <phase duration="3"  state="GrrrrrGyyyyrrryrrrGrrrrGrrrrr"/>
         <phase duration="38" state="rrrrrrrGGGrrrrrrrrrrrrrrGGGGr"/>
         <phase duration="3"  state="GrrrrrGyyyrrrrrrrrGrrrrGyyyyr"/>
         <phase duration="52" state="GrrrrrGrrrrrrrrrrrGrrrrGGGGGG"/>
