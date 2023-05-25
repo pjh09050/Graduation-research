@@ -101,10 +101,10 @@ def set_phase():
     new_phases = {traffic_light_ids[0]: {0: 31.00, 1: 3.00, 2: 17.00, 3: 3.00, 4: 27.00, 5: 3.00, 6: 38.00, 7: 3.00, 8: 52.00, 9: 2.00}}  # 각 신호의 주기 설정
 
     # 주기 변경
-    # 주기 변경
     for traffic_light_id, phases in new_phases.items():
         for phase_id, duration in phases.items():
             print(traffic_light_id, phase_id, duration)
+            #print(len(traffic_light_id)+len(phase_id)+len(duration))
             traci.trafficlight.setPhaseDuration(traffic_light_id, phase_id, duration)
 
     # 변경된 주기 확인
