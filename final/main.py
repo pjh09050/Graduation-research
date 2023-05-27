@@ -65,7 +65,7 @@ def main():
     generate_routefile()
 
     # this is the normal way of using traci. sumo is started as a subprocess and then the python script connects and runs
-    while run_step < 2:
+    while run_step < 10:
         traci.start([sumoBinary, "-c", "tt.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--start"])
         average = run()
         result.append(average)
