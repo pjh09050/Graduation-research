@@ -1,8 +1,9 @@
 import traci
+from del_lane import del_lane
 
 def calculate_efficiency_index():
     # 대기 시간 추출
-    lane_ids = traci.lane.getIDList()
+    lane_ids = del_lane()
     waiting_times = [traci.lane.getWaitingTime(lane_id) for lane_id in lane_ids]
     average_waiting_time = sum(waiting_times) / len(waiting_times)
 
@@ -21,14 +22,3 @@ def calculate_efficiency_index():
     efficiency_index = passing_vehicle_ratio /  waiting_vehicle_ratio
 
     return efficiency_index
-
-# SUMO 초기화 및 교통 시뮬레이션 실행
-traci.start(['sumo', '-c', 'path/to/your/sumo_config_file.sumocfg'])
-traci.simulationStep()
-
-# 효율성 지수 계산
-efficiency_index = calculate_efficiency_index()
-print("Efficiency Index:", efficiency_index)
-
-# SUMO 종료
-traci.close()
