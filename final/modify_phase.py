@@ -1,22 +1,21 @@
 import traci
 
-def modify_phase():
+def modify_phase(current_phases0, current_phases1, current_phases2):
+    print('current :', current_phases0, current_phases1, current_phases2)
     # 신호등 ID 가져오기
     traffic_light_id0 = traci.trafficlight.getIDList()[0]
     traffic_light_id1 = traci.trafficlight.getIDList()[1]
     traffic_light_id2 = traci.trafficlight.getIDList()[2]
-    
     #print("Traffic light ID:", traffic_light_id)
-    
-    # 현재 phase
-    current_phases0 = [31.00, 3.00, 17.00, 3.00, 27.00, 3.00, 38.00, 3.00, 52.00, 3.00]
-    current_phases1 = [33.00, 3.00, 17.00, 3.00, 22.00, 3.00, 32.00, 3.00, 61.00, 3.00]
-    current_phases2 = [25.00, 3.00, 47.00, 3.00, 18.00, 3.00, 51.00, 3.00, 24.00, 3.00]
-    
+
     # 새로운 phase
     new_phases0 = [31.00, 3.00, 17.00, 3.00, 27.00, 3.00, 38.00, 3.00, 52.00, 3.00]
     new_phases1 = [33.00, 3.00, 17.00, 3.00, 22.00, 3.00, 32.00, 3.00, 61.00, 3.00]
     new_phases2 = [25.00, 3.00, 47.00, 3.00, 18.00, 3.00, 51.00, 3.00, 24.00, 3.00]
+
+    new_phases0 = current_phases0
+    new_phases1 = current_phases1
+    new_phases2 = current_phases2
 
     ### '00' 신호등 의 모든 phase 정보 가져오기 ###
     complete_definition0 = traci.trafficlight.getCompleteRedYellowGreenDefinition(traffic_light_id0)
@@ -29,6 +28,7 @@ def modify_phase():
     traci.trafficlight.setCompleteRedYellowGreenDefinition(traffic_light_id0, complete_definition0[0])
     # 수정된 신호등 phase 정보 확인
     modify_phases0 = traci.trafficlight.getCompleteRedYellowGreenDefinition(traffic_light_id0)
+    #modify_phases0.phase.duration, modify_phases0.phase.minDur, modify_phases0.phase.maxDur
     #print(modify_phases0[0].phases)
 
     ### '000' 신호등 의 모든 phase 정보 가져오기 ###
@@ -56,3 +56,6 @@ def modify_phase():
     # 수정된 신호등 phase 정보 확인
     modify_phases2 = traci.trafficlight.getCompleteRedYellowGreenDefinition(traffic_light_id2)
     #print(modify_phases2[0].phases)
+    print('new :', new_phases0, new_phases1, new_phases2)
+
+    return new_phases0, new_phases1, new_phases2
