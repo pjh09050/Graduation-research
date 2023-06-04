@@ -67,7 +67,7 @@ def main():
 
     # this is the normal way of using traci. sumo is started as a subprocess and then the python script connects and runs
     # traci를 사용하여 sumo와 python을 연결
-    while run_step < 1:
+    while run_step < 3:
         traci.start([sumoBinary, "-c", "tt.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--start"])
         modify_phases0, modify_phases1, modify_phases2 = modify_phase(current_phases0, current_phases1, current_phases2)
         #modify_phases0[6] += 10
