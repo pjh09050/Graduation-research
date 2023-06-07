@@ -1,36 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2023-05-11 15:54:45 by Eclipse SUMO netedit Version 1.16.0
-<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
-
-    <input>
-        <sumocfg-file value="C:\Users\wrete\OneDrive\바탕 화면\test1\tt.sumocfg"/>
-        <sumo-net-file value="c.net.xml"/>
-    </input>
-
-    <processing>
-        <geometry.min-radius.fix.railways value="false"/>
-        <geometry.max-grade.fix value="false"/>
-        <offset.disable-normalization value="true"/>
-        <lefthand value="0"/>
-    </processing>
-
-    <junctions>
-        <no-turnarounds value="true"/>
-        <junctions.corner-detail value="5"/>
-        <junctions.limit-turn-speed value="5.50"/>
-        <rectangular-lane-cut value="0"/>
-    </junctions>
-
-    <pedestrian>
-        <walkingareas value="0"/>
-    </pedestrian>
-
-</configuration>
--->
-
 <nodes version="1.16" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/nodes_file.xsd">
-    <!--<location netOffset="112.80,62.40" convBoundary="0.00,0.00,542.20,124.80" origBoundary="-112.80,-62.40,429.40,62.40" projParameter="!"/>-->
     
     <node id="00" x="0.0" y="0.0" type="traffic_light" tl="00"/>
     <node id="1" x="0.0" y="87.4" type="dead_end"/>
@@ -56,17 +26,20 @@
 
     <!--차선변경 1-->
     <node id="009" x="78.8" y="-3.2" type="dead_end"/>
+    <!--
     <node id="012" x="78.8" y="0.0" type="dead_end"/>
     <node id="010" x="83.8" y="0.0" type="dead_end"/>
+    <node id="014" x="260.0" y="0.0" type="dead_end"/>
+    <node id="016" x="295.0" y="-12.8" type="dead_end"/>
+    -->
     <node id="011" x="83.8" y="3.2" type="dead_end"/>
 
     <!--차선변경 2-->
     <node id="013" x="265.0" y="3.2" type="dead_end"/>
-    <node id="014" x="260.0" y="0.0" type="dead_end"/>
-
+    
     <!--차선변경 3-->
     <node id="015" x="290.0" y="-9.6" type="dead_end"/>
-    <node id="016" x="295.0" y="-12.8" type="dead_end"/>
+    
 
     <!--spillback 1-->
     <node id="001" x="45.6" y="-9.6" type="dead_end"/>
