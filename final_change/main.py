@@ -24,7 +24,7 @@ def run():
     max_step = 3600
     average_list = []
     # 불필요한 라인 지운 후 라인 확인
-    lane_ids = del_lane()
+    #lane_ids = del_lane()
     #print(len(lane_ids))
     #print(lane_ids)
     
@@ -32,10 +32,10 @@ def run():
         traci.simulationStep()
 
         # 교차로 효율성 지수 측정할 if문 (기준을 어떻게 잡지?)(lane_ids에서 차선별로 구분지어서 좌우는 좀더 가중치 주기?)
-        if step > 100 and step % 3 == 0:
-            efficiency_index = calculate_efficiency_index()
-            average_list.append(efficiency_index)
-            print("{} step Efficiency Index: {:.2f}".format(step ,efficiency_index))
+        #if step > 100 and step % 3 == 0:
+            #efficiency_index = calculate_efficiency_index()
+            #average_list.append(efficiency_index)
+            #print("{} step Efficiency Index: {:.2f}".format(step ,efficiency_index))
         step += 1
 
     average = sum(average_list)/len(average_list)
@@ -61,27 +61,26 @@ def main():
     generate_routefile()
     
     # 초기 신호 설정값
-    current_phases0 = [31.00, 3.00, 17.00, 3.00, 27.00, 3.00, 38.00, 3.00, 52.00, 3.00]
-    current_phases1 = [33.00, 3.00, 17.00, 3.00, 22.00, 3.00, 32.00, 3.00, 61.00, 3.00]
-    current_phases2 = [25.00, 3.00, 47.00, 3.00, 18.00, 3.00, 51.00, 3.00, 24.00, 3.00]
+    #current_phases0 = [31.00, 3.00, 17.00, 3.00, 27.00, 3.00, 38.00, 3.00, 52.00, 3.00]
+    #current_phases1 = [33.00, 3.00, 17.00, 3.00, 22.00, 3.00, 32.00, 3.00, 61.00, 3.00]
+    #current_phases2 = [25.00, 3.00, 47.00, 3.00, 18.00, 3.00, 51.00, 3.00, 24.00, 3.00]
 
     # this is the normal way of using traci. sumo is started as a subprocess and then the python script connects and runs
     # traci를 사용하여 sumo와 python을 연결
-    while run_step < 3:
-        traci.start([sumoBinary, "-c", "tt.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--start"])
-        modify_phases0, modify_phases1, modify_phases2 = modify_phase(current_phases0, current_phases1, current_phases2)
+    traci.start([sumoBinary, "-c", "tt.sumocfg", "--tripinfo-output", "tripinfo.xml"])
+    run()
+        #modify_phases0, modify_phases1, modify_phases2 = modify_phase(current_phases0, current_phases1, current_phases2)
         #modify_phases0[6] += 10
-        current_phases0 = modify_phases0
-        current_phases1 = modify_phases1
-        current_phases2 = modify_phases2
-        average = run()
-        result.append(average)
-        generate_routefile()
-        run_step += 1
+        #current_phases0 = modify_phases0
+        #current_phases1 = modify_phases1
+        #current_phases2 = modify_phases2
+        #average = run()
+        #result.append(average)
+        #generate_routefile()
 
-    result_average = sum(result) / len(result)
-    print('result : ', result)
-    print('{}번 시뮬레이션 : 평균 {:.2f}'.format(run_step, result_average))
+    #result_average = sum(result) / len(result)
+    #print('result : ', result)
+    #print('{}번 시뮬레이션 : 평균 {:.2f}'.format(run_step, result_average))
 
 if __name__ == "__main__":
     main()

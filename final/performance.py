@@ -21,5 +21,5 @@ def calculate_efficiency_index():
     #efficiency_index = passing_vehicle_ratio / (scaled_waiting_time + waiting_vehicle_ratio)
     efficiency_index = passing_vehicle_ratio /  waiting_vehicle_ratio
 
-    return efficiency_index
-    #return average_waiting_time
+    #return efficiency_index
+    return average_waiting_time
