@@ -11,7 +11,6 @@ from modify_phase import modify_phase
 from del_lane import del_lane
 from performance import calculate_efficiency_index
 
-# we need to import python modules from the $SUMO_HOME/tools directory
 # $SUMO_HOME/tools directory에서 python module 가져와야 실행 가능
 if 'SUMO_HOME' in os.environ:
     tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
@@ -60,14 +59,12 @@ def main():
     result = []
     best_score = 99999999999
 
-    # this script has been called from the command line. It will start sumo as a server, then connect and run
     # True : gui 실행없이 값만 출력, False : gui 실행
     if options == False:
         sumoBinary = checkBinary('sumo')
     else:
         sumoBinary = checkBinary('sumo-gui')
 
-    # first, generate the route file for this simulation
     # 첫번째 교통량 생성
     generate_routefile()
     
@@ -76,7 +73,6 @@ def main():
     current_phases1 = [33.00, 3.00, 17.00, 3.00, 22.00, 3.00, 32.00, 3.00, 61.00, 3.00]
     current_phases2 = [25.00, 3.00, 47.00, 3.00, 18.00, 3.00, 51.00, 3.00, 24.00, 3.00]
 
-    # this is the normal way of using traci. sumo is started as a subprocess and then the python script connects and runs
     # traci를 사용하여 sumo와 python을 연결
     while run_step < 10:
         traci.start([sumoBinary, "-c", "tt.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start"])
