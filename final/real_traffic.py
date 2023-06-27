@@ -7,7 +7,7 @@ def total_traffic():
     sorted_list = []
     W1_arrival_rate = 1500 / 3600  # 차량 도착율 계산
     W1_time_list = [] # W1 등장 차량 시간 리스트
-    W1_arrival_intervals = np.random.exponential(scale=1/W1_arrival_rate, size=1500)
+    W1_arrival_intervals = np.random.exponential(scale=1/W1_arrival_rate, size=1500) # scale은 지수 분포의 평균 역수를 나타내는 값
     W1_cumulative_interval = 0
     for i, interval in enumerate(W1_arrival_intervals):
         # W1출발부터 모든 경로에 대한 확률 가중치 부여 후 경로 선택

@@ -1,6 +1,6 @@
 import numpy as np
 import random
-from asdf import total_traffic
+from real_traffic import total_traffic
 
 
 def generate_routefile():

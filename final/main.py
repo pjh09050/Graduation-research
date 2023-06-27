@@ -62,7 +62,7 @@ def main():
 
     # this script has been called from the command line. It will start sumo as a server, then connect and run
     # True : gui 실행없이 값만 출력, False : gui 실행
-    if options == True:
+    if options == False:
         sumoBinary = checkBinary('sumo')
     else:
         sumoBinary = checkBinary('sumo-gui')
