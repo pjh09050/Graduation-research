@@ -75,7 +75,7 @@ def main():
 
     # traci를 사용하여 sumo와 python을 연결
     while run_step < 10:
-        traci.start([sumoBinary, "-c", "tt.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-wait"])
+        traci.start([sumoBinary, "-c", "tt.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start"])
         modify_phases0, modify_phases1, modify_phases2 = modify_phase(current_phases0, current_phases1, current_phases2)
         print('{}번째 시뮬레이션'.format(run_step+1))
         average, high_score = run()
