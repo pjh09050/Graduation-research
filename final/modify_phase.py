@@ -8,11 +8,6 @@ def modify_phase(current_phases0, current_phases1, current_phases2):
     traffic_light_id2 = traci.trafficlight.getIDList()[2]
     #print("Traffic light ID:", traffic_light_id)
 
-    # 새로운 phase
-    new_phases0 = [31.00, 3.00, 17.00, 3.00, 27.00, 3.00, 38.00, 3.00, 52.00, 3.00]
-    new_phases1 = [33.00, 3.00, 17.00, 3.00, 22.00, 3.00, 32.00, 3.00, 61.00, 3.00]
-    new_phases2 = [25.00, 3.00, 47.00, 3.00, 18.00, 3.00, 51.00, 3.00, 24.00, 3.00]
-
     new_phases0 = current_phases0
     new_phases1 = current_phases1
     new_phases2 = current_phases2

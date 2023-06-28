@@ -5,7 +5,7 @@ import os
 import sys
 from sumolib import checkBinary  
 import traci
-import numpy as np
+import pandas as pd
 from TrafficGenerator import generate_routefile
 from modify_phase import modify_phase
 from del_lane import del_lane
@@ -21,8 +21,8 @@ else:
 def run():
     step = 0
     max_step = 3600
-    average_list = []
     list_cycle = []
+    average = 0
     high_score = -99999999999
     # 불필요한 라인 지운 후 라인 확인
     lane_ids = del_lane()
@@ -36,22 +36,16 @@ def run():
         if step > 180:
             efficiency_index = calculate_efficiency_index()
             list_cycle.append(efficiency_index)
-            cycle_average = sum(list_cycle)/len(list_cycle)
+            average = sum(list_cycle)/len(list_cycle)
             if step % 180 == 0:
-                #print("{} step Efficiency Index: {:.2f}".format(step ,cycle_average))
-                print("{} step Average_waiting_time: {:.2f}".format(step, cycle_average))
-                list_cycle = []
-            average_list.append(cycle_average)
+                print("{} Average_waiting_time : {:.2f}".format(step, average))
+
         step += 1
 
-    average = sum(average_list)/len(average_list)
-    if high_score <= average:
-        high_score = average
-    #print("Efficiency average: {:.2f}".format(average))
     print("Average_waiting_time: {:.2f}".format(average))
     traci.close()
-    #return np.round(average,2)
-    return average, high_score
+
+    return average
 
 def main():
     options = False
@@ -65,9 +59,6 @@ def main():
     else:
         sumoBinary = checkBinary('sumo-gui')
 
-    # 첫번째 교통량 생성
-    generate_routefile()
-    
     # 초기 신호 설정값
     current_phases0 = [31.00, 3.00, 17.00, 3.00, 27.00, 3.00, 38.00, 3.00, 52.00, 3.00]
     current_phases1 = [33.00, 3.00, 17.00, 3.00, 22.00, 3.00, 32.00, 3.00, 61.00, 3.00]
@@ -75,40 +66,37 @@ def main():
 
     # traci를 사용하여 sumo와 python을 연결
     while run_step < 10:
-        traci.start([sumoBinary, "-c", "tt.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start"])
-        modify_phases0, modify_phases1, modify_phases2 = modify_phase(current_phases0, current_phases1, current_phases2)
         print('{}번째 시뮬레이션'.format(run_step+1))
-        average, high_score = run()
+        generate_routefile() # 교통량 생성
+        traci.start([sumoBinary, "-c", "tt.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
         
-        if best_score >= high_score:
-            best_score = high_score
-            best_phase0 = modify_phases0[:]
-            best_phase1 = modify_phases1[:]
-            best_phase2 = modify_phases2[:]
+        # sumo에서 신호 세팅해주는 부분
+        current_phases0, current_phases1, current_phases2 = modify_phase(current_phases0, current_phases1, current_phases2)
+
+        # sumo 시뮬레이션 run 하는 부분 및 성능 추출하는 부분
+        average = run()
         
-        # modify_phases0[0] -+ 1
-        # modify_phases0[6] += 1
-        # modify_phases1[0] -+ 1
-        # modify_phases1[6] += 1
-        # modify_phases2[0] -+ 1
-        # modify_phases2[6] += 1
-        current_phases0 = modify_phases0[:]
-        current_phases1 = modify_phases1[:]
-        current_phases2 = modify_phases2[:]
-        
+        # current_phases0[0] -= 1
+        # current_phases0[6] += 1
+        # current_phases1[0] -= 1
+        # current_phases1[6] += 1
+        # current_phases2[0] -= 1
+        # current_phases2[6] += 1
+
         result.append(average)
-        generate_routefile()
         run_step += 1
 
     result_average = sum(result) / len(result)
     print('result : ', result)
     print('{}번 시뮬레이션 : 평균 {:.2f}'.format(run_step, result_average))
-    print(best_phase0, best_phase1, best_phase2)
-    return best_phase0, best_phase1, best_phase2, best_score
+
+    df = pd.DataFrame(result)
+    df.to_csv('{}번 시뮬레이션 결과.csv'.format(run_step))
 
 if __name__ == "__main__":
-    best_phase0, best_phase1, best_phase2, best_score = main()
-    print('첫번째 교차로 최적 신호주기 :', best_phase0)
-    print('두번째 교차로 최적 신호주기 :', best_phase1)
-    print('세번째 교차로 최적 신호주기 :', best_phase2)
-    print('최고 높은 점수는 :', best_score)
+    main()
+    # best_phase0, best_phase1, best_phase2, best_score = main()
+    # print('첫번째 교차로 최적 신호주기 :', best_phase0)
+    # print('두번째 교차로 최적 신호주기 :', best_phase1)
+    # print('세번째 교차로 최적 신호주기 :', best_phase2)
+    # print('최고 높은 점수는 :', best_score)
