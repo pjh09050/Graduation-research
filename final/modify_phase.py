@@ -51,6 +51,6 @@ def modify_phase(current_phases0, current_phases1, current_phases2):
     # 수정된 신호등 phase 정보 확인
     modify_phases2 = traci.trafficlight.getCompleteRedYellowGreenDefinition(traffic_light_id2)
     #print(modify_phases2[0].phases)
-    print('new :', new_phases0, new_phases1, new_phases2)
+    #print('new :', new_phases0, new_phases1, new_phases2)
 
     return new_phases0, new_phases1, new_phases2
