@@ -112,13 +112,18 @@ def objective_function(x):
     x3 = np.array(x[20:30])
     traci.start([sumoBinary, "-c", "tt.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
     modify_phase(x1, x2, x3)
-    # if sum(x1) != 150:
-    #     return sys.maxsize
-    # elif sum(x2) != 150:
-    #     return sys.maxsize
-    # elif sum(x3) != 150:
-    #     return sys.maxsize
-    z = run()
+    z =0 
+    if sum(x1) != 150:
+        z = run()
+        return sys.maxsize
+    elif sum(x2) != 150:
+        z = run()
+        return  sys.maxsize
+    elif sum(x3) != 150:
+        z = run()
+        return sys.maxsize
+    else:
+        z = run()
 
     result.append([x, z])
     if len(result) % 300 ==0:
