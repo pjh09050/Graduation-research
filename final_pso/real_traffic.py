@@ -272,6 +272,6 @@ def total_traffic():
 
     total_list = W1_time_list + N1_time_list + S1_time_list + N2_time_list + S2_time_list + N3_time_list + S3_time_list + E3_time_list
     sorted_list = sorted(total_list, key=lambda x: x[1])
-    print(len(sorted_list))
+    #print(len(sorted_list))
 
     return sorted_list

@@ -10,10 +10,8 @@ from TrafficGenerator import generate_routefile
 from modify_phase import modify_phase
 from del_lane import del_lane
 from performance import calculate_efficiency_index
-from PSO import PSO
 import numpy as np
-import time
-import datetime
+
 # $SUMO_HOME/tools directory에서 python module 가져와야 실행 가능
 if 'SUMO_HOME' in os.environ:
     tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
@@ -21,21 +19,16 @@ if 'SUMO_HOME' in os.environ:
 else:
     sys.exit("please declare environment variable 'SUMO_HOME'")
 
-
 def run():
     step = 0
-    max_step = 3600
+    max_step = 3780
     list_cycle = []
     average = 0
-    high_score = -99999999999
     # 불필요한 라인 지운 후 라인 확인
     lane_ids = del_lane()
-    #print(len(lane_ids))
-    #print(lane_ids)
-    
+
     while step < max_step+1:
         traci.simulationStep()
-
         # 교차로 효율성 지수 측정할 if문 (기준을 어떻게 잡지?)(lane_ids에서 차선별로 구분지어서 좌우는 좀더 가중치 주기?)
         if step > 180:
             efficiency_index = calculate_efficiency_index()
@@ -43,16 +36,13 @@ def run():
             average = sum(list_cycle)/len(list_cycle)
             if step % 180 == 0:
                 print("{} Average_waiting_time : {:.2f}".format(step, average))
-
         step += 1
-
     print("Average_waiting_time: {:.2f}".format(average))
     traci.close()
-
     return average
 
 def main():
-    options = False
+    options = True
     run_step = 0
     result = []
     best_score = 99999999999
@@ -79,13 +69,6 @@ def main():
 
         # sumo 시뮬레이션 run 하는 부분 및 성능 추출하는 부분
         average = run()
-        
-        # current_phases0[0] -= 1
-        # current_phases0[6] += 1
-        # current_phases1[0] -= 1
-        # current_phases1[6] += 1
-        # current_phases2[0] -= 1
-        # current_phases2[6] += 1
 
         result.append(average)
         run_step += 1
@@ -96,7 +79,6 @@ def main():
 
     df = pd.DataFrame(result)
     df.to_csv('{}번 시뮬레이션 결과.csv'.format(run_step))
-
 
 if __name__ == "__main__":
     main()

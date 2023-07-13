@@ -93,15 +93,6 @@ def objective_function(x):
     x2 = np.array(x[10:20])
     x3 = np.array(x[20:30])
     z = -20 * np.exp(-0.2 * np.sqrt(0.5 * (x1[0]**2 + x2[1]**2))) - np.exp(0.5 * (np.cos(2 * np.pi * x1[0]) + np.cos(2 * np.pi * x2[1]))) + np.exp(1) + 20 
-    print(z)
-    if sum(x1) != 150:
-        return sys.maxsize
-    elif sum(x2) != 150:
-        return sys.maxsize
-    elif sum(x3) != 150:
-        return sys.maxsize
-    
-
     return z
 
 
