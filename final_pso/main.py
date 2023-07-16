@@ -62,7 +62,8 @@ def main():
     while run_step < 10:
         print('{}번째 시뮬레이션'.format(run_step+1))
         generate_routefile() # 교통량 생성
-        traci.start([sumoBinary, "-c", "tt.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
+        # traci.start([sumoBinary, "-c", "tt.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
+        traci.start([sumoBinary, "-c", "tt.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--no-warnings"])
         
         # sumo에서 신호 세팅해주는 부분
         current_phases0, current_phases1, current_phases2 = modify_phase(current_phases0, current_phases1, current_phases2)

@@ -26,12 +26,12 @@
 
     <!--차선변경 1-->
     <node id="009" x="78.8" y="-3.2" type="dead_end"/>
-    <!--
+    
     <node id="012" x="78.8" y="0.0" type="dead_end"/>
     <node id="010" x="83.8" y="0.0" type="dead_end"/>
     <node id="014" x="260.0" y="0.0" type="dead_end"/>
     <node id="016" x="295.0" y="-12.8" type="dead_end"/>
-    -->
+    
     <node id="011" x="83.8" y="3.2" type="dead_end"/>
 
     <!--차선변경 2-->
@@ -41,17 +41,17 @@
     <node id="015" x="290.0" y="-9.6" type="dead_end"/>
     
 
-    <!--spillback 1-->
+    <!-- spillback 1
     <node id="001" x="45.6" y="-9.6" type="dead_end"/>
     <node id="002" x="45.6" y="-9.6" type="dead_end"/>
     <node id="003" x="45.6" y="-60.0" type="dead_end"/>
     <node id="004" x="45.6" y="-60.0" type="dead_end"/>
 
-    <!--spillback 2-->
+    spillback 2
     <node id="005" x="274.2" y="-12.8" type="dead_end"/>
     <node id="006" x="274.2" y="-12.8" type="dead_end"/>
     <node id="007" x="274.2" y="-60.0" type="dead_end"/>
-    <node id="008" x="274.2" y="-60.0" type="dead_end"/>
+    <node id="008" x="274.2" y="-60.0" type="dead_end"/> -->
 
 
 

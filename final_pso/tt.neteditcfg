@@ -6,7 +6,7 @@
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
-        <sumo-net-file value="b.net.xml"/>
+        <sumo-net-file value="hello.net.xml"/>
     </input>
 
     <processing>

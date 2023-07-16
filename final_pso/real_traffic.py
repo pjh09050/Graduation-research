@@ -65,9 +65,10 @@ def total_traffic():
             a = random.random()
             if a < 0.9:
                 departLane = random.randint(1,2)
+                arrivalLane = departLane
             else:
                 departLane = random.randint(0,2)
-            arrivalLane = random.randint(0,2)
+                arrivalLane = departLane
         elif car_direction == "routeN1_S2":
             departLane = 3
             arrivalLane = random.randint(0,1)
@@ -95,9 +96,10 @@ def total_traffic():
             a = random.random()
             if a < 0.9:
                 departLane = random.randint(1,2)
+                arrivalLane = departLane
             else:
                 departLane = random.randint(0,1)
-            arrivalLane = random.randint(0,2) 
+                arrivalLane = departLane
         elif car_direction == "routeS1_S3":
             departLane = 0
             arrivalLane = random.randint(0,1)
@@ -239,7 +241,7 @@ def total_traffic():
     E3_arrival_intervals = np.random.exponential(scale=1/E3_arrival_rate, size=E3_car)
     E3_cumulative_interval = 0
     for i, interval in enumerate(E3_arrival_intervals):
-        car_direction = random.choices(population=["routeE3_W1", "routeE3_N1", "routeE3_S1", "routeE3_N2", "routeE3_S2", "routeE3_N3", "routeE3_S3"], weights=[0.3, 0.04, 0.08, 0.06, 0.12, 0.1, 0.3], k=1)[0]
+        car_direction = random.choices(population=["routeE3_W1", "routeE3_N1", "routeE3_S1", "routeE3_N2", "routeE3_S2", "routeE3_N3", "routeE3_S3"], weights=[0.37, 0.04, 0.08, 0.06, 0.05, 0.1, 0.3], k=1)[0]
         E3_cumulative_interval += interval
         if E3_cumulative_interval > time:
             break

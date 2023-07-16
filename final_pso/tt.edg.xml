@@ -60,11 +60,11 @@
     <edge id="013to014" from="013" to="014" priority="-1" numLanes="1" speed="13.89"/>
     <edge id="014to000" from="014" to="000" priority="-1" numLanes="1" speed="13.89"/>
 
-    <!-- spillback 안에서 일어남-->
+    <!-- spillback 안에서 일어남
     <edge id="001to003" from="001" to="003" priority="-1" numLanes="1" speed="13.89"/>
     <edge id="004to002" from="004" to="002" priority="-1" numLanes="1" speed="13.89"/>
     <edge id="005to007" from="005" to="007" priority="-1" numLanes="1" speed="13.89"/>
-    <edge id="008to006" from="008" to="006" priority="-1" numLanes="1" speed="13.89"/>
+    <edge id="008to006" from="008" to="006" priority="-1" numLanes="1" speed="13.89"/>-->
 
 
 
