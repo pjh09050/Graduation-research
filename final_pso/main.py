@@ -21,7 +21,7 @@ else:
 
 def run():
     step = 0
-    max_step = 3780
+    max_step = 3600
     list_cycle = []
     average = 0
     # 불필요한 라인 지운 후 라인 확인
@@ -54,16 +54,19 @@ def main():
         sumoBinary = checkBinary('sumo-gui')
 
     # 초기 신호 설정값
-    current_phases0 = [31.00, 3.00, 17.00, 3.00, 27.00, 3.00, 38.00, 3.00, 52.00, 3.00]
-    current_phases1 = [33.00, 3.00, 17.00, 3.00, 22.00, 3.00, 32.00, 3.00, 61.00, 3.00]
-    current_phases2 = [25.00, 3.00, 47.00, 3.00, 18.00, 3.00, 51.00, 3.00, 24.00, 3.00]
+    #current_phases0 = [31.00, 3.00, 17.00, 3.00, 27.00, 3.00, 38.00, 3.00, 52.00, 3.00]
+    #current_phases1 = [33.00, 3.00, 17.00, 3.00, 22.00, 3.00, 32.00, 3.00, 61.00, 3.00]
+    #current_phases2 = [25.00, 3.00, 47.00, 3.00, 18.00, 3.00, 51.00, 3.00, 24.00, 3.00]
+    # 13번신호 설정값    
+    current_phases0 =  [26.00, 3.00, 17.00, 3.00, 27.00, 3.00, 43.00, 3.00, 52.00, 3.00]
+    current_phases1 = [26.00, 3.00, 17.00, 3.00, 22.00, 3.00, 39.00, 3.00, 61.00, 3.00]
+    current_phases2 = [22.00, 3.00, 42.00, 3.00, 21.00, 3.00, 56.00, 3.00, 24.00, 3.00]
 
     # traci를 사용하여 sumo와 python을 연결
     while run_step < 10:
         print('{}번째 시뮬레이션'.format(run_step+1))
         generate_routefile() # 교통량 생성
-        # traci.start([sumoBinary, "-c", "tt.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
-        traci.start([sumoBinary, "-c", "tt.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--no-warnings"])
+        traci.start([sumoBinary, "-c", "tt.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
         
         # sumo에서 신호 세팅해주는 부분
         current_phases0, current_phases1, current_phases2 = modify_phase(current_phases0, current_phases1, current_phases2)
