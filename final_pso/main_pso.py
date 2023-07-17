@@ -9,31 +9,30 @@ import pandas as pd
 from TrafficGenerator import generate_routefile
 from modify_phase import modify_phase
 from del_lane import del_lane
-from performance import calculate_efficiency_index
+from performance import calculate_target_index
 from PSO import PSO
 import numpy as np
 import time
 import datetime
-# $SUMO_HOME/tools directory에서 python module 가져와야 실행 가능
+
 if 'SUMO_HOME' in os.environ:
     tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
     sys.path.append(tools)
 else:
     sys.exit("please declare environment variable 'SUMO_HOME'")
 
-
 def run():
     step = 0
-    max_step = 3780
+    max_step = 3600
     list_cycle = []
     average = 0
-    lane_ids = del_lane()
+    del_lane()
 
     while step < max_step+1:
         traci.simulationStep()
         if step > 180:
-            efficiency_index = calculate_efficiency_index()
-            list_cycle.append(efficiency_index)
+            target_score = calculate_target_index()
+            list_cycle.append(target_score)
             average = sum(list_cycle)/len(list_cycle)
             if step % 180 == 0:
                 print("{} Average_waiting_time : {:.2f}".format(step, average))
@@ -120,7 +119,7 @@ if __name__ == "__main__":
     bounds = []
     for i in range(len(min_dur)):
         bounds.append((min_dur[i], max_dur[i]))
-    num_particles = 50
+    num_particles = 30
     maxiter = 1000
     pso = PSO(objective_function, bounds, num_particles, maxiter)
     pso.run_result()

@@ -195,9 +195,10 @@ def total_traffic():
             a = random.random()
             if a < 0.9:
                 departLane = random.randint(1,3)
+                arrivalLane = departLane
             else:
                 departLane = random.randint(0,3)
-            arrivalLane = random.randint(1,3) 
+                arrivalLane = random.randint(1,3) 
         elif car_direction == "routeN3_E3":
             departLane = 4
             arrivalLane = 2
@@ -228,9 +229,10 @@ def total_traffic():
             a = random.random()
             if a < 0.9:
                 departLane = random.randint(1,3)
+                arrivalLane = departLane
             else:
                 departLane = random.randint(0,3)
-            arrivalLane = random.randint(0,3) 
+                arrivalLane = random.randint(0,3) 
         elif car_direction == "routeS3_E3":
             departLane = 0
             arrivalLane = 1
@@ -274,6 +276,4 @@ def total_traffic():
 
     total_list = W1_time_list + N1_time_list + S1_time_list + N2_time_list + S2_time_list + N3_time_list + S3_time_list + E3_time_list
     sorted_list = sorted(total_list, key=lambda x: x[1])
-    #print(len(sorted_list))
-
     return sorted_list
