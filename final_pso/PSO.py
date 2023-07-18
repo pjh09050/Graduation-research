@@ -88,25 +88,4 @@ class PSO:
         print('Best fitness:', self.global_best_fitness)
         return self.global_best_position, self.global_best_fitness
 
-def objective_function(x):
-    x1 = np.array(x[:10])
-    x2 = np.array(x[10:20])
-    x3 = np.array(x[20:30])
-    z = -20 * np.exp(-0.2 * np.sqrt(0.5 * (x1[0]**2 + x2[1]**2))) - np.exp(0.5 * (np.cos(2 * np.pi * x1[0]) + np.cos(2 * np.pi * x2[1]))) + np.exp(1) + 20 
-    return z
 
-
-min_dur = [10, 3, 10, 3, 10, 3, 10, 3, 10, 3,10, 3, 10, 3, 10, 3, 10, 3, 10, 3,10, 3, 10, 3, 10, 3, 10, 3, 10, 3]
-max_dur = [30, 3, 30, 3, 30, 3, 30, 3, 30, 3,30, 3, 30, 3, 30, 3, 30, 3, 30, 3,30, 3, 30, 3, 30, 3, 30, 3, 30, 3]
-
-
-if __name__ == "__main__":
-    bounds = []
-    #bounds = [(min_dur[i], max_dur[i]) for i in range(len(min_dur))]  # 제약조건
-    for i in range(len(min_dur)):
-        bounds.append((min_dur[i], max_dur[i]))
-    num_particles = 20
-    maxiter = 3000
-    pso = PSO(objective_function, bounds, num_particles, maxiter)
-    pso.run_result()
-    #pso.run_animation()

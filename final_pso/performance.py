@@ -3,7 +3,7 @@ from del_lane import del_lane
 
 def calculate_target_index():
     # 대기 시간 추출
-    lane_ids = del_lane()
+    lane = del_lane()
 
     # 학교 -> 정왕역 lane list
     left_right = ['0000to000_0', '0000to000_1', '0000to000_2','0000to013_0', '013to014_0', '014to000_0','0000to04_1', '0000to04_2', '0000to04_3','000to0000_1','000to0000_2', '000to0000_3',
