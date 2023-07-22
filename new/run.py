@@ -5,6 +5,8 @@ import os
 import sys
 from sumolib import checkBinary  
 import traci
+import pandas as pd
+from TrafficGenerator import generate_routefile
 
 # $SUMO_HOME/tools directory에서 python module 가져와야 실행 가능
 if 'SUMO_HOME' in os.environ:
@@ -29,7 +31,8 @@ def main():
         sumoBinary = checkBinary('sumo')
     else:
         sumoBinary = checkBinary('sumo-gui')
-
+        
+    generate_routefile() 
     traci.start([sumoBinary, "-c", "new.sumocfg", "--tripinfo-output", "tripinfo.xml", "--no-warnings"])
     run()
 
