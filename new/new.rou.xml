@@ -1,0 +1,136 @@
+<routes>
+        <vType id="typeCAR" length="5" minGap="2.5" maxSpeed="10" allowLaneChange="False" guiShape="passenger"/>
+        <route id='routeW1_S2' edges='02to00 00toc1 c1to000 000to6'/>
+        <route id='routeW1_E3' edges='02to00 00toc1 c1to000 000toc4 c4to0000 0000to04'/>
+        <!-- <route id='routeW1_N1' edges=''/>
+        <route id='routeW1_S1' edges=''/>
+        <route id='routeW1_N2' edges=''/>
+        
+        <route id='routeW1_S3' edges=''/>
+        <route id='routeW1_E3' edges=''/>
+
+        <route id='routeN1_W1' edges=''/>
+        <route id='routeN1_S1' edges=''/>
+        <route id='routeN1_S2' edges=''/>
+        <route id='routeN1_S3' edges=''/>
+        <route id='routeN1_E3' edges=''/>
+
+        <route id='routeS1_W1' edges=''/>
+        <route id='routeS1_N1' edges=''/>
+        <route id='routeS1_S3' edges=''/>
+        <route id='routeS1_E3' edges=''/>
+        
+        <route id='routeN2_W1' edges=''/>
+        <route id='routeN2_S1' edges=''/>
+        <route id='routeN2_S2' edges=''/>
+        <route id='routeN2_S3' edges=''/>
+        <route id='routeN2_E3' edges=''/>
+
+        <route id='routeS2_W1' edges=''/>
+        <route id='routeS2_N1' edges=''/>
+        <route id='routeS2_N2' edges=''/>
+        <route id='routeS2_S3' edges=''/>
+        <route id='routeS2_E3' edges=''/>
+
+        <route id='routeN3_W1' edges=''/>
+        <route id='routeN3_N1' edges=''/>
+        <route id='routeN3_S1' edges=''/>
+        <route id='routeN3_S2' edges=''/>
+        <route id='routeN3_S3' edges=''/>
+        <route id='routeN3_E3' edges=''/>
+        
+        <route id='routeS3_W1' edges=''/>
+        <route id='routeS3_N1' edges=''/>
+        <route id='routeS3_S1' edges=''/>
+        <route id='routeS3_N2' edges=''/>
+        <route id='routeS3_N3' edges=''/>
+        <route id='routeS3_E3' edges=''/>
+
+        <route id='routeE3_W1' edges=''/>
+        <route id='routeE3_N1' edges=''/>
+        <route id='routeE3_S1' edges=''/>
+        <route id='routeE3_N2' edges=''/>
+        <route id='routeE3_S2' edges=''/>
+        <route id='routeE3_N3' edges=''/>
+        <route id='routeE3_S3' edges=''/>  -->
+
+    <vehicle id="route_1" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_2" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_3" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_4" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_5" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_6" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_7" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_8" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_9" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_10" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_11" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_12" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_13" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_14" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_15" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_16" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_17" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_18" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_19" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_20" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_21" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_22" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_23" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_24" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_25" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_26" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_27" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_28" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_29" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_30" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_31" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_32" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_33" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_34" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_35" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_36" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_37" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_38" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_39" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_40" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_41" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_42" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_43" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_44" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_45" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_46" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_47" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_48" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_49" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_50" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_51" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_52" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_53" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_54" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_55" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_56" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_57" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_58" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_59" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_60" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_61" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_62" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_63" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_64" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_65" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_66" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_67" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_68" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_69" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_70" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_71" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_72" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_73" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_74" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_75" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_76" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="1" />
+    <vehicle id="route_77" type="typeCAR" route="routeW1_S2" depart="0" departLane="2" arrivalLane="0" />
+    <vehicle id="route_78" type="typeCAR" route="routeW1_E3" depart="0" departLane="2" arrivalLane="0" />
+
+</routes>

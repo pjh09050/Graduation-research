@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<edges version="1.16" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!-- 왼쪽에서 오른쪽-->
+    <edge id="02to00" from="02" to="00" priority="-1" numLanes="4" speed="13.89"/>
+    <edge id="00to000" from="00" to="000" priority="-1" numLanes="4" speed="13.89"/>
+        <!-- <lane index="3" allow="private"/>
+        <lane index="2"/>
+        <lane index="1"/>
+        <lane index="0"/>
+    </edge> -->
+
+    <edge id="00toc1" from="00" to="c1" priority="-1" numLanes="1" speed="13.89">
+        <lane index="0" allow="private"/>
+    </edge>
+    <edge id="c1to000" from="c1" to="000" priority="-1" numLanes="1" speed="13.89"/>
+    
+    <!-- 오른쪽에서 왼쪽-->
+    <edge id="000to00" from="000" to="00" priority="-1" numLanes="4" speed="13.89"/>
+    <edge id="00to01" from="00" to="01" priority="-1" numLanes="4" speed="13.89">
+        <lane index="3" allow="private"/>
+        <lane index="2"/>
+        <lane index="1"/>
+        <lane index="0"/>
+    </edge>
+
+    <!--위에서 아래-->
+    <edge id="1to00" from="1" to="00" priority="-1" numLanes="4" speed="13.89"/>
+    <edge id="00to3" from="00" to="3" priority="-1" numLanes="4" speed="13.89">
+        <lane index="3" allow="private"/>
+        <lane index="2"/>
+        <lane index="1"/>
+        <lane index="0"/>
+    </edge>
+    <edge id="5to000" from="5" to="000" priority="-1" numLanes="2" speed="13.89"/>
+    <edge id="000to7" from="000" to="7" priority="-1" numLanes="2" speed="13.89"/>
+
+    <!--아래에서 위-->
+    <edge id="4to00" from="4" to="00" priority="-1" numLanes="4" speed="13.89"/>
+    <edge id="00to2" from="00" to="2" priority="-1" numLanes="4" speed="13.89">
+        <lane index="3" allow="private"/>
+        <lane index="2"/>
+        <lane index="1"/>
+        <lane index="0"/>
+    </edge>
+    <edge id="8to000" from="8" to="000" priority="-1" numLanes="2" speed="13.89"/>
+    <edge id="000to6" from="000" to="6" priority="-1" numLanes="2" speed="13.89"/>
+</edges>
