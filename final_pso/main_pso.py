@@ -10,7 +10,7 @@ from TrafficGenerator import generate_routefile
 from modify_phase import modify_phase
 from del_lane import del_lane
 from performance import calculate_target_index
-from PSO import PSO
+from PSO1 import PSO
 import numpy as np
 import time
 import datetime
@@ -47,19 +47,14 @@ def objective_function(x):
     y = []
     for num in x:
         y.extend([num, 3])
+    print(y)
     x1 = np.array(y[:10])
     x2 = np.array(y[10:20])
     x3 = np.array(y[20:30])
     traci.start([checkBinary('sumo'), "-c", "tt.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
     modify_phase(x1, x2, x3)
     z =0 
-    if sum(x1) != 180:
-        z = run()
-        return sys.maxsize
-    elif sum(x2) != 180:
-        z = run()
-        return  sys.maxsize
-    elif sum(x3) != 180:
+    if sum(x1) != 180 or sum(x2) != 180 or sum(x3) != 180:
         z = run()
         return sys.maxsize
     else:
@@ -69,20 +64,23 @@ def objective_function(x):
         pd.DataFrame(result).to_csv('result{}.csv'.format(len(result)), header=False, index=False)
     return z
 
-min_dur = [20, 10, 20, 25, 30, 20, 10, 20, 25, 30, 15, 30, 10, 30, 10]
-max_dur = [45, 30, 40, 60, 70, 45, 30, 40, 60, 70, 40, 65, 40, 80, 40]
+# min_dur = [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20]
+# max_dur = [45, 45, 45, 45, 45, 45, 45, 45, 45, 45, 45, 45, 45, 45, 45]
+
+# 의미있는 신호 +- 10, 의미없는 신호 +-5
+min_dur = [21, 12, 22, 28, 42, 23, 12, 15, 22, 51, 15, 37, 13, 41, 19] 
+cur_dur = [31, 17, 27, 38, 52, 33, 17, 22, 32, 61, 25, 47, 18, 51, 24]
+max_dur = [41, 22, 32, 48, 62, 43, 22, 27, 42, 71, 35, 57, 23, 61, 29]
+
+new_dur = [26, 17, 27, 43, 52, 26, 17, 22, 39, 61, 22, 42, 21, 56, 24]
 
 if __name__ == "__main__":
-    start = time.time()
+    initial_positions = [cur_dur, new_dur]
     bounds = []
     for i in range(len(min_dur)):
         bounds.append((min_dur[i], max_dur[i]))
-    num_particles = 30
+    num_particles = 15
     maxiter = 1000
-    pso = PSO(objective_function, bounds, num_particles, maxiter)
+    pso = PSO(objective_function, bounds, num_particles, maxiter, initial_positions)
+    # pso = PSO(objective_function, bounds, num_particles, maxiter)
     pso.run_result()
-    
-    end = time.time()
-    sec = end - start
-    result_time = datetime.timedelta(seconds=(sec))
-    print('총 걸린 시간 : ', result_time)

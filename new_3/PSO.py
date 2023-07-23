@@ -1,10 +1,6 @@
 import random
 import numpy as np
 from math import *
-from matplotlib import pyplot as plt
-from matplotlib import animation
-from mpl_toolkits.mplot3d import Axes3D
-from IPython.display import HTML
 import matplotlib
 import sys
 matplotlib.rcParams['animation.embed_limit'] = 50.0 # 용량 제한 
@@ -35,7 +31,7 @@ class Particle:
         w_max = 1
         self.iteration += 1
         w = w_max - ((w_max - w_min) * self.iteration / self.max_iter) # w가 점점 감소
-        #w = random.uniform(w_min, w_max) # particle의 속도에 대한 가중치 (w가 랜덤으로 설정)
+        # w = random.uniform(w_min, w_max) # particle의 속도에 대한 가중치 (w가 랜덤으로 설정)
         c1 = 1  # 자신의 최고 위치에 대한 가중치
         c2 = 2  # 집단의 최고 위치에 대한 가중치
         for i in range(len(self.position)):
@@ -56,10 +52,6 @@ class Particle:
                 self.position[i] = bounds[i][1]
 
 class PSO:
-    '''
-    animation : 처음부터 끝까지 (중간에 끊으면 안됨) 
-    result : 값을 바로 알려줌
-    '''
     def __init__(self, fitness_function, bounds, num_particles, max_iter):
         self.fitness_func = fitness_function
         self.bounds = bounds
