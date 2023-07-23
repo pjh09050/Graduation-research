@@ -8,6 +8,7 @@ import traci
 import pandas as pd
 from TrafficGenerator import generate_routefile
 from del_lane import del_lane
+from performance import calculate_target_index
 
 # $SUMO_HOME/tools directory에서 python module 가져와야 실행 가능
 if 'SUMO_HOME' in os.environ:
@@ -21,7 +22,7 @@ def run():
     step = 0
     max_step = 3600
     del_lane()
-
+    calculate_target_index()
     while step < max_step+1:
         traci.simulationStep()
         # 성능뽑을 떄 뒤에 1800 이후에 뽑아서 뒤에 30분만 평가하는게 현실적임
