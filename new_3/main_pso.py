@@ -47,9 +47,13 @@ def objective_function(x):
     y = []
     for num in x:
         y.extend([num, 3])
+    print(y)
     x1 = np.array(y[:10])
     x2 = np.array(y[10:20])
     x3 = np.array(y[20:30])
+    print(x1)
+    print(x2)
+    print(x3)
     traci.start([checkBinary('sumo'), "-c", "tt.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
     modify_phase(x1, x2, x3)
     z =0 
@@ -65,18 +69,22 @@ def objective_function(x):
     else:
         z = run()
     result.append([x, z])
+
     if len(result) % 1000 ==0:
         pd.DataFrame(result).to_csv('result{}.csv'.format(len(result)), header=False, index=False)
     return z
+
 
 min_dur = [20, 10, 20, 25, 30, 20, 10, 20, 25, 30, 15, 30, 10, 30, 10]
 max_dur = [45, 30, 40, 60, 70, 45, 30, 40, 60, 70, 40, 65, 40, 80, 40]
 
 if __name__ == "__main__":
+
     start = time.time()
     bounds = []
     for i in range(len(min_dur)):
         bounds.append((min_dur[i], max_dur[i]))
+    print(bounds)
     num_particles = 30
     maxiter = 1000
     pso = PSO(objective_function, bounds, num_particles, maxiter)

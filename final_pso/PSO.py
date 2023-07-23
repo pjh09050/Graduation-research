@@ -1,10 +1,6 @@
 import random
 import numpy as np
 from math import *
-from matplotlib import pyplot as plt
-from matplotlib import animation
-from mpl_toolkits.mplot3d import Axes3D
-from IPython.display import HTML
 import matplotlib
 import sys
 matplotlib.rcParams['animation.embed_limit'] = 50.0 # 용량 제한 
@@ -19,7 +15,7 @@ class Particle:
         self.iteration = 0 # 반복 횟수
         self.max_iter = max_iter
         for i in range(len(bounds)):
-            self.position.append(random.uniform(bounds[i][0], bounds[i][1]))
+            self.position.append(random.randint(bounds[i][0], bounds[i][1]))
             self.velocity.append(random.uniform(-1, 1))
 
     def evaluate_fitness(self, fitness_func):
@@ -56,10 +52,6 @@ class Particle:
                 self.position[i] = bounds[i][1]
 
 class PSO:
-    '''
-    animation : 처음부터 끝까지 (중간에 끊으면 안됨) 
-    result : 값을 바로 알려줌
-    '''
     def __init__(self, fitness_function, bounds, num_particles, max_iter):
         self.fitness_func = fitness_function
         self.bounds = bounds
@@ -79,7 +71,7 @@ class PSO:
                 # global_best_position, global_best_fitness 업데이트
                 if self.swarm[j].fitness < self.global_best_fitness or self.global_best_fitness == -1:
                     self.global_best_position = list(self.swarm[j].position)
-                    self.global_best_fitness = float(self.swarm[j].fitness)
+                    self.global_best_fitness = self.swarm[j].fitness
             # 각 particle의 position과 velocity 업데이트
             for j in range(self.num_particles):
                 self.swarm[j].update_velocity(self.global_best_position)
