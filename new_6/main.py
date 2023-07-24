@@ -10,6 +10,7 @@ from TrafficGenerator import generate_routefile
 from modify_phase import modify_phase
 from del_lane import del_lane
 from performance import calculate_target_index
+
 # $SUMO_HOME/tools directory에서 python module 가져와야 실행 가능
 if 'SUMO_HOME' in os.environ:
     tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
@@ -43,7 +44,6 @@ def run():
             if step % 180 == 0:
                 print("{}초 평균 대기 시간 : {:.2f}".format(step, average))
                 print("{}초 총 이탈 차량 수 : {}, 평균 이동 시간 : {}".format(step, len(vehicle_travel_times), average_travel_time))
-
         step += 1
     print("평균 대기 시간 : {:.3f}".format(average))
     print("평균 이동 시간 : {:.3f}".format(average_travel_time))
