@@ -11,7 +11,8 @@ def generate_routefile():
     with open("new.rou.xml", 'w') as routes:
         print("""<routes>
         <vType id="typeCAR" length="5" minGap="2.5" maxSpeed="10" allowLaneChange="False" guiShape="passenger"/>
-        <vType id="typeBUS" length="15" minGap="2.5" maxSpeed="7" allowLaneChange="False" guiShape="bus"/>
+        <vType id="typeCAR1" length="4" minGap="2.5" maxSpeed="10" allowLaneChange="False" guiShape="passenger/sedan"/>
+        <vType id="typeBUS" length="15" minGap="2.5" maxSpeed="7" allowLaneChange="False" guiShape="bus/coach"/>
 
         <route id='routeW1_S2' edges='02to00 00toc1 c1to000 000to7'/>
         <route id='routeW1_N1' edges='02to00 00to2'/>
@@ -67,9 +68,12 @@ def generate_routefile():
         <route id='routeE3_S3' edges='03to0000 0000to11'/> """, file=routes)
 
         color = {'red':(255,0,0), 'gray':(96,96,96), 'white':(255,255,255), 'green':(51,51,0), 'brown':(51,0,0)}
-
         for i in range(len(sorted_list)):
-            a = random.choice(list(color.values()))
-            print('    <vehicle id="route_%i" type="typeCAR" route="%s" depart="%.1f" departLane="%i" arrivalLane="%i" color="%i,%i,%i" />' % (i, sorted_list[i][0], sorted_list[i][1], sorted_list[i][2], sorted_list[i][3], a[0], a[1], a[2]), file=routes)
+            car_type = random.choices(population=["typeCAR", "typeCAR1", "typeBUS"], weights=[0.7, 0.299, 0.001], k=1)[0]
+            if car_type == "typeBUS":
+                a = (0,255,0)
+            else:
+                a = random.choice(list(color.values()))
+            print('    <vehicle id="route_%i" type="%s" route="%s" depart="%.1f" departLane="%i" arrivalLane="%i" color="%i,%i,%i" />' % (i, car_type ,sorted_list[i][0], sorted_list[i][1], sorted_list[i][2], sorted_list[i][3], a[0], a[1], a[2]), file=routes)
             
         print("</routes>", file=routes)

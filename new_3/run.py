@@ -10,7 +10,6 @@ from TrafficGenerator import generate_routefile
 from del_lane import del_lane
 from performance import calculate_target_index
 
-# $SUMO_HOME/tools directory에서 python module 가져와야 실행 가능
 if 'SUMO_HOME' in os.environ:
     tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
     sys.path.append(tools)
