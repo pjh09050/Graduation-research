@@ -39,7 +39,8 @@ class Particle:
             r2 = random.random()
             cognitive_velocity = c1 * r1 * (self.best_position[i] - self.position[i])
             social_velocity = c2 * r2 * (global_best_position[i] - self.position[i])
-            self.velocity[i] = w * self.velocity[i] + cognitive_velocity + social_velocity
+            self.velocity[i] = w * self.velocity[i] + cognitive_velocity + 
+            # 합이 180되게해주는 작업
 
     def update_position(self, bounds):
         for i in range(len(self.position)):
