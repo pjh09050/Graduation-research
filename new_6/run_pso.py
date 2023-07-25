@@ -12,8 +12,6 @@ from del_lane import del_lane
 from performance import calculate_target_index
 from PSO import PSO
 import numpy as np
-import time
-import datetime
 
 if 'SUMO_HOME' in os.environ:
     tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
@@ -30,7 +28,7 @@ def run():
 
     while step < max_step+1:
         traci.simulationStep()
-        if step > 600:
+        if step > 1800:
             target_score = calculate_target_index()
             list_cycle.append(target_score)
             average = sum(list_cycle)/len(list_cycle)
@@ -47,14 +45,10 @@ def objective_function(x):
     y = []
     for num in x:
         y.extend([num, 3])
-    print(y)
     x1 = np.array(y[:10])
     x2 = np.array(y[10:20])
     x3 = np.array(y[20:30])
-    print(x1)
-    print(x2)
-    print(x3)
-    traci.start([checkBinary('sumo'), "-c", "tt.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
+    traci.start([checkBinary('sumo'), "-c", "new.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
     modify_phase(x1, x2, x3)
     z =0 
     if sum(x1) != 180:
@@ -74,23 +68,16 @@ def objective_function(x):
         pd.DataFrame(result).to_csv('result{}.csv'.format(len(result)), header=False, index=False)
     return z
 
-
-min_dur = [20, 10, 20, 25, 30, 20, 10, 20, 25, 30, 15, 30, 10, 30, 10]
-max_dur = [45, 30, 40, 60, 70, 45, 30, 40, 60, 70, 40, 65, 40, 80, 40]
+# 의미있는 신호 +- 10, 의미없는 신호 +-5
+min_dur = [21, 12, 22, 28, 42, 23, 12, 15, 22, 51, 15, 37, 13, 41, 19] 
+cur_dur = [31, 17, 27, 38, 52, 33, 17, 22, 32, 61, 25, 47, 18, 51, 24]
+max_dur = [41, 22, 32, 48, 62, 43, 22, 27, 42, 71, 35, 57, 23, 61, 29]
 
 if __name__ == "__main__":
-
-    start = time.time()
     bounds = []
     for i in range(len(min_dur)):
         bounds.append((min_dur[i], max_dur[i]))
-    print(bounds)
-    num_particles = 30
+    num_particles = 15
     maxiter = 1000
     pso = PSO(objective_function, bounds, num_particles, maxiter)
     pso.run_result()
-    
-    end = time.time()
-    sec = end - start
-    result_time = datetime.timedelta(seconds=(sec))
-    print('총 걸린 시간 : ', result_time)

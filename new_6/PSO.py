@@ -1,9 +1,6 @@
 import random
-import numpy as np
 from math import *
-import matplotlib
 import sys
-matplotlib.rcParams['animation.embed_limit'] = 50.0 # 용량 제한 
 
 class Particle:
     def __init__(self, bounds, max_iter):
@@ -39,8 +36,9 @@ class Particle:
             r2 = random.random()
             cognitive_velocity = c1 * r1 * (self.best_position[i] - self.position[i])
             social_velocity = c2 * r2 * (global_best_position[i] - self.position[i])
-            self.velocity[i] = w * self.velocity[i] + cognitive_velocity + 
-            # 합이 180되게해주는 작업
+            self.velocity[i] = w * self.velocity[i] + cognitive_velocity + social_velocity
+        # 합이 180되게해주는 작업
+        print(self.velocity)
 
     def update_position(self, bounds):
         for i in range(len(self.position)):

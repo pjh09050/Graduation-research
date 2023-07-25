@@ -5,7 +5,6 @@ import os
 import sys
 from sumolib import checkBinary  
 import traci
-import pandas as pd
 from TrafficGenerator import generate_routefile
 from modify_phase import modify_phase
 from del_lane import del_lane
@@ -28,7 +27,6 @@ def run():
     
     while step < max_step+1:
         traci.simulationStep()
-        # 성능뽑을 떄 뒤에 1800 이후에 뽑아서 뒤에 30분만 평가하는게 현실적임
         if step > 1800:
             target_score = calculate_target_index()
             cycle_list.append(target_score)
@@ -66,21 +64,16 @@ def main():
     current_phases1 = [22.00, 3.00, 17.00, 3.00, 20.00, 3.00, 45.00, 3.00, 61.00, 3.00]
     current_phases2 = [25.00, 3.00, 44.00, 3.00, 21.00, 3.00, 60.00, 3.00, 20.00, 3.00]
 
-    # 수연 신호 설정값    
-    current_phases0 = [26.00, 3.00, 17.00, 3.00, 27.00, 3.00, 43.00, 3.00, 52.00, 3.00]
-    current_phases1 = [22.00, 3.00, 17.00, 3.00, 20.00, 3.00, 45.00, 3.00, 61.00, 3.00]
-    current_phases2 = [25.00, 3.00, 44.00, 3.00, 21.00, 3.00, 60.00, 3.00, 20.00, 3.00]
-
     options = True
     if options == False:
         sumoBinary = checkBinary('sumo')
     else:
         sumoBinary = checkBinary('sumo-gui')
 
+    traci.start([sumoBinary, "-c", "new.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--no-warnings"])
+    # traci.start([sumoBinary, "-c", "new.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
     generate_routefile() 
-    #traci.start([sumoBinary, "-c", "new.sumocfg", "--tripinfo-output", "tripinfo.xml", "--no-warnings"])
-    traci.start([sumoBinary, "-c", "new.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
-    current_phases0, current_phases1, current_phases2 = modify_phase(current_phases0, current_phases1, current_phases2)
+    modify_phase(current_phases0, current_phases1, current_phases2)
     run()
 
 if __name__ == "__main__":
