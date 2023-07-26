@@ -64,7 +64,7 @@ def main():
     current_phases1 = [22.00, 3.00, 17.00, 3.00, 20.00, 3.00, 45.00, 3.00, 61.00, 3.00]
     current_phases2 = [25.00, 3.00, 44.00, 3.00, 21.00, 3.00, 60.00, 3.00, 20.00, 3.00]
 
-    options = True
+    options = False
     if options == False:
         sumoBinary = checkBinary('sumo')
     else:

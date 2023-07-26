@@ -50,18 +50,18 @@ def objective_function(x):
     x3 = np.array(y[20:30])
     traci.start([checkBinary('sumo'), "-c", "new.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
     modify_phase(x1, x2, x3)
-    z =0 
-    if sum(x1) != 180:
-        z = run()
-        return sys.maxsize
-    elif sum(x2) != 180:
-        z = run()
-        return  sys.maxsize
-    elif sum(x3) != 180:
-        z = run()
-        return sys.maxsize
-    else:
-        z = run()
+    # z =0 
+    # if sum(x1) != 180:
+    #     z = run()
+    #     return sys.maxsize
+    # elif sum(x2) != 180:
+    #     z = run()
+    #     return  sys.maxsize
+    # elif sum(x3) != 180:
+    #     z = run()
+    #     return sys.maxsize
+    # else:
+    z = run()
     result.append([x, z])
 
     if len(result) % 1000 ==0:
@@ -77,7 +77,7 @@ if __name__ == "__main__":
     bounds = []
     for i in range(len(min_dur)):
         bounds.append((min_dur[i], max_dur[i]))
-    num_particles = 15
+    num_particles = 2   
     maxiter = 1000
     pso = PSO(objective_function, bounds, num_particles, maxiter)
     pso.run_result()
