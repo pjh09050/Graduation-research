@@ -2,6 +2,7 @@ import traci
 
 def modify_phase(current_phases0, current_phases1, current_phases2):
     print('current :', current_phases0, current_phases1, current_phases2)
+    print('신호주기 합 :', sum(current_phases0), sum(current_phases1), sum(current_phases2))
     # 신호등 ID 가져오기
     traffic_light_id0 = traci.trafficlight.getIDList()[0]
     traffic_light_id1 = traci.trafficlight.getIDList()[1]
