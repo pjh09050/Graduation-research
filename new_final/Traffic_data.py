@@ -10,6 +10,15 @@ N3_car = 1147
 S3_car = 1881
 E3_car = 720
 time = 3600
+# W1_car = 2500
+# N1_car = 675
+# S1_car = 538
+# N2_car = 192
+# S2_car = 228
+# N3_car = 1707
+# S3_car = 2821
+# E3_car = 1080
+# time = 5400
 
 def total_traffic():
     np.random.seed(1234)

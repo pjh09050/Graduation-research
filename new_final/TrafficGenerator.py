@@ -7,7 +7,7 @@ def generate_routefile():
     np.random.seed(1234)
 
     sorted_list = total_traffic()
-    
+
     with open("new.rou.xml", 'w') as routes:
         print("""<routes>
         <vType id="typeCAR" length="5" minGap="2.5" maxSpeed="10" allowLaneChange="False" guiShape="passenger"/>

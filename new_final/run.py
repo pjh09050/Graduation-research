@@ -27,6 +27,8 @@ def run():
     
     while step < max_step+1:
         traci.simulationStep()
+        step += 1
+
         if step > 1800:
             target_score = calculate_target_index()
             cycle_list.append(target_score)
@@ -43,7 +45,7 @@ def run():
             if step % 180 == 0:
                 print("{}초 평균 대기 시간 : {:.2f}".format(step, cycle_average))
                 print("{}초 총 이탈 차량 수 : {}, 평균 이동 시간 : {}".format(step, len(vehicle_travel_times), average_travel_time))
-        step += 1
+        
     print("평균 대기 시간 : {:.3f}".format(cycle_average))
     print("평균 이동 시간 : {:.3f}".format(average_travel_time))
     traci.close()
@@ -65,11 +67,11 @@ def main():
     # current_phases2 = [25.00, 3.00, 44.00, 3.00, 21.00, 3.00, 60.00, 3.00, 20.00, 3.00]
 
     # PSO
-    current_phases0 = [21, 3, 21, 3, 21, 3, 47, 3, 55, 3]
-    current_phases1 = [42, 3, 11, 3, 24, 3, 21, 3, 67, 3]
-    current_phases2 = [17, 3, 38, 3, 24, 3, 62, 3, 24, 3]
+    # current_phases0 = [21, 3, 21, 3, 21, 3, 47, 3, 55, 3]
+    # current_phases1 = [42, 3, 11, 3, 24, 3, 21, 3, 67, 3]
+    # current_phases2 = [17, 3, 38, 3, 24, 3, 62, 3, 24, 3]
 
-    options = True
+    options = False
     if options == False:
         sumoBinary = checkBinary('sumo')
     else:
