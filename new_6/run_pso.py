@@ -10,7 +10,7 @@ from TrafficGenerator import generate_routefile
 from modify_phase import modify_phase
 from del_lane import del_lane
 from performance import calculate_target_index
-from PSO_float import PSO
+from PSO_int import PSO
 import numpy as np
 
 if 'SUMO_HOME' in os.environ:
@@ -66,7 +66,7 @@ if __name__ == "__main__":
     bounds = []
     for i in range(len(min_dur)):
         bounds.append((min_dur[i], max_dur[i]))
-    num_particles = 15
-    maxiter = 5
+    num_particles = 20
+    maxiter = 100
     pso = PSO(objective_function, bounds, num_particles, maxiter)
     pso.run_result()
