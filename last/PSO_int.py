@@ -183,9 +183,9 @@ class Particle:
                     self.position[smallest_value_idx] += 1
                     self.position[smallest_value_idx] = int(round(self.position[smallest_value_idx]))
 
-        x1_sum = sum(self.position[:5])
-        x2_sum = sum(self.position[5:10])
-        x3_sum = sum(self.position[10:])
+        # x1_sum = sum(self.position[:5])
+        # x2_sum = sum(self.position[5:10])
+        # x3_sum = sum(self.position[10:])
         # print('update 후 position', self.position, x1_sum, x2_sum, x3_sum, sum(self.position))
 
 class PSO:

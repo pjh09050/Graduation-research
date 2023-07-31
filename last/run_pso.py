@@ -42,9 +42,10 @@ def run():
 result = []
 def objective_function(x):
     generate_routefile()
-    y = []
-    for num in x:
-        y.extend([num, 3])
+    y = [num for num in x[:11] for num in (num, 3)]
+    y.extend(x[11:12])
+    y += [num for num in x[12:] for num in (num, 3)]
+    y.extend([3])
     x1 = np.array(y[:10])
     x2 = np.array(y[10:20])
     x3 = np.array(y[20:30])
@@ -58,9 +59,9 @@ def objective_function(x):
     return z
 
 # 의미있는 신호 +- 10, 의미없는 신호 +-5
-min_dur = [21, 12, 22, 28, 42, 23, 12, 15, 22, 51, 15, 37, 13, 41, 19] 
-cur_dur = [31, 17, 27, 38, 52, 33, 17, 22, 32, 61, 25, 47, 18, 51, 24]
-max_dur = [41, 22, 32, 48, 62, 43, 22, 27, 42, 71, 35, 57, 23, 61, 29]
+min_dur = [21, 12, 22, 28, 42, 23, 12, 15, 22, 51, 56, 13, 0, 41, 19] 
+cur_dur = [31, 17, 27, 38, 52, 33, 17, 22, 32, 61, 66, 18, 4, 55, 22]
+max_dur = [41, 22, 32, 48, 62, 43, 22, 27, 42, 71, 76, 23, 8, 61, 29]
 
 if __name__ == "__main__":
     bounds = []

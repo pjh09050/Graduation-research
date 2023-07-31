@@ -50,7 +50,6 @@ def generate_routefile():
         <route id='routeN3_S1' edges='9to0000 0000toc3 c3to000 000toc2 c2to00 00to3'/>
         <route id='routeN3_S2' edges='9to0000 0000toc3 c3to000 000to7'/>
         <route id='routeN3_S3' edges='9to0000 0000to11'/>
-        <route id='routeN3_E3' edges='9to0000 0000to04'/>
         
         <route id='routeS3_W1' edges='12to0000 0000toc3 c3to000 000toc2 c2to00 00to01'/>
         <route id='routeS3_N1' edges='12to0000 0000toc3 c3to000 000toc2 c2to00 00to2'/>

@@ -184,7 +184,7 @@ def total_traffic():
     N3_arrival_intervals = np.random.exponential(scale=1/N3_arrival_rate, size=N3_car)
     N3_cumulative_interval = 0
     for i, interval in enumerate(N3_arrival_intervals):
-        car_direction = random.choices(population=["routeN3_W1", "routeN3_N1", "routeN3_S1", "routeN3_S2", "routeN3_S3", "routeN3_E3"], weights=[0.015, 0.004, 0.005, 0.006, 0.8, 0.17], k=1)[0]
+        car_direction = random.choices(population=["routeN3_W1", "routeN3_N1", "routeN3_S1", "routeN3_S2", "routeN3_S3"], weights=[0.036, 0.009, 0.01, 0.01, 0.8], k=1)[0]
         N3_cumulative_interval += interval
         if N3_cumulative_interval > time:
             break
@@ -201,16 +201,8 @@ def total_traffic():
             departLane = 0
             arrivalLane = random.randint(0,1)
         elif car_direction == "routeN3_S3":
-            a = random.random()
-            if a < 0.9:
-                departLane = random.randint(1,3)
-                arrivalLane = departLane
-            else:
-                departLane = random.randint(0,3)
-                arrivalLane = random.randint(1,3) 
-        elif car_direction == "routeN3_E3":
-            departLane = 4
-            arrivalLane = 2
+            departLane = random.randint(1,3)
+            arrivalLane = departLane
         N3_time_list.append((car_direction, np.round(N3_cumulative_interval,1), departLane, arrivalLane))
 
     S3_arrival_rate = S3_car / time  # 차량 도착율 계산
@@ -218,7 +210,7 @@ def total_traffic():
     S3_arrival_intervals = np.random.exponential(scale=1/S3_arrival_rate, size=S3_car)
     S3_cumulative_interval = 0
     for i, interval in enumerate(S3_arrival_intervals):
-        car_direction = random.choices(population=["routeS3_W1", "routeS3_N1", "routeS3_S1", "routeS3_N2", "routeS3_N3", "routeS3_E3"], weights=[0.02, 0.003, 0.004, 0.003, 0.8, 0.17], k=1)[0]
+        car_direction = random.choices(population=["routeS3_W1", "routeS3_N1", "routeS3_S1", "routeS3_N2", "routeS3_N3", "routeS3_E3"], weights=[0.02, 0.003, 0.004, 0.003, 0.87, 0.1], k=1)[0]
         S3_cumulative_interval += interval
         if S3_cumulative_interval > time:
             break
@@ -235,13 +227,8 @@ def total_traffic():
             departLane = 4
             arrivalLane = random.randint(0,1)
         elif car_direction == "routeS3_N3":
-            a = random.random()
-            if a < 0.9:
-                departLane = random.randint(1,3)
-                arrivalLane = departLane
-            else:
-                departLane = random.randint(0,3)
-                arrivalLane = random.randint(0,3) 
+            departLane = random.randint(1,3)
+            arrivalLane = departLane
         elif car_direction == "routeS3_E3":
             departLane = 0
             arrivalLane = 1
