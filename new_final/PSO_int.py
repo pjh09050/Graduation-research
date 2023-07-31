@@ -96,7 +96,7 @@ class Particle:
         w = w_max - ((w_max - w_min) * self.iteration / self.max_iter) # w가 점점 감소
         c1 = 1  # 자신의 최고 위치에 대한 가중치
         c2 = 2  # 집단의 최고 위치에 대한 가중치
-        threshold = 0.5  # 임의의 threshold 값
+        threshold = random.random()  # 임의의 threshold 값
         for i in range(len(self.position)):
             r1 = random.random() # 0,1 사이의 난수
             r2 = random.random()
@@ -104,11 +104,11 @@ class Particle:
             social_velocity = c2 * r2 * (global_best_position[i] - self.position[i])
             self.velocity[i] = w * self.velocity[i] + cognitive_velocity + social_velocity
             # threshold를 기준으로 반올림 또는 반내림
-            # if self.velocity[i] > threshold:
-            #     self.velocity[i] = int(round(self.velocity[i]))
-            # else:
-            #     self.velocity[i] = int(self.velocity[i])
-        self.velocity = [int(round(v)) for v in self.velocity]
+            if threshold > 0.3:
+                self.velocity[i] = int(round(self.velocity[i]))
+            else:
+                self.velocity[i] = int(self.velocity[i])
+        # self.velocity = [int(round(v)) for v in self.velocity]
 
     def update_position(self, bounds):
         for i in range(len(self.position)):

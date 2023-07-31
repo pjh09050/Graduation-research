@@ -6,8 +6,8 @@
     <node id="2" x="0.0" y="87.4" type="dead_end"/>
     <node id="3" x="0.0" y="-87.4" type="dead_end"/>
     <node id="4" x="0.0" y="-87.4" type="dead_end"/>
-    <node id="01" x="-200.8" y="0.0" type="dead_end"/>
-    <node id="02" x="-200.8" y="0.0" type="dead_end"/>
+    <node id="01" x="-300.8" y="0.0" type="dead_end"/>
+    <node id="02" x="-300.8" y="0.0" type="dead_end"/>
 
     <node id="c1" x="98.6" y="0.0" type="dead_end"/>
     <node id="c2" x="98.6" y="0.0" type="dead_end"/>

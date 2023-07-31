@@ -52,16 +52,11 @@ def run():
 
 def main():
     # 초기 신호 설정값
-    current_phases0 = [31.00, 3.00, 17.00, 3.00, 27.00, 3.00, 38.00, 3.00, 52.00, 3.00]
-    current_phases1 = [33.00, 3.00, 17.00, 3.00, 22.00, 3.00, 32.00, 3.00, 61.00, 3.00]
-    current_phases2 = [25.00, 3.00, 47.00, 3.00, 18.00, 3.00, 51.00, 3.00, 24.00, 3.00]
-    
-    # 13번신호 설정값    
-    # current_phases0 = [26.00, 3.00, 17.00, 3.00, 27.00, 3.00, 43.00, 3.00, 52.00, 3.00]
-    # current_phases1 = [26.00, 3.00, 17.00, 3.00, 22.00, 3.00, 39.00, 3.00, 61.00, 3.00]
-    # current_phases2 = [22.00, 3.00, 42.00, 3.00, 21.00, 3.00, 56.00, 3.00, 24.00, 3.00]
+    current_phases0 = [31.00, 3.00, 17.00, 3.00, 27.00, 3.00, 38.00, 3.00, 52.00, 3.00] # (S-N:31),(S-W,N-E:17),(E-WS:27),(W-E:38),(W-NE:52)
+    current_phases1 = [33.00, 3.00, 17.00, 3.00, 22.00, 3.00, 32.00, 3.00, 61.00, 3.00] # (S-N:33),(S-W,N-E:17),(E-WS:22),(W-E:32),(W-NE:61)
+    current_phases2 = [66.00, 3.00, 18.00, 3.00, 4.00, 3.00, 55.00, 3.00, 22.00, 3.00] # (S-N:66),(S-N,S-W:18),(S-N,S-W:4),(W-E:55),(E-WS:22)
 
-    # 진환 신호 설정값    
+    # 진환 신호 설정값
     # current_phases0 = [26.00, 3.00, 17.00, 3.00, 27.00, 3.00, 43.00, 3.00, 52.00, 3.00]
     # current_phases1 = [22.00, 3.00, 17.00, 3.00, 20.00, 3.00, 45.00, 3.00, 61.00, 3.00]
     # current_phases2 = [25.00, 3.00, 44.00, 3.00, 21.00, 3.00, 60.00, 3.00, 20.00, 3.00]
@@ -71,13 +66,13 @@ def main():
     # current_phases1 = [42, 3, 11, 3, 24, 3, 21, 3, 67, 3]
     # current_phases2 = [17, 3, 38, 3, 24, 3, 62, 3, 24, 3]
 
-    options = False
+    options = True
     if options == False:
         sumoBinary = checkBinary('sumo')
     else:
         sumoBinary = checkBinary('sumo-gui')
 
-    traci.start([sumoBinary, "-c", "new.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--no-warnings"])
+    traci.start([sumoBinary, "-c", "new.sumocfg", "--tripinfo-output", "tripinfo.xml", "--no-warnings"])
     # traci.start([sumoBinary, "-c", "new.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
     generate_routefile() 
     modify_phase(current_phases0, current_phases1, current_phases2)

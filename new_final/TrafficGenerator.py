@@ -12,7 +12,7 @@ def generate_routefile():
         print("""<routes>
         <vType id="typeCAR" length="5" minGap="2.5" maxSpeed="10" allowLaneChange="False" guiShape="passenger"/>
         <vType id="typeCAR1" length="4" minGap="2.5" maxSpeed="10" allowLaneChange="False" guiShape="passenger/sedan"/>
-        <vType id="typeBUS" length="15" minGap="2.5" maxSpeed="7" allowLaneChange="False" guiShape="bus/coach"/>
+        <vType id="typeBUS" length="11" minGap="2" maxSpeed="7" allowLaneChange="False" guiShape="bus/coach"/>
 
         <route id='routeW1_S2' edges='02to00 00toc1 c1to000 000to7'/>
         <route id='routeW1_N1' edges='02to00 00to2'/>
@@ -69,7 +69,7 @@ def generate_routefile():
 
         color = {'red':(255,0,0), 'gray':(96,96,96), 'white':(255,255,255), 'green':(51,51,0), 'brown':(51,0,0)}
         for i in range(len(sorted_list)):
-            car_type = random.choices(population=["typeCAR", "typeCAR1", "typeBUS"], weights=[0.7, 0.299, 0.001], k=1)[0]
+            car_type = random.choices(population=["typeCAR", "typeCAR1", "typeBUS"], weights=[0.6, 0.399, 0.001], k=1)[0]
             if car_type == "typeBUS":
                 a = (0,255,0)
             else:
