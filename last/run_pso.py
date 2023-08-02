@@ -49,7 +49,7 @@ def objective_function(x):
     x1 = np.array(y[:10])
     x2 = np.array(y[10:20])
     x3 = np.array(y[20:30])
-    traci.start([checkBinary('sumo'), "-c", "new.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
+    traci.start([checkBinary('sumo'), "-c", "new.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--start", "--no-warnings"])
     modify_phase(x1, x2, x3)
     z = run()
     result.append([x, z])
@@ -59,9 +59,12 @@ def objective_function(x):
     return z
 
 # 의미있는 신호 +- 10, 의미없는 신호 +-5
-min_dur = [21, 12, 22, 28, 42, 23, 12, 15, 22, 51, 56, 13, 0, 41, 19] 
-cur_dur = [31, 17, 27, 38, 52, 33, 17, 22, 32, 61, 66, 18, 4, 55, 22]
-max_dur = [41, 22, 32, 48, 62, 43, 22, 27, 42, 71, 76, 23, 8, 61, 29]
+min_dur = [21, 12, 22, 28, 42, 23, 12, 15, 22, 51, 56, 13, 0, 19, 45]
+cur_dur = [31, 17, 27, 38, 52, 33, 17, 22, 32, 61, 66, 18, 4, 22, 55]
+max_dur = [41, 22, 32, 48, 62, 43, 22, 27, 42, 71, 76, 23, 8, 29, 65]
+
+# pso 결과
+pso_dur = []
 
 if __name__ == "__main__":
     bounds = []

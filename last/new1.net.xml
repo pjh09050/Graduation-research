@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2023-07-31 22:10:47 by Eclipse SUMO netedit Version 1.15.0
+<!-- generated on 2023-08-02 20:33:29 by Eclipse SUMO netedit Version 1.16.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
@@ -32,7 +32,7 @@
 </configuration>
 -->
 
-<net version="1.9" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+<net version="1.16" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
 
     <location netOffset="300.80,87.40" convBoundary="0.00,0.00,951.20,174.80" origBoundary="-300.80,-87.40,650.40,87.40" projParameter="!"/>
 
@@ -200,7 +200,7 @@
         <lane id="0000to10_1" index="1" speed="13.89" length="70.60" shape="751.20,104.20 751.20,174.80"/>
         <lane id="0000to10_2" index="2" speed="13.89" length="70.60" shape="748.00,104.20 748.00,174.80"/>
         <lane id="0000to10_3" index="3" speed="13.89" length="70.60" shape="744.80,104.20 744.80,174.80"/>
-        <lane id="0000to10_4" index="4" speed="13.89" length="70.60" shape="741.60,104.20 741.60,174.80"/>
+        <lane id="0000to10_4" index="4" allow="private" speed="13.89" length="70.60" shape="741.60,104.20 741.60,174.80"/>
     </edge>
     <edge id="0000to11" from="0000" to="11" priority="-1">
         <lane id="0000to11_0" index="0" speed="13.89" length="67.40" shape="725.60,67.40 725.60,-0.00"/>
@@ -362,10 +362,10 @@
         <phase duration="18" state="GrrrrrGrrrrGGGGGGGrrrrr"/>
         <phase duration="4"  state="yrrrrryrrrryGGGGGyrrrrr"/>
         <phase duration="3"  state="GrrrrrGrrrrGyyyyyGrrrrr"/>
-        <phase duration="55" state="rrrrrrrGGGrrrrrrrrGGGGr"/>
-        <phase duration="3"  state="GrrrrrGyyyrGrrrrrGyyyyr"/>
         <phase duration="22" state="GrrrrrGGGGGGrrrrrGrrrrr"/>
         <phase duration="3"  state="GrrrrrGyyyyGrrrrrGrrrrr"/>
+        <phase duration="55" state="rrrrrrrGGGrrrrrrrrGGGGr"/>
+        <phase duration="3"  state="GrrrrrGyyyrGrrrrrGyyyyr"/>
         <phase duration="3"  state="rrrrrrrrrrrrrrrrrrrrrrr"/>
     </tlLogic>
 
