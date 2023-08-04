@@ -12,7 +12,7 @@ def calculate_target_index():
                '0000to10_1','0000to10_2','0000to10_3']
 
     # 방향별 가중치 넣는 부분
-    left_right_ratio = 0.8
+    left_right_ratio = 0.6
     left_right_waiting_times = [traci.lane.getWaitingTime(lane_id) for lane_id in left_right]
     up_down_waiting_times = [traci.lane.getWaitingTime(lane_id) for lane_id in up_down]
 
