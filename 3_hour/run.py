@@ -61,7 +61,7 @@ def main():
     current_phases0 = [31.00, 3.00, 17.00, 3.00, 27.00, 3.00, 38.00, 3.00, 52.00, 3.00] # (S-N:31),(S-W,N-E:17),(E-WS:27),(W-E:38),(W-NE:52)
     current_phases1 = [33.00, 3.00, 17.00, 3.00, 22.00, 3.00, 32.00, 3.00, 61.00, 3.00] # (S-N:33),(S-W,N-E:17),(E-WS:22),(W-E:32),(W-NE:61)
     current_phases2 = [66.00, 3.00, 18.00, 4.00, 3.00, 22.00, 3.00, 55.00, 3.00, 3.00] # (S-N:66),(S-N,S-W:18,4),(E-WS:22),(W-E:55) 마지막: 올적
-    
+
     # PSO 중간
     # current_phases0 = [27, 3, 22, 3, 26, 3, 42, 3, 48, 3] 
     # current_phases1 = [31, 3, 19, 3, 19, 3, 35, 3, 61, 3] 
@@ -72,13 +72,13 @@ def main():
     # current_phases1 = [23, 3, 22, 3, 27, 3, 22, 3, 71, 3]
     # current_phases2 = [56, 3, 14, 1, 3, 29, 3, 65, 3, 3]
 
-    options = True
+    options = False
     if options == False:
         sumoBinary = checkBinary('sumo')
     else:
         sumoBinary = checkBinary('sumo-gui')
 
-    while run_step < 3:
+    while run_step < 10:
         print('{}번째 시뮬레이션'.format(run_step+1))
         generate_routefile() # 교통량 생성
 

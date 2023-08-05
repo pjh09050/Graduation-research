@@ -38,7 +38,6 @@ def run():
     print("Average_waiting_time: {:.2f}".format(average))
     traci.close()
     return average
-
 result = []
 def objective_function(x):
     generate_routefile()
@@ -58,7 +57,7 @@ def objective_function(x):
         pd.DataFrame(result).to_csv('result{}.csv'.format(len(result)), header=False, index=False)
     return z
 
-min_dur = [25, 12, 22, 28, 42, 25, 12, 15, 30, 51, 56, 13, 0, 19, 45]
+min_dur = [25, 12, 22, 28, 42, 25, 12, 15, 30, 51, 56, 13, 1, 19, 45]
 cur_dur = [31, 17, 27, 38, 52, 33, 17, 22, 32, 61, 66, 18, 4, 22, 55]
 max_dur = [41, 22, 32, 48, 62, 43, 22, 27, 42, 65, 76, 23, 8, 29, 65]
 
