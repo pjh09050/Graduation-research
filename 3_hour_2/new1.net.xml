@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2023-08-02 20:33:29 by Eclipse SUMO netedit Version 1.16.0
+<!-- generated on 2023-08-08 14:57:00 by Eclipse SUMO netedit Version 1.15.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
@@ -32,7 +32,7 @@
 </configuration>
 -->
 
-<net version="1.16" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+<net version="1.9" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
 
     <location netOffset="300.80,87.40" convBoundary="0.00,0.00,951.20,174.80" origBoundary="-300.80,-87.40,650.40,87.40" projParameter="!"/>
 
@@ -333,38 +333,38 @@
     </edge>
 
     <tlLogic id="00" type="static" programID="0" offset="0">
-        <phase duration="31" state="rGGGrrrrrrrGGGrrrrrr"/>
+        <phase duration="26" state="rGGGrrrrrrrGGGrrrrrr"/>
         <phase duration="3"  state="GyyyrGrrrrGyyyrGrrrr"/>
-        <phase duration="17" state="GrrrGGrrrrGrrrGGrrrr"/>
+        <phase duration="15" state="GrrrGGrrrrGrrrGGrrrr"/>
         <phase duration="3"  state="GrrryGrrrrGrrryGrrrr"/>
-        <phase duration="27" state="GrrrrGGGGGGrrrrGrrrr"/>
+        <phase duration="25" state="GrrrrGGGGGGrrrrGrrrr"/>
         <phase duration="3"  state="GrrrrGyyyyGrrrrGrrrr"/>
-        <phase duration="38" state="rrrrrrGGGrrrrrrrGGGr"/>
+        <phase duration="48" state="rrrrrrGGGrrrrrrrGGGr"/>
         <phase duration="3"  state="GrrrrGyyyrGrrrrGyyyr"/>
-        <phase duration="52" state="GrrrrGrrrrGrrrrGGGGG"/>
+        <phase duration="51" state="GrrrrGrrrrGrrrrGGGGG"/>
         <phase duration="3"  state="GrrrrGrrrrGrrrrGyyyy"/>
     </tlLogic>
     <tlLogic id="000" type="static" programID="0" offset="0">
-        <phase duration="33" state="rGGrrrrrrrGGrrrrrr"/>
+        <phase duration="26" state="rGGrrrrrrrGGrrrrrr"/>
         <phase duration="3"  state="GyyrGrrrrGyyrGrrrr"/>
-        <phase duration="17" state="GrrGGrrrrGrrGGrrrr"/>
+        <phase duration="22" state="GrrGGrrrrGrrGGrrrr"/>
         <phase duration="3"  state="GrryGrrrrGrryGrrrr"/>
-        <phase duration="22" state="GrrrGGGGGGrrrGrrrr"/>
+        <phase duration="17" state="GrrrGGGGGGrrrGrrrr"/>
         <phase duration="3"  state="GrrrGyyyyGrrrGrrrr"/>
-        <phase duration="32" state="rrrrrGGGrrrrrrGGGr"/>
+        <phase duration="42" state="rrrrrGGGrrrrrrGGGr"/>
         <phase duration="3"  state="GrrrGyyyrGrrrGyyyr"/>
-        <phase duration="61" state="GrrrGrrrrGrrrGGGGG"/>
+        <phase duration="58" state="GrrrGrrrrGrrrGGGGG"/>
         <phase duration="3"  state="GrrrGrrrrGrrrGyyyy"/>
     </tlLogic>
     <tlLogic id="0000" type="static" programID="0" offset="0">
-        <phase duration="66" state="rGGGGrrrrrrrGGGGrrrrrrr"/>
+        <phase duration="56" state="rGGGGrrrrrrrGGGGrrrrrrr"/>
         <phase duration="3"  state="GyyyyrGrrrrGyyyyrGrrrrr"/>
-        <phase duration="18" state="GrrrrrGrrrrGGGGGGGrrrrr"/>
-        <phase duration="4"  state="yrrrrryrrrryGGGGGyrrrrr"/>
+        <phase duration="13" state="GrrrrrGrrrrGGGGGGGrrrrr"/>
+        <phase duration="2"  state="yrrrrryrrrryGGGGGyrrrrr"/>
         <phase duration="3"  state="GrrrrrGrrrrGyyyyyGrrrrr"/>
-        <phase duration="22" state="GrrrrrGGGGGGrrrrrGrrrrr"/>
+        <phase duration="29" state="GrrrrrGGGGGGrrrrrGrrrrr"/>
         <phase duration="3"  state="GrrrrrGyyyyGrrrrrGrrrrr"/>
-        <phase duration="55" state="rrrrrrrGGGrrrrrrrrGGGGr"/>
+        <phase duration="65" state="rrrrrrrGGGrrrrrrrrGGGGr"/>
         <phase duration="3"  state="GrrrrrGyyyrGrrrrrGyyyyr"/>
         <phase duration="3"  state="rrrrrrrrrrrrrrrrrrrrrrr"/>
     </tlLogic>

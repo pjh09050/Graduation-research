@@ -66,7 +66,7 @@ def generate_routefile():
         <route id='routeE3_N3' edges='03to0000 0000to10'/>
         <route id='routeE3_S3' edges='03to0000 0000to11'/> """, file=routes)
 
-        color = {'red':(255,0,0), 'gray':(96,96,96), 'white':(255,255,255), 'green':(51,51,0), 'brown':(51,0,0)}
+        color = {'red':(255,0,0), 'green':(96,150,96), 'white':(255,255,255), 'yellow':(255,255,0)}
         for i in range(len(sorted_list)):
             car_type = random.choices(population=["typeCAR", "typeCAR1", "typeBUS"], weights=[0.6, 0.399, 0.001], k=1)[0]
             if car_type == "typeBUS":

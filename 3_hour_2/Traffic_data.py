@@ -39,7 +39,7 @@ def total_traffic():
     W1_cumulative_interval = 0
     for i, interval in enumerate(W1_arrival_intervals):
         # W1출발부터 모든 경로에 대한 확률 가중치 부여 후 경로 선택
-        car_direction = random.choices(population=["routeW1_N1", "routeW1_S1", "routeW1_N2", "routeW1_S2", "routeW1_S3", "routeW1_E3"], weights=[0.1,0.1,0.08,0.05,0.07,0.6], k=1)[0]
+        car_direction = random.choices(population=["routeW1_N1", "routeW1_S1", "routeW1_N2", "routeW1_S2", "routeW1_S3", "routeW1_E3"], weights=[0.1,0.1,0.08,0.05,0.05,0.62], k=1)[0]
         W1_cumulative_interval += interval
         if W1_cumulative_interval > time:
             break
@@ -72,7 +72,7 @@ def total_traffic():
     N1_arrival_intervals = np.random.exponential(scale=1/N1_arrival_rate, size=N1_car)
     N1_cumulative_interval = 0
     for i, interval in enumerate(N1_arrival_intervals):
-        car_direction = random.choices(population=["routeN1_W1", "routeN1_S1", "routeN1_S2", "routeN1_S3", "routeN1_E3"], weights=[0.1, 0.608, 0.015, 0.027, 0.25], k=1)[0]
+        car_direction = random.choices(population=["routeN1_W1", "routeN1_S1", "routeN1_S2", "routeN1_S3", "routeN1_E3"], weights=[0.1, 0.685, 0.015, 0.02, 0.18], k=1)[0]
         N1_cumulative_interval += interval
         if N1_cumulative_interval > time:
             break
@@ -103,7 +103,7 @@ def total_traffic():
     S1_arrival_intervals = np.random.exponential(scale=1/S1_arrival_rate, size=S1_car)
     S1_cumulative_interval = 0
     for i, interval in enumerate(S1_arrival_intervals):
-        car_direction = random.choices(population=["routeS1_W1", "routeS1_N1", "routeS1_S3", "routeS1_E3"], weights=[0.1, 0.623, 0.027, 0.25], k=1)[0]
+        car_direction = random.choices(population=["routeS1_W1", "routeS1_N1", "routeS1_S3", "routeS1_E3"], weights=[0.1, 0.63, 0.02, 0.25], k=1)[0]
         S1_cumulative_interval += interval
         if S1_cumulative_interval > time:
             break
@@ -131,7 +131,7 @@ def total_traffic():
     N2_arrival_intervals = np.random.exponential(scale=1/N2_arrival_rate, size=N2_car)
     N2_cumulative_interval = 0
     for i, interval in enumerate(N2_arrival_intervals):
-        car_direction = random.choices(population=["routeN2_W1", "routeN2_S1", "routeN2_S2", "routeN2_S3", "routeN2_E3"], weights=[0.07, 0.02, 0.5, 0.04, 0.37], k=1)[0]
+        car_direction = random.choices(population=["routeN2_W1", "routeN2_S1", "routeN2_S2", "routeN2_S3", "routeN2_E3"], weights=[0.07, 0.02, 0.5, 0.02, 0.39], k=1)[0]
         N2_cumulative_interval += interval
         if N2_cumulative_interval > time:
             break
@@ -162,7 +162,7 @@ def total_traffic():
     S2_arrival_intervals = np.random.exponential(scale=1/S2_arrival_rate, size=S2_car)
     S2_cumulative_interval = 0
     for i, interval in enumerate(S2_arrival_intervals):
-        car_direction = random.choices(population=["routeS2_W1", "routeS2_N1", "routeS2_N2", "routeS2_S3", "routeS2_E3"], weights=[0.09, 0.01, 0.5, 0.04, 0.36], k=1)[0]
+        car_direction = random.choices(population=["routeS2_W1", "routeS2_N1", "routeS2_N2", "routeS2_S3", "routeS2_E3"], weights=[0.09, 0.01, 0.52, 0.02, 0.36], k=1)[0]
         S2_cumulative_interval += interval
         if S2_cumulative_interval > time:
             break

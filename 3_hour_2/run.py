@@ -82,7 +82,7 @@ def main():
     current_phases1 = [26, 3, 22, 3, 17, 3, 42, 3, 58, 3]
     current_phases2 = [56, 3, 13, 2, 3, 29, 3, 65, 3, 3]
 
-    options = False
+    options = True
     if options == False:
         sumoBinary = checkBinary('sumo')
     else:
@@ -90,7 +90,7 @@ def main():
 
     while run_step < 10:
         print('{}번째 시뮬레이션'.format(run_step+1))
-        generate_routefile() # 교통량 생성
+        generate_routefile() # 교통량 생성S
 
         # traci를 사용하여 sumo와 python을 연결
         traci.start([sumoBinary, "-c", "new.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])

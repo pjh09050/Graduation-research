@@ -72,7 +72,7 @@ def main():
     # current_phases1 = [23, 3, 22, 3, 27, 3, 22, 3, 71, 3]
     # current_phases2 = [56, 3, 14, 1, 3, 29, 3, 65, 3, 3]
 
-    options = False
+    options = True
     if options == False:
         sumoBinary = checkBinary('sumo')
     else:
@@ -83,7 +83,7 @@ def main():
         generate_routefile() # 교통량 생성
 
         # traci를 사용하여 sumo와 python을 연결
-        traci.start([sumoBinary, "-c", "new.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
+        traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
         # sumo에서 신호 세팅해주는 부분
         current_phases0, current_phases1, current_phases2 = modify_phase(current_phases0, current_phases1, current_phases2)
 
