@@ -29,8 +29,8 @@ def run():
 
     while step < max_step+1:
         traci.simulationStep()
-        if step > 1800:
-            target_score = calculate_target_index()
+        if step > 3600:
+            target_score, left_right = calculate_target_index()
             list_cycle.append(target_score)
             average = sum(list_cycle)/len(list_cycle)
             if step % 180 == 0:
@@ -64,7 +64,7 @@ cur_dur = [31, 17, 27, 38, 52, 33, 17, 22, 32, 61, 66, 22, 18, 4, 55]
 max_dur = [41, 22, 32, 48, 62, 43, 22, 27, 42, 65, 76, 29, 23, 8, 65]
 
 # pso 결과
-pso_dur = [24, 24, 23, 48, 46, 23, 22, 27, 22, 71, 56, 15, 21, 8, 65]
+pso_dur = [26, 15, 25, 48, 51, 26, 22, 17, 42, 58, 56, 15, 21, 8, 65]
 
 if __name__ == "__main__":
     bounds = []

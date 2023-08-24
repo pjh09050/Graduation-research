@@ -23,4 +23,8 @@ def calculate_target_index():
     # 모든 방향 가중치 같게 넣는 부분
     # waiting_times = [traci.lane.getWaitingTime(lane_id) for lane_id in lane_ids]
     # average_waiting_time = sum(waiting_times) / len(waiting_times)
-    return average_waiting_time
+
+    # 학교 정왕역만 성능 뽑는 부분
+    left_right_waiting_times = [traci.lane.getWaitingTime(lane_id) for lane_id in left_right]
+    average_left_right_waiting_time = sum(left_right_waiting_times) / len(left_right_waiting_times)
+    return average_waiting_time, average_left_right_waiting_time

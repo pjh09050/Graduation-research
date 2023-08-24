@@ -23,6 +23,7 @@ def run():
     step = 0
     max_step = 10800
     cycle_list = []
+    left_right_list = []
     vehicle_travel_times = {}
     del_lane()
     
@@ -30,10 +31,12 @@ def run():
         traci.simulationStep()
         step += 1
 
-        if step > 1800:
-            target_score = calculate_target_index()
+        if step > 3600:
+            target_score, left_right = calculate_target_index()
             cycle_list.append(target_score)
             cycle_average = sum(cycle_list) / len(cycle_list)
+            left_right_list.append(left_right)
+            left_right_list_average = sum(left_right_list) / len(left_right_list)
 
             vehicle_ids = traci.vehicle.getIDList()
             for vehicle_id in vehicle_ids:
@@ -45,6 +48,8 @@ def run():
 
             if step % 180 == 0:
                 print("{}초 평균 대기 시간 : {:.2f}".format(step, cycle_average))
+                print("{}초 학교->정왕역 평균 대기 시간 : {:.2f}".format(step, left_right_list_average))
+                print("{}초 학교->정왕역 최대 대기 시간 : {:.2f}".format(step, max(left_right_list)))
                 print("{}초 총 이탈 차량 수 : {}, 평균 이동 시간 : {}".format(step, len(vehicle_travel_times), average_travel_time))
         
     print("평균 대기 시간 : {:.3f}".format(cycle_average))
@@ -58,19 +63,14 @@ def main():
     travel_result = []
     
     # 초기 신호 설정값
-    current_phases0 = [31.00, 3.00, 17.00, 3.00, 27.00, 3.00, 38.00, 3.00, 52.00, 3.00] # (S-N:31),(S-W,N-E:17),(E-WS:27),(W-E:38),(W-NE:52)
-    current_phases1 = [33.00, 3.00, 17.00, 3.00, 22.00, 3.00, 32.00, 3.00, 61.00, 3.00] # (S-N:33),(S-W,N-E:17),(E-WS:22),(W-E:32),(W-NE:61)
-    current_phases2 = [66.00, 3.00, 22.00, 3.00, 18.00, 4.00, 3.00, 55.00, 3.00, 3.00] # (S-N:66),(S-N,S-W:18,4),(E-WS:22),(W-E:55) 마지막: 올적
-
-    # 경험 신호주기
-    # current_phases0 = [26, 3, 17, 3, 27, 3, 43, 3, 52, 3]
-    # current_phases1 = [26, 3, 17, 3, 22, 3, 39, 3, 61, 3]
-    # current_phases2 = [60, 3, 22, 3, 18, 4, 3, 61, 3, 3]
+    current_phases0 = [35, 3, 20, 3, 52, 3, 38, 3, 20, 3]
+    current_phases1 = [33, 3, 15, 3, 65, 3, 32, 3, 20, 3]
+    current_phases2 = [47, 3, 25, 3, 18, 24, 3, 51, 3, 3]
 
     # 3시간 PSO
-    # current_phases0 = [26, 3, 15, 3, 25, 3, 48, 3, 51, 3]
-    # current_phases1 = [26, 3, 22, 3, 17, 3, 42, 3, 58, 3]
-    # current_phases2 = [56, 3, 29, 13, 2, 3, 3, 65, 3, 3]
+    # current_phases0 = [43, 3, 16, 3, 43, 3, 48, 3, 15, 3]
+    # current_phases1 = [26, 3, 13, 3, 74, 3, 37, 3, 15, 3]
+    # current_phases2 = [44, 3, 20, 3, 21, 3, 20, 3, 60, 3]
 
     options = True
     if options == False:

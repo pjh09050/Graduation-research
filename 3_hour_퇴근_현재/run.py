@@ -23,6 +23,7 @@ def run():
     step = 0
     max_step = 10800
     cycle_list = []
+    left_right_list = []
     vehicle_travel_times = {}
     del_lane()
     
@@ -30,10 +31,12 @@ def run():
         traci.simulationStep()
         step += 1
 
-        if step > 1800:
-            target_score = calculate_target_index()
+        if step > 3600:
+            target_score, left_right = calculate_target_index()
             cycle_list.append(target_score)
             cycle_average = sum(cycle_list) / len(cycle_list)
+            left_right_list.append(left_right)
+            left_right_list_average = sum(left_right_list) / len(left_right_list)
 
             vehicle_ids = traci.vehicle.getIDList()
             for vehicle_id in vehicle_ids:
@@ -45,6 +48,8 @@ def run():
 
             if step % 180 == 0:
                 print("{}초 평균 대기 시간 : {:.2f}".format(step, cycle_average))
+                print("{}초 학교->정왕역 평균 대기 시간 : {:.2f}".format(step, left_right_list_average))
+                print("{}초 학교->정왕역 최대 대기 시간 : {:.2f}".format(step, max(left_right_list)))
                 print("{}초 총 이탈 차량 수 : {}, 평균 이동 시간 : {}".format(step, len(vehicle_travel_times), average_travel_time))
         
     print("평균 대기 시간 : {:.3f}".format(cycle_average))
