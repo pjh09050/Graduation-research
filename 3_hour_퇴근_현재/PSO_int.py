@@ -14,10 +14,13 @@ class Particle:
         for i in range(len(bounds)):
             self.position.append(int(round(random.uniform(bounds[i][0], bounds[i][1]))))
             self.velocity.append(random.uniform(-1, 1))
-        # x1_sum = sum(self.position[:5])
-        # x2_sum = sum(self.position[5:10])
-        # x3_sum = sum(self.position[10:])
-        # print('초기해', self.position, x1_sum, x2_sum, x3_sum, sum(self.position))
+        x1 = self.position[:5]
+        x2 = self.position[5:10]
+        x3 = self.position[10:]
+        x1_sum = sum(x1)
+        x2_sum = sum(x2)
+        x3_sum = sum(x3)
+        print('초기해', self.position, x1_sum, x2_sum, x3_sum, sum(self.position))
         while True:
             x1_sum = int(round(sum(self.position[:5])))
             x2_sum = int(round(sum(self.position[5:10])))
