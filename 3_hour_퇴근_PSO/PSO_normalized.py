@@ -82,7 +82,7 @@ class Particle:
                     position_idx = minus_list[idx] + 10
                     self.position[position_idx] -= 1
                     self.position[position_idx] = int(round(self.position[position_idx]))
-                    if self.position[position_idx] < 0 and position_idx < 14:
+                    if self.position[position_idx] <= 0 and position_idx < 14:
                         self.position[position_idx] += 1
                         self.position[position_idx] = int(round(self.position[position_idx]))
                         position_idx += 1
@@ -95,7 +95,7 @@ class Particle:
                     position_idx = plus_list[idx] + 10
                     self.position[position_idx] += 1
                     self.position[position_idx] = int(round(self.position[position_idx]))
-                    if self.position[position_idx] < 0 and position_idx < 14:
+                    if self.position[position_idx] <= 0 and position_idx < 14:
                         self.position[position_idx] += 1
                         self.position[position_idx] = int(round(self.position[position_idx]))
                         position_idx += 1
@@ -210,7 +210,7 @@ class Particle:
                     position_idx = minus_list[idx] + 10
                     self.position[position_idx] -= 1
                     self.position[position_idx] = int(round(self.position[position_idx]))
-                    if self.position[position_idx] < 0 and position_idx < 14:
+                    if self.position[position_idx] <= 0 and position_idx < 14:
                         self.position[position_idx] += 1
                         self.position[position_idx] = int(round(self.position[position_idx]))
                         position_idx += 1
@@ -223,7 +223,7 @@ class Particle:
                     position_idx = plus_list[idx] + 10
                     self.position[position_idx] += 1
                     self.position[position_idx] = int(round(self.position[position_idx]))
-                    if self.position[position_idx] < 0 and position_idx < 14:
+                    if self.position[position_idx] <= 0 and position_idx < 14:
                         self.position[position_idx] += 1
                         self.position[position_idx] = int(round(self.position[position_idx]))
                         position_idx += 1
