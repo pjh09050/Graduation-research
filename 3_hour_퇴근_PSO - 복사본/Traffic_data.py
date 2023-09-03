@@ -1,15 +1,25 @@
 import numpy as np
 import random
 
-W1_car = 1253
-N1_car = 1732
-S1_car = 1339
-N2_car = 537
-S2_car = 238
-N3_car = 3542
-S3_car = 3905
-E3_car = 6398
+W1_car = 5400
+N1_car = 1365
+S1_car = 1074
+N2_car = 384
+S2_car = 459
+N3_car = 3441
+S3_car = 5863
+E3_car = 2160
 time = 10800
+
+# W1_car = 4468
+# N1_car = 1537
+# S1_car = 1258
+# N2_car = 456
+# S2_car = 609
+# N3_car = 3375
+# S3_car = 5632
+# E3_car = 2402
+# time = 10800
 
 def total_traffic():
     np.random.seed(1234)
@@ -21,7 +31,7 @@ def total_traffic():
     W1_cumulative_interval = 0
     for i, interval in enumerate(W1_arrival_intervals):
         # W1출발부터 모든 경로에 대한 확률 가중치 부여 후 경로 선택
-        car_direction = random.choices(population=["routeW1_N1", "routeW1_S1", "routeW1_N2", "routeW1_S2", "routeW1_S3", "routeW1_E3"], weights=[0.1,0.1,0.08,0.05,0.05,0.62], k=1)[0]
+        car_direction = random.choices(population=["routeW1_N1", "routeW1_S1", "routeW1_N2", "routeW1_S2", "routeW1_S3", "routeW1_E3"], weights=[0.1,0.1,0.05,0.05,0.05,0.65], k=1)[0]
         W1_cumulative_interval += interval
         if W1_cumulative_interval > time:
             break

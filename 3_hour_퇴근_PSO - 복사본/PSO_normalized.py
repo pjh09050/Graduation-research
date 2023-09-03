@@ -82,7 +82,7 @@ class Particle:
                     position_idx = minus_list[idx] + 10
                     self.position[position_idx] -= 1
                     self.position[position_idx] = int(round(self.position[position_idx]))
-                    if self.position[position_idx] < 0 and position_idx < 14:
+                    if self.position[position_idx] <= 0 and position_idx < 14:
                         self.position[position_idx] += 1
                         self.position[position_idx] = int(round(self.position[position_idx]))
                         position_idx += 1
@@ -95,14 +95,14 @@ class Particle:
                     position_idx = plus_list[idx] + 10
                     self.position[position_idx] += 1
                     self.position[position_idx] = int(round(self.position[position_idx]))
-                    if self.position[position_idx] < 0 and position_idx < 14:
+                    if self.position[position_idx] <= 0 and position_idx < 14:
                         self.position[position_idx] += 1
                         self.position[position_idx] = int(round(self.position[position_idx]))
                         position_idx += 1
         # print('조정 후1', self.position[:5])
         # print('조정 후2', self.position[5:10])
         # print('조정 후3', self.position[10:])
-        # print(self.position, sum(self.position))
+        print(self.position, sum(self.position))
 
     def evaluate_fitness(self, fitness_func):
         # current position에 대한 fitness 계산
@@ -210,7 +210,7 @@ class Particle:
                     position_idx = minus_list[idx] + 10
                     self.position[position_idx] -= 1
                     self.position[position_idx] = int(round(self.position[position_idx]))
-                    if self.position[position_idx] < 0 and position_idx < 14:
+                    if self.position[position_idx] <= 0 and position_idx < 14:
                         self.position[position_idx] += 1
                         self.position[position_idx] = int(round(self.position[position_idx]))
                         position_idx += 1
@@ -223,13 +223,13 @@ class Particle:
                     position_idx = plus_list[idx] + 10
                     self.position[position_idx] += 1
                     self.position[position_idx] = int(round(self.position[position_idx]))
-                    if self.position[position_idx] < 0 and position_idx < 14:
+                    if self.position[position_idx] <= 0 and position_idx < 14:
                         self.position[position_idx] += 1
                         self.position[position_idx] = int(round(self.position[position_idx]))
                         position_idx += 1
-        print('조정 후1', self.position[:5])
-        print('조정 후2', self.position[5:10])
-        print('조정 후3', self.position[10:])
+        # print('조정 후1', self.position[:5])
+        # print('조정 후2', self.position[5:10])
+        # print('조정 후3', self.position[10:])
         print(self.position, sum(self.position))
 
 class PSO:

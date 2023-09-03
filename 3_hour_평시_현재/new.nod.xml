@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<nodes version="1.16" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <node id="00" x="0.0" y="0.0" type="traffic_light" tl="00"/>
+    <node id="1" x="0.0" y="87.4" type="dead_end"/>
+    <node id="2" x="0.0" y="87.4" type="dead_end"/>
+    <node id="3" x="0.0" y="-87.4" type="dead_end"/>
+    <node id="4" x="0.0" y="-87.4" type="dead_end"/>
+    <node id="01" x="-300.8" y="0.0" type="dead_end"/>
+    <node id="02" x="-300.8" y="0.0" type="dead_end"/>
+
+    <node id="c1" x="98.6" y="0.0" type="dead_end"/>
+    <node id="c2" x="98.6" y="0.0" type="dead_end"/>
+    
+    <node id="000" x="210.6" y="0.0" type="traffic_light" tl="000"/>
+    <node id="5" x="210.6" y="87.4" type="dead_end"/>
+    <node id="6" x="210.6" y="87.4" type="dead_end"/>
+    <node id="7" x="210.6" y="-87.4" type="dead_end"/>
+    <node id="8" x="210.6" y="-87.4" type="dead_end"/>
+
+    <node id="c3" x="336.4" y="0.0" type="dead_end"/>
+    <node id="c4" x="398.4" y="0.0" type="dead_end"/>
+    
+
+    <node id="0000" x="439.2" y="0.0" type="traffic_light" tl="0000"/>
+    <node id="9" x="439.2" y="87.4" type="dead_end"/>
+    <node id="10" x="439.2" y="87.4" type="dead_end"/>
+    <node id="11" x="439.2" y="-87.4" type="dead_end"/>
+    <node id="12" x="439.2" y="-87.4" type="dead_end"/>
+    <node id="03" x="650.4" y="0.0" type="dead_end"/>
+    <node id="04" x="650.4" y="0.0" type="dead_end"/>
+
+</nodes>
