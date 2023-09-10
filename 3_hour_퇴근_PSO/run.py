@@ -75,11 +75,11 @@ def main():
     # current_phases0 = [26, 3, 15, 3, 25, 3, 48, 3, 51, 3]
     # current_phases1 = [26, 3, 22, 3, 17, 3, 42, 3, 58, 3]
     # current_phases2 = [56, 3, 15, 3, 21, 8, 3, 65, 3, 3]
-
+                        
     # 3시간 PSO_정규화_가상 데이터
-    # current_phases0 = [33, 3, 8, 3, 26, 3, 43, 3, 55, 3]
-    # current_phases1 = [26, 3, 18, 3, 30, 3, 33, 3, 58, 3]
-    # current_phases2 = [55, 3, 17, 3, 21, 6, 3, 66, 3, 3]
+    # current_phases0 = [, 3, , 3, , 3, , 3, , 3]
+    # current_phases1 = [, 3, , 3, , 3, , 3, , 3]
+    # current_phases2 = [, 3, , 3, , , 3, , 3, 3]
 
     # 3시간 PSO_정규화_실제 데이터
     current_phases0 = [32, 3, 8, 3, 27, 3, 42, 3, 56, 3]
