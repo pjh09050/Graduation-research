@@ -22,11 +22,11 @@ class Particle:
         x2_sum = sum(x2)
         x3_sum = sum(x3)
         x1_normalized = [x / x1_sum for x in x1]
-        x1_adjusted = [int(x * 180) for x in x1_normalized]
+        x1_adjusted = [int(x * 165) for x in x1_normalized]
         x2_normalized = [x / x2_sum for x in x2]
-        x2_adjusted = [int(x * 180) for x in x2_normalized]
+        x2_adjusted = [int(x * 165) for x in x2_normalized]
         x3_normalized = [x / x3_sum for x in x3]
-        x3_adjusted = [int(x * 180) for x in x3_normalized]
+        x3_adjusted = [int(x * 165) for x in x3_normalized]
         self.position = x1_adjusted + x2_adjusted + x3_adjusted
 
         while True: # 합이 495될때까지 반복
@@ -150,11 +150,11 @@ class Particle:
         x2_sum = sum(x2)
         x3_sum = sum(x3)
         x1_normalized = [x / x1_sum for x in x1]
-        x1_adjusted = [int(x * 180) for x in x1_normalized]
+        x1_adjusted = [int(x * 165) for x in x1_normalized]
         x2_normalized = [x / x2_sum for x in x2]
-        x2_adjusted = [int(x * 180) for x in x2_normalized]
+        x2_adjusted = [int(x * 165) for x in x2_normalized]
         x3_normalized = [x / x3_sum for x in x3]
-        x3_adjusted = [int(x * 180) for x in x3_normalized]
+        x3_adjusted = [int(x * 165) for x in x3_normalized]
         self.position = x1_adjusted + x2_adjusted + x3_adjusted
 
         while True: # 합이 495될때까지 반복

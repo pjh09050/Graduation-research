@@ -77,16 +77,16 @@ def main():
     # current_phases2 = [56, 3, 15, 3, 21, 8, 3, 65, 3, 3]
                         
     # 3시간 PSO_정규화_가상 데이터
-    # current_phases0 = [, 3, , 3, , 3, , 3, , 3]
-    # current_phases1 = [, 3, , 3, , 3, , 3, , 3]
-    # current_phases2 = [, 3, , 3, , , 3, , 3, 3]
+    # current_phases0 = [27, 3, 16, 3, 23, 3, 53, 3, 46, 3]
+    # current_phases1 = [41, 3, 15, 3, 14, 3, 40, 3, 55, 3]
+    # current_phases2 = [56, 3, 19, 3, 19, 6, 3, 65, 3, 3]
 
     # 3시간 PSO_정규화_실제 데이터
-    current_phases0 = [32, 3, 8, 3, 27, 3, 42, 3, 56, 3]
-    current_phases1 = [27, 3, 19, 3, 28, 3, 33, 3, 58, 3] 
-    current_phases2 = [55, 3, 17, 3, 21, 6, 3, 66, 3, 3]
+    # current_phases0 = [32, 3, 8, 3, 27, 3, 42, 3, 56, 3]
+    # current_phases1 = [27, 3, 19, 3, 28, 3, 33, 3, 58, 3] 
+    # current_phases2 = [55, 3, 17, 3, 21, 6, 3, 66, 3, 3]
 
-    options = True
+    options = False
     if options == False:
         sumoBinary = checkBinary('sumo')
     else:

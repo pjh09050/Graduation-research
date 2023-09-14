@@ -42,7 +42,7 @@ def run():
 
 result = []
 def objective_function(x):
-    generate_routefile()
+    # generate_routefile()
     y = [num for num in x[:12] for num in (num, 3)]
     y.extend(x[12:13])
     y += [num for num in x[13:] for num in (num, 3)]
