@@ -1,25 +1,25 @@
 import numpy as np
 import random
 
-# W1_car = 5400
-# N1_car = 1365
-# S1_car = 1074
-# N2_car = 384
-# S2_car = 459
-# N3_car = 3441
-# S3_car = 5863
-# E3_car = 2160
-# time = 10800
-
-W1_car = 4468
-N1_car = 1537
-S1_car = 1258
-N2_car = 456
-S2_car = 609
-N3_car = 3375
-S3_car = 5632
-E3_car = 2402
+W1_car = 5400
+N1_car = 1365
+S1_car = 1074
+N2_car = 384
+S2_car = 459
+N3_car = 3441
+S3_car = 5863
+E3_car = 2160
 time = 10800
+
+# W1_car = 4468
+# N1_car = 1537
+# S1_car = 1258
+# N2_car = 456
+# S2_car = 609
+# N3_car = 3375
+# S3_car = 5632
+# E3_car = 2402
+# time = 10800
 
 def total_traffic():
     np.random.seed(1234)
