@@ -63,9 +63,9 @@ def main():
     current_phases2 = [47, 3, 25, 3, 18, 24, 3, 51, 3, 3]
 
     # 3시간 PSO
-    # current_phases0 = [26, 3, 15, 3, 25, 3, 48, 3, 51, 3]
-    # current_phases1 = [26, 3, 22, 3, 17, 3, 42, 3, 58, 3]
-    # current_phases2 = [56, 3, 15, 3, 21, 8, 3, 65, 3, 3]
+    # current_phases0 = [35, 3, 18, 3, 49, 3, 45, 3, 18, 3]
+    # current_phases1 = [33, 3, 12, 3, 64, 3, 41, 3, 15, 3]
+    # current_phases2 = [48, 3, 22, 3, 14, 34, 3, 47, 3, 3]
 
     options = True
     if options == False:
