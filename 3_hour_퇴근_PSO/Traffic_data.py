@@ -1,7 +1,7 @@
 import numpy as np
 import random
 
-W1_car = 5400
+W1_car = 5700
 N1_car = 1365
 S1_car = 1074
 N2_car = 384

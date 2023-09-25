@@ -4,10 +4,10 @@ import random
 W1_car = 3411
 N1_car = 1043
 S1_car = 1072
-N2_car = 405
-S2_car = 649
-N3_car = 2799
-S3_car = 4095
+N2_car = 367
+S2_car = 554
+N3_car = 2705
+S3_car = 4012
 E3_car = 3283
 time = 10800
 

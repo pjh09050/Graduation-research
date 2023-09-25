@@ -10,7 +10,7 @@ from TrafficGenerator import generate_routefile
 from modify_phase import modify_phase
 from del_lane import del_lane
 from performance import calculate_target_index
-from PSO_int import PSO
+from PSO_normalized import PSO
 import numpy as np
 
 if 'SUMO_HOME' in os.environ:
@@ -50,7 +50,7 @@ def objective_function(x):
     x1 = np.array(y[:10])
     x2 = np.array(y[10:20])
     x3 = np.array(y[20:30])
-    traci.start([checkBinary('sumo'), "-c", "new.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--start", "--no-warnings"])
+    traci.start([checkBinary('sumo'), "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--start", "--no-warnings"])
     modify_phase(x1, x2, x3)
     z = run()
     result.append([x, z])
@@ -59,18 +59,18 @@ def objective_function(x):
         pd.DataFrame(result).to_csv('result{}.csv'.format(len(result)), header=False, index=False)
     return z
 
-min_dur = [25, 12, 22, 28, 42, 25, 12, 15, 30, 51, 56, 19, 13, 1, 45]
-cur_dur = [31, 17, 27, 38, 52, 33, 17, 22, 32, 61, 66, 22, 18, 4, 55]
-max_dur = [41, 22, 32, 48, 62, 43, 22, 27, 42, 65, 76, 29, 23, 8, 65]
+min_dur = [35, 12, 22, 48, 13, 31, 12, 22, 42, 23, 56, 19, 13, 1, 45]
+cur_dur = [45, 17, 27, 58, 18, 41, 17, 27, 52, 28, 66, 22, 18, 4, 55]
+max_dur = [50, 22, 32, 63, 23, 46, 22, 32, 57, 38, 76, 29, 23, 8, 65]
 
 # pso 결과
-pso_dur = [26, 15, 25, 48, 51, 26, 22, 17, 42, 58, 56, 15, 21, 8, 65]
+pso_dur = []
 
 if __name__ == "__main__":
     bounds = []
     for i in range(len(min_dur)):
         bounds.append((min_dur[i], max_dur[i]))
-    num_particles = 17
+    num_particles = 20
     maxiter = 100
     pso = PSO(objective_function, bounds, num_particles, maxiter)
     pso.run_result()

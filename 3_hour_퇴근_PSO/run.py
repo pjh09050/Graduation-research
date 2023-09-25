@@ -62,9 +62,9 @@ def main():
     travel_result = []
     
     # 초기 신호 설정값
-    # current_phases0 = [31.00, 3.00, 17.00, 3.00, 27.00, 3.00, 38.00, 3.00, 52.00, 3.00] # (S-N:31),(S-W,N-E:17),(E-WS:27),(W-E:38),(W-NE:52)
-    # current_phases1 = [33.00, 3.00, 17.00, 3.00, 22.00, 3.00, 32.00, 3.00, 61.00, 3.00] # (S-N:33),(S-W,N-E:17),(E-WS:22),(W-E:32),(W-NE:61)
-    # current_phases2 = [66.00, 3.00, 22.00, 3.00, 18.00, 4.00, 3.00, 55.00, 3.00, 3.00] # (S-N:66),(S-N,S-W:18,4),(E-WS:22),(W-E:55) 마지막: 올적
+    current_phases0 = [31.00, 3.00, 17.00, 3.00, 27.00, 3.00, 38.00, 3.00, 52.00, 3.00] # (S-N:31),(S-W,N-E:17),(E-WS:27),(W-E:38),(W-NE:52)
+    current_phases1 = [33.00, 3.00, 17.00, 3.00, 22.00, 3.00, 32.00, 3.00, 61.00, 3.00] # (S-N:33),(S-W,N-E:17),(E-WS:22),(W-E:32),(W-NE:61)
+    current_phases2 = [66.00, 3.00, 22.00, 3.00, 18.00, 4.00, 3.00, 55.00, 3.00, 3.00] # (S-N:66),(S-N,S-W:18,4),(E-WS:22),(W-E:55) 마지막: 올적
 
     # 경험 신호주기
     # current_phases0 = [26, 3, 17, 3, 27, 3, 43, 3, 52, 3]
@@ -86,7 +86,12 @@ def main():
     # current_phases1 = [27, 3, 19, 3, 28, 3, 33, 3, 58, 3] 
     # current_phases2 = [55, 3, 17, 3, 21, 6, 3, 66, 3, 3]
 
-    options = False
+    # 3시간 PSO_정규화_최종
+    # current_phases0 = [26, 3, 23, 3, 23, 3, 46, 3, 47, 3]
+    # current_phases1 = [37, 3, 10, 3, 24, 3, 37, 3, 57, 3] 
+    # current_phases2 = [60, 3, 20, 3, 13, 2, 3, 70, 3, 3]
+
+    options = True
     if options == False:
         sumoBinary = checkBinary('sumo')
     else:
@@ -97,7 +102,8 @@ def main():
         generate_routefile() # 교통량 생성S
 
         # traci를 사용하여 sumo와 python을 연결
-        traci.start([sumoBinary, "-c", "new.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
+        # traci.start([sumoBinary, "-c", "new.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
+        traci.start([sumoBinary, "-c", "new.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--no-warnings"])
         # sumo에서 신호 세팅해주는 부분
         current_phases0, current_phases1, current_phases2 = modify_phase(current_phases0, current_phases1, current_phases2)
 
