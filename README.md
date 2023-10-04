@@ -1,2 +1,2 @@
 # Graduation-research
-강화학습을 이용한 교통 신호 최적화(SUMO 시뮬레이터 사용)
+Particle Swarm Optimization과 SUMO를 이용한 다중 교차로 교통 신호 최적화
