@@ -10,6 +10,8 @@ from modify_phase import modify_phase
 from del_lane import del_lane
 from performance import calculate_target_index
 import pandas as pd
+import matplotlib.pyplot as plt
+plt.rc('font', family='Malgun Gothic')
 
 # $SUMO_HOME/tools directory에서 python module 가져와야 실행 가능
 if 'SUMO_HOME' in os.environ:
@@ -23,21 +25,15 @@ def run():
     step = 0
     max_step = 10800
     cycle_list = []
-    left_right_list = []
+    waiting_time = []
     vehicle_travel_times = {}
     del_lane()
-    
+    average_waiting_time_list = []
     while step < max_step+1:
         traci.simulationStep()
         step += 1
 
-        if step > 3600:
-            target_score, left_right = calculate_target_index()
-            cycle_list.append(target_score)
-            cycle_average = sum(cycle_list) / len(cycle_list)
-            left_right_list.append(left_right)
-            left_right_list_average = sum(left_right_list) / len(left_right_list)
-
+        if step > 10:
             vehicle_ids = traci.vehicle.getIDList()
             for vehicle_id in vehicle_ids:
                 if vehicle_id not in vehicle_travel_times:
@@ -45,21 +41,36 @@ def run():
                 vehicle_travel_times[vehicle_id] += 1
             average_travel_time_list = list(vehicle_travel_times.values())
             average_travel_time = sum(average_travel_time_list) / len(average_travel_time_list)
-
-            if step % 180 == 0:
-                print("{}초 평균 대기 시간 : {:.2f}".format(step, cycle_average))
-                print("{}초 학교->정왕역 평균 대기 시간 : {:.2f}".format(step, left_right_list_average))
-                print("{}초 학교->정왕역 최대 대기 시간 : {:.2f}".format(step, max(left_right_list)))
-                print("{}초 총 이탈 차량 수 : {}, 평균 이동 시간 : {}".format(step, len(vehicle_travel_times), average_travel_time))
         
+            if step > 3600:
+                target_score, left_right = calculate_target_index()
+                cycle_list.append(target_score)
+                cycle_average = sum(cycle_list) / len(cycle_list)
+                average_waiting_time_list.append(cycle_average)
+                            
+                waiting_time.append(left_right)
+                left_right_list_average = sum(waiting_time) / len(waiting_time)
+                
+                if step % 180 == 0:
+                    print("{}초 평균 대기 시간 : {:.2f}".format(step, cycle_average))
+                    print("{}초 학교->정왕역 평균 대기 시간 : {:.2f}".format(step, left_right_list_average))
+                    print("{}초 학교->정왕역 최대 대기 시간 : {:.2f}".format(step, max(waiting_time)))
+                    print("{}초 총 이탈 차량 수 : {}, 평균 이동 시간 : {}".format(step, len(vehicle_travel_times), average_travel_time))
+
     print("평균 대기 시간 : {:.3f}".format(cycle_average))
     print("평균 이동 시간 : {:.3f}".format(average_travel_time))
     traci.close()
+    # print('average_waiting_time_list 길이', len(average_waiting_time_list))
+    # plt.plot(range(3780, step), average_waiting_time_list[180:])
+    # plt.xlabel('Time Step (단위:분)', fontsize=14)
+    # plt.ylabel('Average Waiting Time (단위:분)', fontsize=14)
+    # plt.title('Simulation result', fontsize=16)
+    # plt.show()
     return cycle_average, average_travel_time
 
 def main():
     run_step = 0
-    result = []
+    waiting_result = []
     travel_result = []
     
     # 초기 신호 설정값
@@ -84,27 +95,33 @@ def main():
 
         # traci를 사용하여 sumo와 python을 연결
         traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
+        # traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--no-warnings"])
         # sumo에서 신호 세팅해주는 부분
         current_phases0, current_phases1, current_phases2 = modify_phase(current_phases0, current_phases1, current_phases2)
 
         # sumo 시뮬레이션  성능 추출하는 부분
         average, average_travel_time = run()
 
-        result.append(average)
+        waiting_result.append(average)
         travel_result.append(average_travel_time)
 
         run_step += 1
 
-    result_average = sum(result) / len(result)
+    waiting_result_average = sum(waiting_result) / len(waiting_result)
     travel_result_average = sum(travel_result) / len(travel_result)
 
     print("" "")
-    print('Average_travel_time : ', result)
-    print("Average_waiting_time : ", travel_result_average)
-    print('{}번 시뮬레이션 : 평균 대기 시간 {:.2f}, 평균 이동 시간 {:.2f}'.format(run_step, result_average, travel_result_average))
+    print('Average_travel_time : ', waiting_result)
+    print("Average_waiting_time : ", travel_result)
+    print('{}번 시뮬레이션 : 평균 대기 시간 {:.2f}, 평균 이동 시간 {:.2f}'.format(run_step, waiting_result_average, travel_result_average))
     print("" "")
-    df = pd.DataFrame(result)
-    df.to_csv('{}번 시뮬레이션 결과.csv'.format(run_step))
+    plt.plot(range(run_step), waiting_result)
+    plt.xlabel('Simulation Step', fontsize=14)
+    plt.ylabel('Average Waiting Time Result (단위:분)', fontsize=14)
+    plt.title('Simulation results of 10 iterations', fontsize=16)
+    plt.show()
+    # df = pd.DataFrame([result, travel_result])
+    # df.to_csv('{}번 시뮬레이션 결과.csv'.format(run_step))
 
 if __name__ == "__main__":
     main()

@@ -1,6 +1,7 @@
 import random
 from math import *
 import sys
+import matplotlib.pyplot as plt
 
 class Particle:
     def __init__(self, bounds, max_iter):
@@ -260,4 +261,6 @@ class PSO:
         print('Best position:', self.global_best_position)
         print('sum best position', sum(self.global_best_position))
         print('Best fitness:', self.global_best_fitness)
+        plt.plot(self.fitness_list)
+        plt.show()
         return self.global_best_position, self.global_best_fitness

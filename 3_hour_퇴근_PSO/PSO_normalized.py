@@ -1,6 +1,7 @@
 import random
 from math import *
 import sys
+import matplotlib.pyplot as plt
 
 class Particle:
     def __init__(self, bounds, max_iter):
@@ -240,6 +241,7 @@ class PSO:
         self.max_iter = max_iter
         self.global_best_position = []  # group best position
         self.global_best_fitness = -1  # group best fitness
+        self.fitness_list = []
         self.swarm = [] # 초기 particles
         for i in range(num_particles):
             self.swarm.append(Particle(bounds, self.max_iter))
@@ -253,6 +255,7 @@ class PSO:
                 if self.swarm[j].fitness < self.global_best_fitness or self.global_best_fitness == -1:
                     self.global_best_position = list(self.swarm[j].position)
                     self.global_best_fitness = float(self.swarm[j].fitness)
+                    self.fitness_list.append(self.global_best_fitness)
             # 각 particle의 position과 velocity 업데이트
             for j in range(self.num_particles):
                 self.swarm[j].update_velocity(self.global_best_position)
@@ -260,4 +263,6 @@ class PSO:
         print('Best position:', self.global_best_position)
         print('sum best position', sum(self.global_best_position))
         print('Best fitness:', self.global_best_fitness)
+        plt.plot(self.fitness_list)
+        plt.show()
         return self.global_best_position, self.global_best_fitness
