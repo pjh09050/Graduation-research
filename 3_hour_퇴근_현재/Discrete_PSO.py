@@ -4,6 +4,7 @@ import sys
 import os
 from sumolib import checkBinary  
 import traci
+from TrafficGenerator import generate_routefile
 from modify_phase import modify_phase
 from del_lane import del_lane
 from performance import calculate_target_index
@@ -18,29 +19,33 @@ else:
 def run():
     step = 0
     max_step = 10800
-    cycle_list = []
+    list_cycle = []
+    average = 0
     del_lane()
+
     while step < max_step+1:
         traci.simulationStep()
-        step += 1
-        
         if step > 3600:
             target_score, left_right = calculate_target_index()
-            cycle_list.append(target_score)
-            cycle_average = sum(cycle_list) / len(cycle_list)
-    print("평균 대기 시간 : {:.3f}".format(cycle_average))
+            list_cycle.append(target_score)
+            average = sum(list_cycle)/len(list_cycle)
+            if step % 180 == 0:
+                print("{} Average_waiting_time : {:.2f}".format(step, average))
+        step += 1
+    print("Average_waiting_time: {:.2f}".format(average))
     traci.close()
-    return cycle_average
+    return average
 
 def main(x):
     run_step = 0
     waiting_result = []
 
-    options = False
+    options = True
     if options == False:
         sumoBinary = checkBinary('sumo')
     else:
         sumoBinary = checkBinary('sumo-gui')
+    generate_routefile()
     y = [num for num in x[:12] for num in (num, 3)]
     y.extend(x[12:13])
     y += [num for num in x[13:] for num in (num, 3)]
@@ -50,18 +55,13 @@ def main(x):
     current_phases2 = np.array(y[20:30])
 
     while run_step < 10:
-        # traci를 사용하여 sumo와 python을 연결
         traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
-        # traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--no-warnings"])
-        # sumo에서 신호 세팅해주는 부분
         current_phases0, current_phases1, current_phases2 = modify_phase(current_phases0, current_phases1, current_phases2)
-        # sumo 시뮬레이션  성능 추출하는 부분
         average= run()
         waiting_result.append(average)
         run_step += 1
     waiting_result_average = sum(waiting_result) / len(waiting_result)
     return waiting_result_average
-
 
 class Particle:
     def __init__(self, bounds, max_iter):
@@ -160,10 +160,6 @@ class Particle:
                         self.position[position_idx] += 1
                         self.position[position_idx] = int(round(self.position[position_idx]))
                         position_idx += 1
-        # print('조정 후1', self.position[:5])
-        # print('조정 후2', self.position[5:10])
-        # print('조정 후3', self.position[10:])
-        # print(self.position, sum(self.position))
 
     def evaluate_fitness(self, fitness_func):
         # current position에 대한 fitness 계산
@@ -288,10 +284,6 @@ class Particle:
                         self.position[position_idx] += 1
                         self.position[position_idx] = int(round(self.position[position_idx]))
                         position_idx += 1
-        print('조정 후1', self.position[:5])
-        print('조정 후2', self.position[5:10])
-        print('조정 후3', self.position[10:])
-        print(self.position, sum(self.position))
 
 class PSO:
     def __init__(self, fitness_function, bounds, num_particles, max_iter):
@@ -321,17 +313,17 @@ class PSO:
             for j in range(self.num_particles):
                 self.swarm[j].update_velocity(self.global_best_position)
                 self.swarm[j].update_position(self.bounds)
-        
-        self.min_i = None  # 가장 작은 z 값을 가지는 i의 초기값을 None으로 설정
-        self.min_z = float('inf')  # z의 초기 최솟값을 무한대로 설정
-        for i in self.discrete_pso[-3:]:
+
+        print('discrete pso:', self.discrete_pso)
+        self.min_i = None 
+        self.min_z = float('inf')
+        for i in self.discrete_pso[-2:]:
             z = main(i)
             self.result.append([i, z])
             for i, z in self.result:
                 if z < self.min_z:
                     self.min_i = i
                     self.min_z = z
-        print('discrete pso:', self.discrete_pso)
         print('z :', [self.min_i, self.min_z])
         print('Best position:', self.global_best_position)
         print('sum best position', sum(self.global_best_position))

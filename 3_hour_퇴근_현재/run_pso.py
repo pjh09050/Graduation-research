@@ -70,7 +70,7 @@ if __name__ == "__main__":
     bounds = []
     for i in range(len(min_dur)):
         bounds.append((min_dur[i], max_dur[i]))
-    num_particles = 5
-    maxiter = 5
+    num_particles = 2
+    maxiter = 2
     pso = PSO(objective_function, bounds, num_particles, maxiter)
     pso.run_result()
