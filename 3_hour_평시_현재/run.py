@@ -9,7 +9,6 @@ from TrafficGenerator import generate_routefile
 from modify_phase import modify_phase
 from del_lane import del_lane
 from performance import calculate_target_index
-import pandas as pd
 import matplotlib.pyplot as plt
 plt.rc('font', family='Malgun Gothic')
 
@@ -19,7 +18,6 @@ if 'SUMO_HOME' in os.environ:
     sys.path.append(tools)
 else:
     sys.exit("please declare environment variable 'SUMO_HOME'")
-
 
 def run():
     step = 0
@@ -60,12 +58,11 @@ def run():
     print("평균 대기 시간 : {:.3f}".format(cycle_average))
     print("평균 이동 시간 : {:.3f}".format(average_travel_time))
     traci.close()
-    # print('average_waiting_time_list 길이', len(average_waiting_time_list))
-    # plt.plot(range(3780, step), average_waiting_time_list[180:])
-    # plt.xlabel('Time Step (단위:분)', fontsize=14)
-    # plt.ylabel('Average Waiting Time (단위:분)', fontsize=14)
-    # plt.title('Simulation result', fontsize=16)
-    # plt.show()
+    plt.plot(range(3780, step), average_waiting_time_list[180:])
+    plt.xlabel('Time Step (단위:분)', fontsize=14)
+    plt.ylabel('Average Waiting Time (단위:분)', fontsize=14)
+    plt.title('평시 시간대 Simulation result', fontsize=16)
+    plt.show()
     return cycle_average, average_travel_time
 
 def main():
@@ -74,16 +71,16 @@ def main():
     travel_result = []
     
     # 초기 신호 설정값
-    current_phases0 = [45, 3, 17, 3, 27, 3, 58, 3, 18, 3]
-    current_phases1 = [41, 3, 17, 3, 27, 3, 52, 3, 28, 3] 
-    current_phases2 = [66, 3, 22, 3, 18, 4, 3, 55, 3, 3] 
+    # current_phases0 = [45, 3, 17, 3, 27, 3, 58, 3, 18, 3]
+    # current_phases1 = [41, 3, 17, 3, 27, 3, 52, 3, 28, 3] 
+    # current_phases2 = [66, 3, 22, 3, 18, 4, 3, 55, 3, 3] 
 
     # 3시간 PSO
-    # current_phases0 = [38, 3, 20, 3, 24, 3, 65, 3, 18, 3]
-    # current_phases1 = [34, 3, 13, 3, 25, 3, 60, 3, 33, 3]
-    # current_phases2 = [54, 3, 20, 3, 22, 6, 3, 63, 3, 3]
+    current_phases0 = [38, 3, 20, 3, 24, 3, 65, 3, 18, 3]
+    current_phases1 = [34, 3, 13, 3, 25, 3, 60, 3, 33, 3]
+    current_phases2 = [54, 3, 20, 3, 22, 6, 3, 63, 3, 3]
 
-    options = True
+    options = False
     if options == False:
         sumoBinary = checkBinary('sumo')
     else:
@@ -99,7 +96,7 @@ def main():
         # sumo에서 신호 세팅해주는 부분
         current_phases0, current_phases1, current_phases2 = modify_phase(current_phases0, current_phases1, current_phases2)
 
-        # sumo 시뮬레이션  성능 추출하는 부분
+        # sumo 시뮬레이션 성능 추출하는 부분
         average, average_travel_time = run()
 
         waiting_result.append(average)
@@ -118,10 +115,8 @@ def main():
     plt.plot(range(run_step), waiting_result)
     plt.xlabel('Simulation Step', fontsize=14)
     plt.ylabel('Average Waiting Time Result (단위:분)', fontsize=14)
-    plt.title('Simulation results of 10 iterations', fontsize=16)
+    plt.title('평시 시간대 Simulation results of 10 iterations', fontsize=16)
     plt.show()
-    # df = pd.DataFrame([result, travel_result])
-    # df.to_csv('{}번 시뮬레이션 결과.csv'.format(run_step))
 
 if __name__ == "__main__":
     main()

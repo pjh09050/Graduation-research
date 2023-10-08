@@ -10,7 +10,7 @@ from TrafficGenerator import generate_routefile
 from modify_phase import modify_phase
 from del_lane import del_lane
 from performance import calculate_target_index
-from PSO_int import PSO
+from Discrete_PSO import PSO
 import numpy as np
 
 if 'SUMO_HOME' in os.environ:
@@ -50,7 +50,7 @@ def objective_function(x):
     x1 = np.array(y[:10])
     x2 = np.array(y[10:20])
     x3 = np.array(y[20:30])
-    traci.start([checkBinary('sumo'), "-c", "new.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--start", "--no-warnings"])
+    traci.start([checkBinary('sumo'), "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--start", "--no-warnings"])
     modify_phase(x1, x2, x3)
     z = run()
     result.append([x, z])
@@ -70,7 +70,7 @@ if __name__ == "__main__":
     bounds = []
     for i in range(len(min_dur)):
         bounds.append((min_dur[i], max_dur[i]))
-    num_particles = 17
-    maxiter = 100
+    num_particles = 5
+    maxiter = 5
     pso = PSO(objective_function, bounds, num_particles, maxiter)
     pso.run_result()
