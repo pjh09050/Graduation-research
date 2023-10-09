@@ -45,7 +45,7 @@ def main(x):
         sumoBinary = checkBinary('sumo')
     else:
         sumoBinary = checkBinary('sumo-gui')
-    generate_routefile()
+
     y = [num for num in x[:12] for num in (num, 3)]
     y.extend(x[12:13])
     y += [num for num in x[13:] for num in (num, 3)]
@@ -55,6 +55,7 @@ def main(x):
     current_phases2 = np.array(y[20:30])
 
     while run_step < 10:
+        generate_routefile()
         traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
         current_phases0, current_phases1, current_phases2 = modify_phase(current_phases0, current_phases1, current_phases2)
         average= run()
@@ -324,6 +325,7 @@ class PSO:
                 if z < self.min_z:
                     self.min_i = i
                     self.min_z = z
+        print('discrete pso:', self.discrete_pso)
         print('z :', [self.min_i, self.min_z])
         print('Best position:', self.global_best_position)
         print('sum best position', sum(self.global_best_position))
