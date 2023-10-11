@@ -55,17 +55,17 @@ def run():
                     print("{}초 평균 대기 시간 : {:.2f}".format(step, cycle_average))
                     print("{}초 학교->정왕역 평균 대기 시간 : {:.2f}".format(step, left_right_list_average))
                     print("{}초 학교->정왕역 최대 대기 시간 : {:.2f}".format(step, max(waiting_time)))
-                    print("{}초 총 이탈 차량 수 : {}, 평균 이동 시간 : {}".format(step, len(vehicle_travel_times), average_travel_time))
+                    # print("{}초 총 이탈 차량 수 : {}, 평균 이동 시간 : {}".format(step, len(vehicle_travel_times), average_travel_time))
 
     print("평균 대기 시간 : {:.3f}".format(cycle_average))
-    print("평균 이동 시간 : {:.3f}".format(average_travel_time))
+    # print("평균 이동 시간 : {:.3f}".format(average_travel_time))
     traci.close()
     plt.plot(range(3780, step), average_waiting_time_list[180:])
     plt.xlabel('Time Step (단위:분)', fontsize=14)
     plt.ylabel('Average Waiting Time (단위:분)', fontsize=14)
     plt.title('출근 시간대 Simulation result', fontsize=16)
     plt.show()
-    return cycle_average, average_travel_time
+    return average_waiting_time_list, cycle_average, average_travel_time
 
 def main():
     run_step = 0
@@ -82,7 +82,7 @@ def main():
     current_phases1 = [33, 3, 12, 3, 64, 3, 41, 3, 15, 3]
     current_phases2 = [48, 3, 22, 3, 14, 34, 3, 47, 3, 3]
 
-    options = False
+    options = True
     if options == False:
         sumoBinary = checkBinary('sumo')
     else:
@@ -99,7 +99,7 @@ def main():
         current_phases0, current_phases1, current_phases2 = modify_phase(current_phases0, current_phases1, current_phases2)
 
         # sumo 시뮬레이션  성능 추출하는 부분
-        average, average_travel_time = run()
+        average_waiting_time_list, average, average_travel_time = run()
 
         waiting_result.append(average)
         travel_result.append(average_travel_time)
@@ -112,6 +112,7 @@ def main():
     print("" "")
     print('Average_travel_time : ', waiting_result)
     print("Average_waiting_time : ", travel_result)
+    print()
     print('{}번 시뮬레이션 : 평균 대기 시간 {:.2f}, 평균 이동 시간 {:.2f}'.format(run_step, waiting_result_average, travel_result_average))
     print("" "")
     plt.plot(range(run_step), waiting_result)
