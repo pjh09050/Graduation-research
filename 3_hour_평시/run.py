@@ -76,7 +76,7 @@ def run():
     # plt.ylabel('Average Waiting Time (단위:분)', fontsize=14)
     # plt.title('출근 시간대 Simulation result', fontsize=16)
     # plt.show()
-    return average_waiting_time_list, all_direction_average, left_right_list_average, max(left_right_waiting_time), right_left_list_average, max(left_right_waiting_time), travel_time_average
+    return average_waiting_time_list, all_direction_average, left_right_list_average, max(left_right_waiting_time), right_left_list_average, max(right_left_waiting_time), travel_time_average
 
 def main():
     run_step = 0
@@ -103,7 +103,7 @@ def main():
     else:
         sumoBinary = checkBinary('sumo-gui')
 
-    while run_step < 1:
+    while run_step < 10:
         print('{}번째 시뮬레이션'.format(run_step+1))
         generate_routefile() # 교통량 생성
 
@@ -133,7 +133,7 @@ def main():
     right_left_max_waiting_result1 = []
     travel_result1 = []
 
-    while run_step < 1:
+    while run_step < 10:
         print('{}번째 시뮬레이션'.format(run_step+1))
         generate_routefile() # 교통량 생성
 
@@ -159,83 +159,83 @@ def main():
     # print('{}번 시뮬레이션 : 평균 대기 시간 {:.2f}'.format(run_step, waiting_result_average))
     # print("" "")
 
-    # print('waiting_result = ', waiting_result)
-    # print('waiting_result1 = ', waiting_result1)
-    # print('left_right_result = ', left_right_result)
-    # print('left_right_result1 = ', left_right_result1)
-    # print('left_right_max_waiting_result = ', left_right_max_waiting_result)
-    # print('left_right_max_waiting_result1 = ', left_right_max_waiting_result1)
-    # print('right_left_result = ', right_left_result)
-    # print('right_left_result1 = ', right_left_result1)
-    # print('right_left_max_waiting_result = ', right_left_max_waiting_result)
-    # print('right_left_max_waiting_result1 = ', right_left_max_waiting_result1)
-    # print('travel_result = ', travel_result)
-    # print('travel_result1 = ', travel_result1)
+    print('waiting_result = ', waiting_result)
+    print('waiting_result1 = ', waiting_result1)
+    print('left_right_result = ', left_right_result)
+    print('left_right_result1 = ', left_right_result1)
+    print('left_right_max_waiting_result = ', left_right_max_waiting_result)
+    print('left_right_max_waiting_result1 = ', left_right_max_waiting_result1)
+    print('right_left_result = ', right_left_result)
+    print('right_left_result1 = ', right_left_result1)
+    print('right_left_max_waiting_result = ', right_left_max_waiting_result)
+    print('right_left_max_waiting_result1 = ', right_left_max_waiting_result1)
+    print('travel_result = ', travel_result)
+    print('travel_result1 = ', travel_result1)
     
-    # plt.figure(figsize=(10,8))
-    # plt.boxplot([waiting_result, waiting_result1])
-    # plt.xticks([1,2], labels=['현재 신호', 'PSO 신호'], fontsize=14)
-    # plt.yticks(fontsize=14)
-    # plt.xlabel('평균 대기시간', fontsize=14)
-    # plt.ylabel('Average Waiting Time Result (단위:초)', fontsize=14)
-    # plt.title('평시 시간대 Simulation results of 10 iterations', fontsize=16)
-    # plt.show()
-
-    # plt.figure(figsize=(10,8))
-    # plt.boxplot([left_right_result, left_right_result1])
-    # plt.xticks([1,2], labels=['현재 신호', 'PSO 신호'], fontsize=14)
-    # plt.yticks(fontsize=14)
-    # plt.xlabel('학교 -> 정왕역 평균 대기시간', fontsize=14)
-    # plt.ylabel('학교 -> 정왕역 Average Waiting Time (단위:초)', fontsize=14)
-    # plt.title('평시 시간대 Simulation results of 10 iterations', fontsize=16)
-    # plt.show()
-
-    # plt.figure(figsize=(10,8))
-    # plt.boxplot([left_right_max_waiting_result, left_right_max_waiting_result1])
-    # plt.xticks([1,2], labels=['현재 신호', 'PSO 신호'], fontsize=14)
-    # plt.yticks(fontsize=14)
-    # plt.xlabel('학교 -> 정왕역 최대 대기시간', fontsize=14)
-    # plt.ylabel('학교 -> 정왕역 Max Waiting Time (단위:초)', fontsize=14)
-    # plt.title('평시 시간대 Simulation results of 10 iterations', fontsize=16)
-    # plt.show()
-
-    # plt.figure(figsize=(10,8))
-    # plt.boxplot([right_left_result, right_left_result1])
-    # plt.xticks([1,2], labels=['현재 신호', 'PSO 신호'], fontsize=14)
-    # plt.yticks(fontsize=14)
-    # plt.xlabel('학교 <- 정왕역 평균 대기시간', fontsize=14)
-    # plt.ylabel('학교 <- 정왕역 Average Waiting Time (단위:초)', fontsize=14)
-    # plt.title('평시 시간대 Simulation results of 10 iterations', fontsize=16)
-    # plt.show()
-
-    # plt.figure(figsize=(10,8))
-    # plt.boxplot([right_left_max_waiting_result, right_left_max_waiting_result1])
-    # plt.xticks([1,2], labels=['현재 신호', 'PSO 신호'], fontsize=14)
-    # plt.yticks(fontsize=14)
-    # plt.xlabel('학교 <- 정왕역 최대 대기시간', fontsize=14)
-    # plt.ylabel('학교 <- 정왕역 Max Waiting Time (단위:초)', fontsize=14)
-    # plt.title('평시 시간대 Simulation results of 10 iterations', fontsize=16)
-    # plt.show()
-
-    # plt.figure(figsize=(10,8))
-    # plt.boxplot([travel_result, travel_result1])
-    # plt.xticks([1,2], labels=['현재 신호', 'PSO 신호'], fontsize=14)
-    # plt.yticks(fontsize=14)
-    # plt.xlabel('평균 이동시간', fontsize=14)
-    # plt.ylabel('Average Moving Time Result (단위:초)', fontsize=14)
-    # plt.title('평시 시간대 Simulation results of 10 iterations', fontsize=16)
-    # plt.show()
-
-    plt.figure(figsize=(12,8))
-    plt.plot(range(3780, 10801), average_waiting_time_list[180:])
-    plt.plot(range(3780, 10801), average_waiting_time_list1[180:])
-    plt.xticks(fontsize=14)
+    plt.figure(figsize=(10,8))
+    plt.boxplot([waiting_result, waiting_result1])
+    plt.xticks([1,2], labels=['현재 신호', 'PSO 신호'], fontsize=14)
     plt.yticks(fontsize=14)
-    plt.legend(['현재 신호', 'PSO 신호'])
-    plt.xlabel('Time Step (단위:분)', fontsize=14)
-    plt.ylabel('Average Waiting Time (단위:초)', fontsize=14)
-    plt.title('평시 시간대 Simulation Result', fontsize=16)
+    plt.xlabel('평균 대기시간', fontsize=14)
+    plt.ylabel('Average Waiting Time Result (단위:초)', fontsize=14)
+    plt.title('평시 시간대 Simulation results of 10 iterations', fontsize=16)
     plt.show()
+
+    plt.figure(figsize=(10,8))
+    plt.boxplot([left_right_result, left_right_result1])
+    plt.xticks([1,2], labels=['현재 신호', 'PSO 신호'], fontsize=14)
+    plt.yticks(fontsize=14)
+    plt.xlabel('학교 -> 정왕역 평균 대기시간', fontsize=14)
+    plt.ylabel('학교 -> 정왕역 Average Waiting Time (단위:초)', fontsize=14)
+    plt.title('평시 시간대 Simulation results of 10 iterations', fontsize=16)
+    plt.show()
+
+    plt.figure(figsize=(10,8))
+    plt.boxplot([left_right_max_waiting_result, left_right_max_waiting_result1])
+    plt.xticks([1,2], labels=['현재 신호', 'PSO 신호'], fontsize=14)
+    plt.yticks(fontsize=14)
+    plt.xlabel('학교 -> 정왕역 최대 대기시간', fontsize=14)
+    plt.ylabel('학교 -> 정왕역 Max Waiting Time (단위:초)', fontsize=14)
+    plt.title('평시 시간대 Simulation results of 10 iterations', fontsize=16)
+    plt.show()
+
+    plt.figure(figsize=(10,8))
+    plt.boxplot([right_left_result, right_left_result1])
+    plt.xticks([1,2], labels=['현재 신호', 'PSO 신호'], fontsize=14)
+    plt.yticks(fontsize=14)
+    plt.xlabel('학교 <- 정왕역 평균 대기시간', fontsize=14)
+    plt.ylabel('학교 <- 정왕역 Average Waiting Time (단위:초)', fontsize=14)
+    plt.title('평시 시간대 Simulation results of 10 iterations', fontsize=16)
+    plt.show()
+
+    plt.figure(figsize=(10,8))
+    plt.boxplot([right_left_max_waiting_result, right_left_max_waiting_result1])
+    plt.xticks([1,2], labels=['현재 신호', 'PSO 신호'], fontsize=14)
+    plt.yticks(fontsize=14)
+    plt.xlabel('학교 <- 정왕역 최대 대기시간', fontsize=14)
+    plt.ylabel('학교 <- 정왕역 Max Waiting Time (단위:초)', fontsize=14)
+    plt.title('평시 시간대 Simulation results of 10 iterations', fontsize=16)
+    plt.show()
+
+    plt.figure(figsize=(10,8))
+    plt.boxplot([travel_result, travel_result1])
+    plt.xticks([1,2], labels=['현재 신호', 'PSO 신호'], fontsize=14)
+    plt.yticks(fontsize=14)
+    plt.xlabel('평균 이동시간', fontsize=14)
+    plt.ylabel('Average Moving Time Result (단위:초)', fontsize=14)
+    plt.title('평시 시간대 Simulation results of 10 iterations', fontsize=16)
+    plt.show()
+
+    # plt.figure(figsize=(12,8))
+    # plt.plot(range(3780, 10801), average_waiting_time_list[180:])
+    # plt.plot(range(3780, 10801), average_waiting_time_list1[180:])
+    # plt.xticks(fontsize=14)
+    # plt.yticks(fontsize=14)
+    # plt.legend(['현재 신호', 'PSO 신호'])
+    # plt.xlabel('Time Step (단위:분)', fontsize=14)
+    # plt.ylabel('Average Waiting Time (단위:초)', fontsize=14)
+    # plt.title('평시 시간대 Simulation Result', fontsize=16)
+    # plt.show()
 
     # df = pd.DataFrame([result, travel_result])
     # df.to_csv('{}번 시뮬레이션 결과.csv'.format(run_step))

@@ -76,7 +76,7 @@ def run():
     # plt.ylabel('Average Waiting Time (단위:분)', fontsize=14)
     # plt.title('출근 시간대 Simulation result', fontsize=16)
     # plt.show()
-    return average_waiting_time_list, all_direction_average, left_right_list_average, max(left_right_waiting_time), right_left_list_average, max(left_right_waiting_time), travel_time_average
+    return average_waiting_time_list, all_direction_average, left_right_list_average, max(left_right_waiting_time), right_left_list_average, max(right_left_waiting_time), travel_time_average
 
 def main():
     run_step = 0
@@ -98,24 +98,24 @@ def main():
     # current_phases2 = [60, 3, 22, 3, 18, 4, 3, 61, 3, 3]
 
     # 3시간 PSO
-    current_phases3 = [26, 3, 15, 3, 25, 3, 48, 3, 51, 3]
-    current_phases4 = [26, 3, 22, 3, 17, 3, 42, 3, 58, 3]
-    current_phases5 = [56, 3, 15, 3, 21, 8, 3, 65, 3, 3]
+    # current_phases3 = [26, 3, 15, 3, 25, 3, 48, 3, 51, 3]
+    # current_phases4 = [26, 3, 22, 3, 17, 3, 42, 3, 58, 3]
+    # current_phases5 = [56, 3, 15, 3, 21, 8, 3, 65, 3, 3]
                         
     # 3시간 PSO_정규화_가상 데이터
-    # current_phases0 = [27, 3, 16, 3, 23, 3, 53, 3, 46, 3]
-    # current_phases1 = [41, 3, 15, 3, 14, 3, 40, 3, 55, 3]
-    # current_phases2 = [56, 3, 19, 3, 19, 6, 3, 65, 3, 3]
+    # current_phases3 = [27, 3, 16, 3, 23, 3, 53, 3, 46, 3]
+    # current_phases4 = [41, 3, 15, 3, 14, 3, 40, 3, 55, 3]
+    # current_phases5 = [56, 3, 19, 3, 19, 6, 3, 65, 3, 3]
 
     # 3시간 PSO_정규화_최종
-    # current_phases0 = [26, 3, 23, 3, 23, 3, 46, 3, 47, 3]
-    # current_phases1 = [37, 3, 10, 3, 24, 3, 37, 3, 57, 3] 
-    # current_phases2 = [60, 3, 20, 3, 13, 2, 3, 70, 3, 3]
+    current_phases3 = [26, 3, 23, 3, 23, 3, 46, 3, 47, 3]
+    current_phases4 = [37, 3, 10, 3, 24, 3, 37, 3, 57, 3] 
+    current_phases5 = [60, 3, 20, 3, 13, 2, 3, 70, 3, 3]
 
     # 3시간 PSO_정규화_찐최종
-    # current_phases0 = [23, 3, 20, 3, 21, 3, 42, 3, 59, 3]
-    # current_phases1 = [37, 3, 12, 3, 19, 3, 53, 3, 56, 3] 
-    # current_phases2 = [56, 3, 18, 3, 21, 8, 3, 62, 3, 3]
+    # current_phases3 = [23, 3, 20, 3, 21, 3, 42, 3, 59, 3]
+    # current_phases4 = [37, 3, 12, 3, 19, 3, 53, 3, 56, 3] 
+    # current_phases5 = [56, 3, 18, 3, 21, 8, 3, 62, 3, 3]
 
     options = False
     if options == False:
