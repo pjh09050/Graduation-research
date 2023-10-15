@@ -103,19 +103,19 @@ def main():
     # current_phases5 = [56, 3, 15, 3, 21, 8, 3, 65, 3, 3]
                         
     # 3시간 PSO_정규화_가상 데이터
-    # current_phases3 = [27, 3, 16, 3, 23, 3, 53, 3, 46, 3]
-    # current_phases4 = [41, 3, 15, 3, 14, 3, 40, 3, 55, 3]
-    # current_phases5 = [56, 3, 19, 3, 19, 6, 3, 65, 3, 3]
+    # current_phases6 = [27, 3, 16, 3, 23, 3, 53, 3, 46, 3]
+    # current_phases7 = [41, 3, 15, 3, 14, 3, 40, 3, 55, 3]
+    # current_phases8 = [56, 3, 19, 3, 19, 6, 3, 65, 3, 3]
 
-    # 3시간 PSO_정규화_최종
-    current_phases3 = [26, 3, 23, 3, 23, 3, 46, 3, 47, 3]
-    current_phases4 = [37, 3, 10, 3, 24, 3, 37, 3, 57, 3] 
-    current_phases5 = [60, 3, 20, 3, 13, 2, 3, 70, 3, 3]
+    # # 3시간 PSO_정규화_최종
+    # current_phases9 = [26, 3, 23, 3, 23, 3, 46, 3, 47, 3]
+    # current_phases10 = [37, 3, 10, 3, 24, 3, 37, 3, 57, 3] 
+    # current_phases11 = [60, 3, 20, 3, 13, 2, 3, 70, 3, 3]
 
-    # 3시간 PSO_정규화_찐최종
-    # current_phases3 = [23, 3, 20, 3, 21, 3, 42, 3, 59, 3]
-    # current_phases4 = [37, 3, 12, 3, 19, 3, 53, 3, 56, 3] 
-    # current_phases5 = [56, 3, 18, 3, 21, 8, 3, 62, 3, 3]
+    # # 3시간 PSO_정규화_찐최종
+    current_phases12 = [23, 3, 20, 3, 21, 3, 42, 3, 59, 3]
+    current_phases13 = [37, 3, 12, 3, 19, 3, 53, 3, 56, 3] 
+    current_phases14 = [56, 3, 18, 3, 21, 8, 3, 62, 3, 3]
 
     options = False
     if options == False:
@@ -123,7 +123,7 @@ def main():
     else:
         sumoBinary = checkBinary('sumo-gui')
 
-    while run_step < 10:
+    while run_step < 1:
         print('{}번째 시뮬레이션'.format(run_step+1))
         generate_routefile() # 교통량 생성
 
@@ -145,15 +145,105 @@ def main():
 
         run_step += 1
 
-    run_step = 0
-    waiting_result1 = []
-    left_right_result1 = []
-    left_right_max_waiting_result1 = []
-    right_left_result1 = []
-    right_left_max_waiting_result1 = []
-    travel_result1 = []
+    # run_step = 0
+    # waiting_result1 = []
+    # left_right_result1 = []
+    # left_right_max_waiting_result1 = []
+    # right_left_result1 = []
+    # right_left_max_waiting_result1 = []
+    # travel_result1 = []
 
-    while run_step < 10:
+    # while run_step < 1:
+    #     print('{}번째 시뮬레이션'.format(run_step+1))
+    #     generate_routefile() # 교통량 생성
+
+    #     # traci를 사용하여 sumo와 python을 연결
+    #     traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
+    #     # traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--no-warnings"])
+    #     # sumo에서 신호 세팅해주는 부분
+    #     current_phases3, current_phases4, current_phases5 = modify_phase(current_phases3, current_phases4, current_phases5)
+
+    #     # sumo 시뮬레이션  성능 추출하는 부분
+    #     average_waiting_time_list1, all_direction_average1, left_right_list_average1, max_waiting_time1, right_left_list_average1, left_right_waiting_time1, average_travel_time1 = run()
+
+    #     waiting_result1.append(all_direction_average1)
+    #     left_right_result1.append(left_right_list_average1)
+    #     left_right_max_waiting_result1.append(max_waiting_time1)
+    #     right_left_result1.append(right_left_list_average1)
+    #     right_left_max_waiting_result1.append(left_right_waiting_time1)
+    #     travel_result1.append(average_travel_time1)
+
+    #     run_step += 1
+
+    # run_step = 0
+    # waiting_result2 = []
+    # left_right_result2 = []
+    # left_right_max_waiting_result2 = []
+    # right_left_result2 = []
+    # right_left_max_waiting_result2 = []
+    # travel_result2 = []
+
+    # while run_step < 1:
+    #     print('{}번째 시뮬레이션'.format(run_step+1))
+    #     generate_routefile() # 교통량 생성
+
+    #     # traci를 사용하여 sumo와 python을 연결
+    #     traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
+    #     # traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--no-warnings"])
+    #     # sumo에서 신호 세팅해주는 부분
+    #     current_phases6, current_phases7, current_phases8 = modify_phase(current_phases6, current_phases7, current_phases8)
+
+    #     # sumo 시뮬레이션  성능 추출하는 부분
+    #     average_waiting_time_list2, all_direction_average2, left_right_list_average2, max_waiting_time2, right_left_list_average2, left_right_waiting_time2, average_travel_time2 = run()
+
+    #     waiting_result2.append(all_direction_average2)
+    #     left_right_result2.append(left_right_list_average2)
+    #     left_right_max_waiting_result2.append(max_waiting_time2)
+    #     right_left_result2.append(right_left_list_average2)
+    #     right_left_max_waiting_result2.append(left_right_waiting_time2)
+    #     travel_result2.append(average_travel_time2)
+
+    #     run_step += 1
+
+    # run_step = 0
+    # waiting_result3 = []
+    # left_right_result3 = []
+    # left_right_max_waiting_result3 = []
+    # right_left_result3 = []
+    # right_left_max_waiting_result3 = []
+    # travel_result3 = []
+
+    # while run_step < 1:
+    #     print('{}번째 시뮬레이션'.format(run_step+1))
+    #     generate_routefile() # 교통량 생성
+
+    #     # traci를 사용하여 sumo와 python을 연결
+    #     traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
+    #     # traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--no-warnings"])
+    #     # sumo에서 신호 세팅해주는 부분
+    #     current_phases9, current_phases10, current_phases11 = modify_phase(current_phases9, current_phases10, current_phases11)
+
+    #     # sumo 시뮬레이션  성능 추출하는 부분
+    #     average_waiting_time_list3, all_direction_average3, left_right_list_average3, max_waiting_time3, right_left_list_average3, left_right_waiting_time3, average_travel_time3 = run()
+
+    #     waiting_result3.append(all_direction_average3)
+    #     left_right_result3.append(left_right_list_average3)
+    #     left_right_max_waiting_result3.append(max_waiting_time3)
+    #     right_left_result3.append(right_left_list_average3)
+    #     right_left_max_waiting_result3.append(left_right_waiting_time3)
+    #     travel_result3.append(average_travel_time3)
+
+    #     run_step += 1
+
+    run_step = 0
+    waiting_result4 = []
+    left_right_result4 = []
+    left_right_max_waiting_result4 = []
+    right_left_result4 = []
+    right_left_max_waiting_result4 = []
+    travel_result4 = []
+
+    while run_step < 1:
         print('{}번째 시뮬레이션'.format(run_step+1))
         generate_routefile() # 교통량 생성
 
@@ -161,101 +251,104 @@ def main():
         traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
         # traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--no-warnings"])
         # sumo에서 신호 세팅해주는 부분
-        current_phases3, current_phases4, current_phases5 = modify_phase(current_phases3, current_phases4, current_phases5)
+        current_phases12, current_phases13, current_phases14 = modify_phase(current_phases12, current_phases13, current_phases14)
 
         # sumo 시뮬레이션  성능 추출하는 부분
-        average_waiting_time_list1, all_direction_average1, left_right_list_average1, max_waiting_time1, right_left_list_average1, left_right_waiting_time1, average_travel_time1 = run()
+        average_waiting_time_list4, all_direction_average4, left_right_list_average4, max_waiting_time4, right_left_list_average4, left_right_waiting_time4, average_travel_time4 = run()
 
-        waiting_result1.append(all_direction_average1)
-        left_right_result1.append(left_right_list_average1)
-        left_right_max_waiting_result1.append(max_waiting_time1)
-        right_left_result1.append(right_left_list_average1)
-        right_left_max_waiting_result1.append(left_right_waiting_time1)
-        travel_result1.append(average_travel_time1)
+        waiting_result4.append(all_direction_average4)
+        left_right_result4.append(left_right_list_average4)
+        left_right_max_waiting_result4.append(max_waiting_time4)
+        right_left_result4.append(right_left_list_average4)
+        right_left_max_waiting_result4.append(left_right_waiting_time4)
+        travel_result4.append(average_travel_time4)
 
         run_step += 1
-
     # print('Average_waiting_time : ', waiting_result)
     # print('{}번 시뮬레이션 : 평균 대기 시간 {:.2f}'.format(run_step, waiting_result_average))
     # print("" "")
 
-    print('waiting_result = ', waiting_result)
-    print('waiting_result1 = ', waiting_result1)
-    print('left_right_result = ', left_right_result)
-    print('left_right_result1 = ', left_right_result1)
-    print('left_right_max_waiting_result = ', left_right_max_waiting_result)
-    print('left_right_max_waiting_result1 = ', left_right_max_waiting_result1)
-    print('right_left_result = ', right_left_result)
-    print('right_left_result1 = ', right_left_result1)
-    print('right_left_max_waiting_result = ', right_left_max_waiting_result)
-    print('right_left_max_waiting_result1 = ', right_left_max_waiting_result1)
-    print('travel_result = ', travel_result)
-    print('travel_result1 = ', travel_result1)
+    # print('waiting_result = ', waiting_result)
+    # print('waiting_result1 = ', waiting_result1)
+    # print('left_right_result = ', left_right_result)
+    # print('left_right_result1 = ', left_right_result1)
+    # print('left_right_max_waiting_result = ', left_right_max_waiting_result)
+    # print('left_right_max_waiting_result1 = ', left_right_max_waiting_result1)
+    # print('right_left_result = ', right_left_result)
+    # print('right_left_result1 = ', right_left_result1)
+    # print('right_left_max_waiting_result = ', right_left_max_waiting_result)
+    # print('right_left_max_waiting_result1 = ', right_left_max_waiting_result1)
+    # print('travel_result = ', travel_result)
+    # print('travel_result1 = ', travel_result1)
     
-    plt.figure(figsize=(10,8))
-    plt.boxplot([waiting_result, waiting_result1])
-    plt.xticks([1,2], labels=['현재 신호', 'PSO 신호'], fontsize=14)
-    plt.yticks(fontsize=14)
-    plt.xlabel('평균 대기시간', fontsize=14)
-    plt.ylabel('Average Waiting Time Result (단위:초)', fontsize=14)
-    plt.title('퇴근 시간대 Simulation results of 10 iterations', fontsize=16)
-    plt.show()
-
-    plt.figure(figsize=(10,8))
-    plt.boxplot([left_right_result, left_right_result1])
-    plt.xticks([1,2], labels=['현재 신호', 'PSO 신호'], fontsize=14)
-    plt.yticks(fontsize=14)
-    plt.xlabel('학교 -> 정왕역 평균 대기시간', fontsize=14)
-    plt.ylabel('학교 -> 정왕역 Average Waiting Time (단위:초)', fontsize=14)
-    plt.title('퇴근 시간대 Simulation results of 10 iterations', fontsize=16)
-    plt.show()
-
-    plt.figure(figsize=(10,8))
-    plt.boxplot([left_right_max_waiting_result, left_right_max_waiting_result1])
-    plt.xticks([1,2], labels=['현재 신호', 'PSO 신호'], fontsize=14)
-    plt.yticks(fontsize=14)
-    plt.xlabel('학교 -> 정왕역 최대 대기시간', fontsize=14)
-    plt.ylabel('학교 -> 정왕역 Max Waiting Time (단위:초)', fontsize=14)
-    plt.title('퇴근 시간대 Simulation results of 10 iterations', fontsize=16)
-    plt.show()
-
-    plt.figure(figsize=(10,8))
-    plt.boxplot([right_left_result, right_left_result1])
-    plt.xticks([1,2], labels=['현재 신호', 'PSO 신호'], fontsize=14)
-    plt.yticks(fontsize=14)
-    plt.xlabel('학교 <- 정왕역 평균 대기시간', fontsize=14)
-    plt.ylabel('학교 <- 정왕역 Average Waiting Time (단위:초)', fontsize=14)
-    plt.title('퇴근 시간대 Simulation results of 10 iterations', fontsize=16)
-    plt.show()
-
-    plt.figure(figsize=(10,8))
-    plt.boxplot([right_left_max_waiting_result, right_left_max_waiting_result1])
-    plt.xticks([1,2], labels=['현재 신호', 'PSO 신호'], fontsize=14)
-    plt.yticks(fontsize=14)
-    plt.xlabel('학교 <- 정왕역 최대 대기시간', fontsize=14)
-    plt.ylabel('학교 <- 정왕역 Max Waiting Time (단위:초)', fontsize=14)
-    plt.title('퇴근 시간대 Simulation results of 10 iterations', fontsize=16)
-    plt.show()
-
-    plt.figure(figsize=(10,8))
-    plt.boxplot([travel_result, travel_result1])
-    plt.xticks([1,2], labels=['현재 신호', 'PSO 신호'], fontsize=14)
-    plt.yticks(fontsize=14)
-    plt.xlabel('평균 이동시간', fontsize=14)
-    plt.ylabel('Average Moving Time Result (단위:초)', fontsize=14)
-    plt.title('퇴근 시간대 Simulation results of 10 iterations', fontsize=16)
-    plt.show()
+    # plt.figure(figsize=(12,8))
+    # plt.boxplot([waiting_result, waiting_result1, waiting_result2, waiting_result3, waiting_result4])
+    # plt.xticks([1,2,3,4,5], labels=['현재 신호', 'PSO 1 신호', 'PSO 2 신호', 'PSO 3 신호', 'PSO 4 신호'], fontsize=14)
+    # plt.yticks(fontsize=14)
+    # plt.xlabel('평균 대기시간', fontsize=14)
+    # plt.ylabel('Average Waiting Time Result (단위:초)', fontsize=14)
+    # plt.title('퇴근 시간대 Simulation results of 10 iterations', fontsize=16)
+    # plt.show()
 
     # plt.figure(figsize=(12,8))
-    # plt.plot(range(3780, 10801), average_waiting_time_list[180:])
-    # plt.plot(range(3780, 10801), average_waiting_time_list1[180:])
-    # plt.xticks(fontsize=14)
+    # plt.boxplot([left_right_result, left_right_result1, left_right_result2, left_right_result3, left_right_result4])
+    # plt.xticks([1,2,3,4,5], labels=['현재 신호', 'PSO 1 신호', 'PSO 2 신호', 'PSO 3 신호', 'PSO 4 신호'], fontsize=14)
     # plt.yticks(fontsize=14)
-    # plt.legend(['현재 신호', 'PSO 신호'])
-    # plt.xlabel('Time Step (단위:분)', fontsize=14)
-    # plt.ylabel('Average Waiting Time (단위:초)', fontsize=14)
-    # plt.title('퇴근 시간대 Simulation Result', fontsize=16)
+    # plt.xlabel('학교 -> 정왕역 평균 대기시간', fontsize=14)
+    # plt.ylabel('학교 -> 정왕역 Average Waiting Time (단위:초)', fontsize=14)
+    # plt.title('퇴근 시간대 Simulation results of 10 iterations', fontsize=16)
     # plt.show()
+
+    # plt.figure(figsize=(12,8))
+    # plt.boxplot([left_right_max_waiting_result, left_right_max_waiting_result1, left_right_max_waiting_result2, left_right_max_waiting_result3, left_right_max_waiting_result4])
+    # plt.xticks([1,2,3,4,5], labels=['현재 신호', 'PSO 1 신호', 'PSO 2 신호', 'PSO 3 신호', 'PSO 4 신호'], fontsize=14)
+    # plt.yticks(fontsize=14)
+    # plt.xlabel('학교 -> 정왕역 최대 대기시간', fontsize=14)
+    # plt.ylabel('학교 -> 정왕역 Max Waiting Time (단위:초)', fontsize=14)
+    # plt.title('퇴근 시간대 Simulation results of 10 iterations', fontsize=16)
+    # plt.show()
+
+    # plt.figure(figsize=(12,8))
+    # plt.boxplot([right_left_result, right_left_result1, right_left_result2, right_left_result3, right_left_result4])
+    # plt.xticks([1,2,3,4,5], labels=['현재 신호', 'PSO 1 신호', 'PSO 2 신호', 'PSO 3 신호', 'PSO 4 신호'], fontsize=14)
+    # plt.yticks(fontsize=14)
+    # plt.xlabel('학교 <- 정왕역 평균 대기시간', fontsize=14)
+    # plt.ylabel('학교 <- 정왕역 Average Waiting Time (단위:초)', fontsize=14)
+    # plt.title('퇴근 시간대 Simulation results of 10 iterations', fontsize=16)
+    # plt.show()
+
+    # plt.figure(figsize=(12,8))
+    # plt.boxplot([right_left_max_waiting_result, right_left_max_waiting_result1, right_left_max_waiting_result2, right_left_max_waiting_result3, right_left_max_waiting_result4])
+    # plt.xticks([1,2,3,4,5], labels=['현재 신호', 'PSO 1 신호', 'PSO 2 신호', 'PSO 3 신호', 'PSO 4 신호'], fontsize=14)
+    # plt.yticks(fontsize=14)
+    # plt.xlabel('학교 <- 정왕역 최대 대기시간', fontsize=14)
+    # plt.ylabel('학교 <- 정왕역 Max Waiting Time (단위:초)', fontsize=14)
+    # plt.title('퇴근 시간대 Simulation results of 10 iterations', fontsize=16)
+    # plt.show()
+
+    # plt.figure(figsize=(12,8))
+    # plt.boxplot([travel_result, travel_result1, travel_result2, travel_result3, travel_result4])
+    # plt.xticks([1,2,3,4,5], labels=['현재 신호', 'PSO 1 신호', 'PSO 2 신호', 'PSO 3 신호', 'PSO 4 신호'], fontsize=14)
+    # plt.yticks(fontsize=14)
+    # plt.xlabel('평균 이동시간', fontsize=14)
+    # plt.ylabel('Average Moving Time Result (단위:초)', fontsize=14)
+    # plt.title('퇴근 시간대 Simulation results of 10 iterations', fontsize=16)
+    # plt.show()
+
+    plt.figure(figsize=(12,8))
+    plt.plot(range(3780, 10801), average_waiting_time_list[180:])
+    # plt.plot(range(3780, 10801), average_waiting_time_list1[180:])
+    # plt.plot(range(3780, 10801), average_waiting_time_list2[180:])
+    # plt.plot(range(3780, 10801), average_waiting_time_list3[180:])
+    plt.plot(range(3780, 10801), average_waiting_time_list4[180:])
+    plt.xticks(fontsize=14)
+    plt.yticks(fontsize=14)
+    plt.legend(['현재 신호', 'PSO 신호'])
+    plt.xlabel('Time Step (단위:분)', fontsize=14)
+    plt.ylabel('Average Waiting Time (단위:초)', fontsize=14)
+    plt.title('퇴근 시간대 Simulation Result', fontsize=16)
+    plt.tight_layout()
+    plt.show()
 
     # df = pd.DataFrame([result, travel_result])
     # df.to_csv('{}번 시뮬레이션 결과.csv'.format(run_step))
