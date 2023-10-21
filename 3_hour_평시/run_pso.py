@@ -10,7 +10,7 @@ from TrafficGenerator import generate_routefile
 from modify_phase import modify_phase
 from del_lane import del_lane
 from performance import calculate_target_index
-from PSO_normalized import PSO
+from Discrete_PSO import PSO
 import numpy as np
 
 if 'SUMO_HOME' in os.environ:
@@ -30,7 +30,7 @@ def run():
     while step < max_step+1:
         traci.simulationStep()
         if step > 3600:
-            target_score, left_right = calculate_target_index()
+            target_score, right_left, left_right, up_down, down_up = calculate_target_index()
             list_cycle.append(target_score)
             average = sum(list_cycle)/len(list_cycle)
             if step % 180 == 0:
@@ -72,5 +72,6 @@ if __name__ == "__main__":
         bounds.append((min_dur[i], max_dur[i]))
     num_particles = 20
     maxiter = 100
-    pso = PSO(objective_function, bounds, num_particles, maxiter)
+    best_pick = 5
+    pso = PSO(objective_function, bounds, num_particles, maxiter, best_pick)
     pso.run_result()
