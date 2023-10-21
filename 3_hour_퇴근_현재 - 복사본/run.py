@@ -130,8 +130,8 @@ def main():
     # travel_result = []
     data_list = []
     
-    while run_step < 2:
-        print('{}번째 시뮬레이션'.format(run_step+1))
+    while run_step < 100:
+        print('{}번째 기존 신호 시뮬레이션'.format(run_step+1))
         generate_routefile() # 교통량 생성
 
         # traci를 사용하여 sumo와 python을 연결
@@ -236,8 +236,8 @@ def main():
     # travel_result3 = []
     data_list3 = []
 
-    while run_step < 2:
-        print('{}번째 시뮬레이션'.format(run_step+1))
+    while run_step < 100:
+        print('{}번째 PSO 3 시뮬레이션'.format(run_step+1))
         generate_routefile() # 교통량 생성
 
         # traci를 사용하여 sumo와 python을 연결
@@ -262,51 +262,51 @@ def main():
         run_step += 1
 
 #####################################################################################################################################################################################
-    # waiting_data = [waiting_result, waiting_result3]
-    # left_right_data = [left_right_result, left_right_result3]
-    # right_left_data = [right_left_result, right_left_result3]
-    # up_down_data = [up_down_result, up_down_result3]
-    # down_up_data = [down_up_result, down_up_result3]
+#     waiting_data = [waiting_result, waiting_result3]
+#     left_right_data = [left_right_result, left_right_result3]
+#     right_left_data = [right_left_result, right_left_result3]
+#     up_down_data = [up_down_result, up_down_result3]
+#     down_up_data = [down_up_result, down_up_result3]
 
-    # data_categories = [waiting_data, left_right_data, right_left_data, up_down_data, down_up_data]
-    # category_names = ['모든 방향', '학교 -> 정왕역', '정왕역 -> 학교', '월곶 -> 안산', '안산 -> 월곶']
+#     data_categories = [waiting_data, left_right_data, right_left_data, up_down_data, down_up_data]
+#     category_names = ['모든 방향', '학교 → 정왕역', '정왕역 → 학교', '월곶 → 안산', '안산 → 월곶']
 
-    # fig, axes = plt.subplots(2, 3, figsize=(20, 15), sharey=False, gridspec_kw={'wspace': 0.3, 'hspace': 0.3})
-    # for i, ax in enumerate(axes.flat[:-1]):
-    #     if i < len(data_categories):
-    #         boxplot = ax.boxplot(data_categories[i])
-    #         for box in boxplot['boxes']:
-    #             box.set(linewidth=1)
-    #         ax.set_title(category_names[i], fontsize=20)
-    #         ax.set_xticklabels(['기존 신호', '제안 신호'], fontsize=16)
-    #         ax.set_ylabel('평균 대기시간 (초)', fontsize=16)
-    #         ax.tick_params(axis='both', labelsize=16)
+#     fig, axes = plt.subplots(2, 3, figsize=(12, 8), sharey=False, gridspec_kw={'wspace': 0.3, 'hspace': 0.3})
+#     for i, ax in enumerate(axes.flat[:-1]):
+#         if i < len(data_categories):
+#             boxplot = ax.boxplot(data_categories[i])
+#             for box in boxplot['boxes']:
+#                 box.set(linewidth=1)
+#             ax.set_title(category_names[i], fontsize=20)
+#             ax.set_xticklabels(['기존 신호', '제안 신호'], fontsize=16)
+#             ax.set_ylabel('평균 대기시간 (초)', fontsize=16)
+#             ax.tick_params(axis='both', labelsize=16)
 
-    # fig.delaxes(axes[1, 2])
-    # plt.subplots_adjust(top=0.8)
-    # plt.show()
-#####################################################################################################################################################################################
-    # waiting_data = [waiting_result, waiting_result3]
-    # left_right_data = [left_right_result, left_right_result3]
-    # right_left_data = [right_left_result, right_left_result3]
-    # up_down_data = [up_down_result, up_down_result3]
-    # down_up_data = [down_up_result, down_up_result3]
+#     fig.delaxes(axes[1, 2])
+#     plt.subplots_adjust(top=0.8)
+#     plt.show()
+# #####################################################################################################################################################################################
+#     waiting_data1 = [waiting_result, waiting_result3]
+#     left_right_data1 = [left_right_result, left_right_result3]
+#     right_left_data1 = [right_left_result, right_left_result3]
+#     up_down_data1 = [up_down_result, up_down_result3]
+#     down_up_data1 = [down_up_result, down_up_result3]
 
-    # data_categories = [waiting_data, left_right_data, right_left_data, up_down_data, down_up_data]
-    # category_names = ['모든 방향', '학교 -> 정왕역', '정왕역 -> 학교', '월곶 -> 안산', '안산 -> 월곶']
+#     data_categories = [waiting_data1, left_right_data1, right_left_data1, up_down_data1, down_up_data1]
+#     category_names = ['모든 방향', '학교 → 정왕역', '정왕역 → 학교', '월곶 → 안산', '안산 → 월곶']
 
-    # fig, axes = plt.subplots(1, 5, figsize=(30, 8), sharey=False, gridspec_kw={'wspace': 0.3})
-    # for i, ax in enumerate(axes):
-    #     boxplot = ax.boxplot(data_categories[i])
-    #     for box in boxplot['boxes']:
-    #         box.set(linewidth=1)
-    #     ax.set_title(category_names[i], fontsize=20)
-    #     ax.set_xticklabels(['기존 신호', '제안 신호'], fontsize=16)
-    #     ax.set_ylabel('평균 대기시간 (초)', fontsize=16)
-    #     ax.tick_params(axis='both', labelsize=16)
+#     fig, axes = plt.subplots(1, 5, figsize=(20, 8), sharey=False, gridspec_kw={'wspace': 0.3})
+#     for i, ax in enumerate(axes):
+#         boxplot = ax.boxplot(data_categories[i])
+#         for box in boxplot['boxes']:
+#             box.set(linewidth=1)
+#         ax.set_title(category_names[i], fontsize=20)
+#         ax.set_xticklabels(['기존 신호', '제안 신호'], fontsize=16)
+#         ax.set_ylabel('평균 대기시간 (초)', fontsize=16)
+#         ax.tick_params(axis='both', labelsize=16)
 
-    # plt.subplots_adjust(top=0.8)
-    # plt.show()
+#     plt.subplots_adjust(top=0.8)
+#     plt.show()
 #####################################################################################################################################################################################
     
     # print('current = ', average_waiting_time_list)
@@ -327,10 +327,35 @@ def main():
 
     # df_current = pd.DataFrame([average_waiting_time_list])
     # df_pso = pd.DataFrame([average_waiting_time_list3])
+    df_waiting_result = pd.DataFrame(waiting_result)
+    df_waiting_result1 = pd.DataFrame(waiting_result3)
+    df_waiting_result.to_csv('waiting_result 결과.csv')
+    df_waiting_result1.to_csv('waiting_result3 결과.csv')
+
+    df_left_right_result = pd.DataFrame(left_right_result)
+    df_left_right_result1 = pd.DataFrame(left_right_result3)
+    df_left_right_result.to_csv('left_right_result 결과.csv')
+    df_left_right_result1.to_csv('left_right_result3 결과.csv')
+
+    df_right_left_result = pd.DataFrame(right_left_result)
+    df_right_left_result1 = pd.DataFrame(right_left_result3)
+    df_right_left_result.to_csv('right_left_result 결과.csv')
+    df_right_left_result1.to_csv('right_left_result3 결과.csv')
+
+    df_up_down_result = pd.DataFrame(up_down_result)
+    df_up_down_result1 = pd.DataFrame(up_down_result3)
+    df_up_down_result.to_csv('up_down_result 결과.csv')
+    df_up_down_result1.to_csv('up_down_result3 결과.csv')
+
+    df_down_up_result = pd.DataFrame(down_up_result)
+    df_down_up_result1 = pd.DataFrame(down_up_result3)
+    df_down_up_result.to_csv('down_up_result 결과.csv')
+    df_down_up_result1.to_csv('down_up_result3 결과.csv')
+
     df_current = pd.DataFrame(data_list)
     df_pso = pd.DataFrame(data_list3)
     df_current.to_csv('기존 신호 시뮬레이션 결과.csv')
-    df_pso.to_csv('PSO 신호 시뮬레이션 결과.csv')
+    df_pso.to_csv('PSO 3 신호 시뮬레이션 결과.csv')
     
 if __name__ == "__main__":
     main()
