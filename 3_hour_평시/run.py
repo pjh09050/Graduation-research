@@ -97,6 +97,12 @@ def main():
     current_phases4 = [34, 3, 13, 3, 25, 3, 60, 3, 33, 3]
     current_phases5 = [54, 3, 20, 3, 22, 6, 3, 63, 3, 3]
 
+    # 3시간 Discrete_PSO
+    current_phases6 = [39, 3, 17, 3, 26, 3, 66, 3, 17, 3]
+    current_phases7 = [31, 3, 12, 3, 31, 3, 54, 3, 37, 3]
+    current_phases8 = [54, 3, 18, 3, 22, 7, 3, 64, 3, 3]
+
+    
     options = False
     if options == False:
         sumoBinary = checkBinary('sumo')

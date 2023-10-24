@@ -40,7 +40,7 @@ def main(x):
     run_step = 0
     waiting_result = []
 
-    options = True
+    options = False
     if options == False:
         sumoBinary = checkBinary('sumo')
     else:
