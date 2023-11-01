@@ -98,45 +98,87 @@ def main():
     current_phases4 = [33, 3, 12, 3, 64, 3, 41, 3, 15, 3]
     current_phases5 = [48, 3, 22, 3, 14, 34, 3, 47, 3, 3]
 
+    # 3시간 Discrete_PSO (5번째 입자가 선택됨)
+    current_phases6 = [38, 3, 20, 3, 46, 3, 46, 3, 15, 3]
+    current_phases7 = [24, 3, 12, 3, 73, 3, 41, 3, 15, 3]
+    current_phases8 = [47, 3, 22, 3, 23, 27, 3, 46, 3, 3]
+
     options = False
     if options == False:
         sumoBinary = checkBinary('sumo')
     else:
         sumoBinary = checkBinary('sumo-gui')
 #####################################################################################################################################################################################
-    waiting_result = []
-    left_right_result = []
-    left_right_max_waiting_result = []
-    right_left_result = []
-    right_left_max_waiting_result = []
-    up_down_result = []
-    down_up_result = []
-    # travel_result = []
-    data_list = []
+    # waiting_result = []
+    # left_right_result = []
+    # left_right_max_waiting_result = []
+    # right_left_result = []
+    # right_left_max_waiting_result = []
+    # up_down_result = []
+    # down_up_result = []
+    # # travel_result = []
+    # data_list = []
     
-    while run_step < 100:
-        print('{}번째 기존 신호 시뮬레이션'.format(run_step+1))
-        generate_routefile() # 교통량 생성
+    # while run_step < 100:
+    #     print('{}번째 기존 신호 시뮬레이션'.format(run_step+1))
+    #     generate_routefile() # 교통량 생성
 
-        # traci를 사용하여 sumo와 python을 연결
-        traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
-        # traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--no-warnings"])
-        # sumo에서 신호 세팅해주는 부분
-        current_phases0, current_phases1, current_phases2 = modify_phase(current_phases0, current_phases1, current_phases2)
+    #     # traci를 사용하여 sumo와 python을 연결
+    #     traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
+    #     # traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--no-warnings"])
+    #     # sumo에서 신호 세팅해주는 부분
+    #     current_phases0, current_phases1, current_phases2 = modify_phase(current_phases0, current_phases1, current_phases2)
 
-        # sumo 시뮬레이션  성능 추출하는 부분
-        average_waiting_time_list, all_direction_average, left_right_list_average, max_waiting_time, right_left_list_average, left_right_waiting_time, up_down_list_average, down_up_list_average = run()
+    #     # sumo 시뮬레이션  성능 추출하는 부분
+    #     average_waiting_time_list, all_direction_average, left_right_list_average, max_waiting_time, right_left_list_average, left_right_waiting_time, up_down_list_average, down_up_list_average = run()
 
-        waiting_result.append(all_direction_average)
-        left_right_result.append(left_right_list_average)
-        # left_right_max_waiting_result.append(max_waiting_time)
-        right_left_result.append(right_left_list_average)
-        # right_left_max_waiting_result.append(left_right_waiting_time)
-        up_down_result.append(up_down_list_average)
-        down_up_result.append(down_up_list_average)
-        # travel_result.append(average_travel_time)
-        data_list.append(average_waiting_time_list)
-        run_step += 1
+    #     waiting_result.append(all_direction_average)
+    #     left_right_result.append(left_right_list_average)
+    #     # left_right_max_waiting_result.append(max_waiting_time)
+    #     right_left_result.append(right_left_list_average)
+    #     # right_left_max_waiting_result.append(left_right_waiting_time)
+    #     up_down_result.append(up_down_list_average)
+    #     down_up_result.append(down_up_list_average)
+    #     # travel_result.append(average_travel_time)
+    #     data_list.append(average_waiting_time_list)
+    #     run_step += 1
+#####################################################################################################################################################################################
+
+    # run_step = 0
+    # waiting_result1 = []
+    # left_right_result1 = []
+    # left_right_max_waiting_result1 = []
+    # right_left_result1 = []
+    # right_left_max_waiting_result1 = []
+    # up_down_result1 = []
+    # down_up_result1 = []
+    # # travel_result1 = []
+    # data_list1 = []
+
+    # while run_step < 100:
+    #     print('{}번째 PSO 1 시뮬레이션'.format(run_step+1))
+    #     generate_routefile() # 교통량 생성
+
+    #     # traci를 사용하여 sumo와 python을 연결
+    #     traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
+    #     # traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--no-warnings"])
+    #     # sumo에서 신호 세팅해주는 부분
+    #     current_phases3, current_phases4, current_phases5 = modify_phase(current_phases3, current_phases4, current_phases5)
+
+    #     # sumo 시뮬레이션  성능 추출하는 부분
+    #     average_waiting_time_list1, all_direction_average1, left_right_list_average1, max_waiting_time1, right_left_list_average1, left_right_waiting_time1, up_down_list_average1, down_up_list_average1 = run()
+
+    #     waiting_result1.append(all_direction_average1)
+    #     left_right_result1.append(left_right_list_average1)
+    #     # left_right_max_waiting_result1.append(max_waiting_time1)
+    #     right_left_result1.append(right_left_list_average1)
+    #     # right_left_max_waiting_result1.append(left_right_waiting_time1)
+    #     up_down_result1.append(up_down_list_average1)
+    #     down_up_result1.append(down_up_list_average1)
+    #     # travel_result1.append(average_travel_time1)
+    #     data_list1.append(average_waiting_time_list1)
+
+    #     run_step += 1
 #####################################################################################################################################################################################
 
     run_step = 0
@@ -151,14 +193,14 @@ def main():
     data_list3 = []
 
     while run_step < 100:
-        print('{}번째 PSO 3 시뮬레이션'.format(run_step+1))
+        print('{}번째 PSO 2 시뮬레이션'.format(run_step+1))
         generate_routefile() # 교통량 생성
 
         # traci를 사용하여 sumo와 python을 연결
         traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
         # traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--no-warnings"])
         # sumo에서 신호 세팅해주는 부분
-        current_phases3, current_phases4, current_phases5 = modify_phase(current_phases3, current_phases4, current_phases5)
+        current_phases6, current_phases7, current_phases8 = modify_phase(current_phases6, current_phases7, current_phases8)
 
         # sumo 시뮬레이션  성능 추출하는 부분
         average_waiting_time_list3, all_direction_average3, left_right_list_average3, max_waiting_time3, right_left_list_average3, left_right_waiting_time3, up_down_list_average3, down_up_list_average3 = run()
@@ -174,7 +216,6 @@ def main():
         data_list3.append(average_waiting_time_list3)
 
         run_step += 1
-
 #####################################################################################################################################################################################
 #     waiting_data = [waiting_result, waiting_result3]
 #     left_right_data = [left_right_result, left_right_result3]
@@ -241,35 +282,35 @@ def main():
 
     # df_current = pd.DataFrame([average_waiting_time_list])
     # df_pso = pd.DataFrame([average_waiting_time_list3])
-    df_waiting_result = pd.DataFrame(waiting_result)
+    # df_waiting_result = pd.DataFrame(waiting_result)
     df_waiting_result1 = pd.DataFrame(waiting_result3)
-    df_waiting_result.to_csv('waiting_result 결과.csv')
-    df_waiting_result1.to_csv('waiting_result1 결과.csv')
+    # df_waiting_result.to_csv('waiting_result 결과.csv')
+    df_waiting_result1.to_csv('waiting_result2 결과.csv')
 
-    df_left_right_result = pd.DataFrame(left_right_result)
+    # df_left_right_result = pd.DataFrame(left_right_result)
     df_left_right_result1 = pd.DataFrame(left_right_result3)
-    df_left_right_result.to_csv('left_right_result 결과.csv')
-    df_left_right_result1.to_csv('left_right_result1 결과.csv')
+    # df_left_right_result.to_csv('left_right_result 결과.csv')
+    df_left_right_result1.to_csv('left_right_result2 결과.csv')
 
-    df_right_left_result = pd.DataFrame(right_left_result)
+    # df_right_left_result = pd.DataFrame(right_left_result)
     df_right_left_result1 = pd.DataFrame(right_left_result3)
-    df_right_left_result.to_csv('right_left_result 결과.csv')
-    df_right_left_result1.to_csv('right_left_result1 결과.csv')
+    # df_right_left_result.to_csv('right_left_result 결과.csv')
+    df_right_left_result1.to_csv('right_left_result2 결과.csv')
 
-    df_up_down_result = pd.DataFrame(up_down_result)
+    # df_up_down_result = pd.DataFrame(up_down_result)
     df_up_down_result1 = pd.DataFrame(up_down_result3)
-    df_up_down_result.to_csv('up_down_result 결과.csv')
-    df_up_down_result1.to_csv('up_down_result1 결과.csv')
+    # df_up_down_result.to_csv('up_down_result 결과.csv')
+    df_up_down_result1.to_csv('up_down_result2 결과.csv')
 
-    df_down_up_result = pd.DataFrame(down_up_result)
+    # df_down_up_result = pd.DataFrame(down_up_result)
     df_down_up_result1 = pd.DataFrame(down_up_result3)
-    df_down_up_result.to_csv('down_up_result 결과.csv')
-    df_down_up_result1.to_csv('down_up_result1 결과.csv')
+    # df_down_up_result.to_csv('down_up_result 결과.csv')
+    df_down_up_result1.to_csv('down_up_result2 결과.csv')
 
-    df_current = pd.DataFrame(data_list)
+    # df_current = pd.DataFrame(data_list)
     df_pso = pd.DataFrame(data_list3)
-    df_current.to_csv('기존 신호 시뮬레이션 결과.csv')
-    df_pso.to_csv('PSO 1 신호 시뮬레이션 결과.csv')
+    # df_current.to_csv('기존 신호 시뮬레이션 결과.csv')
+    df_pso.to_csv('PSO 2 신호 시뮬레이션 결과.csv')
     
 if __name__ == "__main__":
     main()
