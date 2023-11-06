@@ -98,13 +98,17 @@ def main():
     current_phases4 = [33, 3, 12, 3, 64, 3, 41, 3, 15, 3]
     current_phases5 = [48, 3, 22, 3, 14, 34, 3, 47, 3, 3]
 
+    # 3시간 Discrete_PSO (5번째 입자가 선택됨)
+    current_phases6 = [38, 3, 20, 3, 46, 3, 46, 3, 15, 3]
+    current_phases7 = [24, 3, 12, 3, 73, 3, 41, 3, 15, 3]
+    current_phases8 = [47, 3, 22, 3, 23, 27, 3, 46, 3, 3]
+
     options = False
     if options == False:
         sumoBinary = checkBinary('sumo')
     else:
         sumoBinary = checkBinary('sumo-gui')
 #####################################################################################################################################################################################
-
     # waiting_result = []
     # left_right_result = []
     # left_right_max_waiting_result = []
@@ -140,6 +144,43 @@ def main():
     #     run_step += 1
 #####################################################################################################################################################################################
 
+    # run_step = 0
+    # waiting_result1 = []
+    # left_right_result1 = []
+    # left_right_max_waiting_result1 = []
+    # right_left_result1 = []
+    # right_left_max_waiting_result1 = []
+    # up_down_result1 = []
+    # down_up_result1 = []
+    # # travel_result1 = []
+    # data_list1 = []
+
+    # while run_step < 100:
+    #     print('{}번째 PSO 1 시뮬레이션'.format(run_step+1))
+    #     generate_routefile() # 교통량 생성
+
+    #     # traci를 사용하여 sumo와 python을 연결
+    #     traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
+    #     # traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--no-warnings"])
+    #     # sumo에서 신호 세팅해주는 부분
+    #     current_phases3, current_phases4, current_phases5 = modify_phase(current_phases3, current_phases4, current_phases5)
+
+    #     # sumo 시뮬레이션  성능 추출하는 부분
+    #     average_waiting_time_list1, all_direction_average1, left_right_list_average1, max_waiting_time1, right_left_list_average1, left_right_waiting_time1, up_down_list_average1, down_up_list_average1 = run()
+
+    #     waiting_result1.append(all_direction_average1)
+    #     left_right_result1.append(left_right_list_average1)
+    #     # left_right_max_waiting_result1.append(max_waiting_time1)
+    #     right_left_result1.append(right_left_list_average1)
+    #     # right_left_max_waiting_result1.append(left_right_waiting_time1)
+    #     up_down_result1.append(up_down_list_average1)
+    #     down_up_result1.append(down_up_list_average1)
+    #     # travel_result1.append(average_travel_time1)
+    #     data_list1.append(average_waiting_time_list1)
+
+    #     run_step += 1
+#####################################################################################################################################################################################
+
     run_step = 0
     waiting_result3 = []
     left_right_result3 = []
@@ -152,7 +193,7 @@ def main():
     data_list3 = []
 
     while run_step < 100:
-        print('{}번째 PSO 3 시뮬레이션'.format(run_step+1))
+        print('{}번째 PSO 2 시뮬레이션'.format(run_step+1))
         generate_routefile() # 교통량 생성
 
         # traci를 사용하여 sumo와 python을 연결
@@ -175,7 +216,6 @@ def main():
         data_list3.append(average_waiting_time_list3)
 
         run_step += 1
-
 #####################################################################################################################################################################################
 #     waiting_data = [waiting_result, waiting_result3]
 #     left_right_data = [left_right_result, left_right_result3]

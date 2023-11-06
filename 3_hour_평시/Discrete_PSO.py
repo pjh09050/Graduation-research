@@ -40,7 +40,7 @@ def main(x):
     run_step = 0
     waiting_result = []
 
-    options = False
+    options = True
     if options == False:
         sumoBinary = checkBinary('sumo')
     else:
@@ -161,7 +161,6 @@ class Particle:
                         self.position[position_idx] += 1
                         self.position[position_idx] = int(round(self.position[position_idx]))
                         position_idx += 1
-        print('초기해 :', self.position, x1_sum, x2_sum, x3_sum)
 
     def evaluate_fitness(self, fitness_func):
         # current position에 대한 fitness 계산

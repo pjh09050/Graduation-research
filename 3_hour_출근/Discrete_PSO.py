@@ -26,7 +26,7 @@ def run():
     while step < max_step+1:
         traci.simulationStep()
         if step > 3600:
-            target_score, left_right = calculate_target_index()
+            target_score, right_left, left_right, up_down, down_up = calculate_target_index()
             list_cycle.append(target_score)
             average = sum(list_cycle)/len(list_cycle)
             if step % 180 == 0:
@@ -287,11 +287,12 @@ class Particle:
                         position_idx += 1
 
 class PSO:
-    def __init__(self, fitness_function, bounds, num_particles, max_iter):
+    def __init__(self, fitness_function, bounds, num_particles, max_iter, best_pick):
         self.fitness_func = fitness_function
         self.bounds = bounds
         self.num_particles = num_particles
         self.max_iter = max_iter
+        self.best_pick = best_pick
         self.global_best_position = []  # group best position
         self.discrete_pso = []
         self.global_best_fitness = -1  # group best fitness
@@ -318,7 +319,7 @@ class PSO:
         print('discrete pso:', self.discrete_pso)
         self.min_i = None 
         self.min_z = float('inf')
-        for i in self.discrete_pso[-2:]:
+        for i in self.discrete_pso[-self.best_pick:]:
             z = main(i)
             self.result.append([i, z])
             for i, z in self.result:
