@@ -72,5 +72,6 @@ if __name__ == "__main__":
         bounds.append((min_dur[i], max_dur[i]))
     num_particles = 30
     maxiter = 65
-    pso = PSO(objective_function, bounds, num_particles, maxiter)
+    best_pick = 5
+    pso = PSO(objective_function, bounds, num_particles, maxiter, best_pick)
     pso.run_result()

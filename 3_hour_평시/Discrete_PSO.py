@@ -316,7 +316,7 @@ class PSO:
                 self.swarm[j].update_velocity(self.global_best_position)
                 self.swarm[j].update_position(self.bounds)
 
-        print('discrete pso:', self.discrete_pso)
+        # print('discrete pso:', self.discrete_pso)
         self.min_i = None 
         self.min_z = float('inf')
         for i in self.discrete_pso[-self.best_pick:]:
@@ -328,7 +328,7 @@ class PSO:
                     self.min_z = z
         print('discrete pso:', self.discrete_pso)
         print('z :', [self.min_i, self.min_z])
-        print('Best position:', self.global_best_position)
+        # print('Best position:', self.global_best_position)
         print('sum best position', sum(self.global_best_position))
         print('Best fitness:', self.global_best_fitness)
         return self.global_best_position, self.global_best_fitness
