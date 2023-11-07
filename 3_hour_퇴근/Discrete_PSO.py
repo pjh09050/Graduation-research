@@ -317,7 +317,7 @@ class PSO:
                 self.swarm[j].update_position(self.bounds)
 
         # print('discrete pso:', self.discrete_pso)
-        self.min_i = None 
+        self.min_i = None
         self.min_z = float('inf')
         for i in self.discrete_pso[-self.best_pick:]:
             z = main(i)
