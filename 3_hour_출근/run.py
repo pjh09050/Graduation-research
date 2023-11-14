@@ -93,11 +93,6 @@ def main():
     current_phases1 = [33, 3, 15, 3, 65, 3, 32, 3, 20, 3]
     current_phases2 = [47, 3, 25, 3, 18, 24, 3, 51, 3, 3]
 
-    # 3시간 PSO
-    current_phases3 = [35, 3, 18, 3, 49, 3, 45, 3, 18, 3]
-    current_phases4 = [33, 3, 12, 3, 64, 3, 41, 3, 15, 3]
-    current_phases5 = [48, 3, 22, 3, 14, 34, 3, 47, 3, 3]
-
     # 3시간 Discrete_PSO (5번째 입자가 선택됨)
     current_phases6 = [38, 3, 20, 3, 46, 3, 46, 3, 15, 3]
     current_phases7 = [24, 3, 12, 3, 73, 3, 41, 3, 15, 3]

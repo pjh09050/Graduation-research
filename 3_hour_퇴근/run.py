@@ -102,12 +102,7 @@ def main():
     # current_phases3 = [26, 3, 15, 3, 25, 3, 48, 3, 51, 3]
     # current_phases4 = [26, 3, 22, 3, 17, 3, 42, 3, 58, 3]
     # current_phases5 = [56, 3, 15, 3, 21, 8, 3, 65, 3, 3]
-                        
-    # 3시간 PSO_정규화
-    current_phases6 = [27, 3, 16, 3, 23, 3, 53, 3, 46, 3]
-    current_phases7 = [41, 3, 15, 3, 14, 3, 40, 3, 55, 3]
-    current_phases8 = [56, 3, 19, 3, 19, 6, 3, 65, 3, 3]
-    
+
     # 3시간 Discrete_PSO
     # current_phases9 = [25, 3, 16, 3, 22, 3, 40, 3, 62, 3]
     # current_phases10 = [25, 3, 20, 3, 27, 3, 41, 3, 52, 3] 
