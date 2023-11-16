@@ -76,7 +76,7 @@ class Particle:
         for i in range(len(bounds)):
             self.position.append((random.uniform(bounds[i][0], bounds[i][1])))
             self.velocity.append(random.uniform(-1, 1))
-
+        print(self.velocity)
         x1 = self.position[:5]
         x2 = self.position[5:10]
         x3 = self.position[10:]

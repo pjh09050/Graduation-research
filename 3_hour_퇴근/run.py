@@ -104,9 +104,9 @@ def main():
     # current_phases5 = [56, 3, 15, 3, 21, 8, 3, 65, 3, 3]
 
     # 3시간 Discrete_PSO
-    # current_phases9 = [25, 3, 16, 3, 22, 3, 40, 3, 62, 3]
-    # current_phases10 = [25, 3, 20, 3, 27, 3, 41, 3, 52, 3] 
-    # current_phases11 = [56, 3, 19, 3, 21, 4, 3, 65, 3, 3]
+    current_phases6 = [25, 3, 16, 3, 22, 3, 40, 3, 62, 3]
+    current_phases7 = [25, 3, 20, 3, 27, 3, 41, 3, 52, 3] 
+    current_phases8 = [56, 3, 19, 3, 21, 4, 3, 65, 3, 3]
 
     options = False
     if options == False:
