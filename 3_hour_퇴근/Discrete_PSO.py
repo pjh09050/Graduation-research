@@ -189,7 +189,7 @@ class Particle:
                 self.velocity[i] = int(round(self.velocity[i]))
             else:
                 self.velocity[i] = int(self.velocity[i])
-        # self.velocity = [int(round(v)) for v in self.velocity]
+        # self.velocity = [int(round(v)) for v in self.velocity
 
     def update_position(self, bounds):
         for i in range(len(self.position)):
