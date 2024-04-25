@@ -108,7 +108,7 @@ def main():
     current_phases7 = [25, 3, 20, 3, 27, 3, 41, 3, 52, 3] 
     current_phases8 = [56, 3, 19, 3, 21, 4, 3, 65, 3, 3]
 
-    options = False
+    options = True
     if options == False:
         sumoBinary = checkBinary('sumo')
     else:
