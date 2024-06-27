@@ -9,6 +9,7 @@ from modify_phase import modify_phase
 from del_lane import del_lane
 from performance import calculate_target_index
 import numpy as np
+import time
 
 if 'SUMO_HOME' in os.environ:
     tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
@@ -22,11 +23,11 @@ def run():
     list_cycle = []
     average = 0
     del_lane()
-
+    start_time = time.time()  # 시작 시간 기록
     while step < max_step+1:
         traci.simulationStep()
         if step > 3600:
-            target_score, left_right = calculate_target_index()
+            target_score, right_left, left_right, up_down, down_up = calculate_target_index()
             list_cycle.append(target_score)
             average = sum(list_cycle)/len(list_cycle)
             if step % 180 == 0:
@@ -34,6 +35,9 @@ def run():
         step += 1
     print("Average_waiting_time: {:.2f}".format(average))
     traci.close()
+    end_time = time.time()  # 종료 시간 기록
+    elapsed_time = end_time - start_time
+    print(f"Execution time: {elapsed_time} seconds")
     return average
 
 def main(x):
@@ -41,7 +45,7 @@ def main(x):
     waiting_result = []
 
     options = True
-    if options == False:
+    if options == True:
         sumoBinary = checkBinary('sumo')
     else:
         sumoBinary = checkBinary('sumo-gui')
@@ -76,7 +80,7 @@ class Particle:
         for i in range(len(bounds)):
             self.position.append((random.uniform(bounds[i][0], bounds[i][1])))
             self.velocity.append(random.uniform(-1, 1))
-        print(self.velocity)
+        #print(self.velocity)
         x1 = self.position[:5]
         x2 = self.position[5:10]
         x3 = self.position[10:]
