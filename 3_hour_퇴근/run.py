@@ -114,10 +114,24 @@ def main():
     # current_phases8 = [56, 3, 18, 3, 19, 8, 3, 64, 3, 3]
 
     # 0.2_1_1
-    current_phases6 = [24, 3, 21, 3, 22, 3, 48, 3, 50, 3]
-    current_phases7 = [40, 3, 12, 3, 23, 3, 40, 3, 50, 3] 
-    current_phases8 = [57, 3, 18, 3, 22, 5, 3, 63, 3, 3]
+    # current_phases6 = [24, 3, 21, 3, 22, 3, 48, 3, 50, 3]
+    # current_phases7 = [40, 3, 12, 3, 23, 3, 40, 3, 50, 3] 
+    # current_phases8 = [57, 3, 18, 3, 22, 5, 3, 63, 3, 3]
 
+    # ga1
+    #current_phases6 = [27, 3, 17, 3, 23, 3, 47, 3, 51, 3]
+    #current_phases7 = [31, 3, 18, 3, 28, 3, 42, 3, 46, 3]
+    #current_phases8 = [61, 3, 16, 3, 19, 8, 3, 61, 3, 3]
+
+    # ga_best
+    # current_phases6 = [27, 3, 17, 3, 23, 3, 47, 3, 51, 3]
+    # current_phases7 = [30, 3, 20, 3, 27, 3, 42, 3, 46, 3]
+    # current_phases8 = [61, 3, 16, 3, 19, 8, 3, 61, 3, 3]
+
+    # aco
+    current_phases6 = [35, 3, 17, 3, 23, 3, 41, 3, 49, 3]
+    current_phases7 = [33, 3, 19, 3, 23, 3, 36, 3, 54, 3]
+    current_phases8 = [56, 3, 22, 3, 20, 8, 3, 59, 3, 3]
 
     options = True
     if options == True:
@@ -243,7 +257,7 @@ def main():
     data_list3 = []
 
     while run_step < 100:
-        print('{}번째 0.2_1_1 시뮬레이션'.format(run_step+1))
+        print('{}번째 aco 신호 시뮬레이션'.format(run_step+1))
         generate_routefile() # 교통량 생성
 
         # traci를 사용하여 sumo와 python을 연결
@@ -336,32 +350,32 @@ def main():
     # df_waiting_result = pd.DataFrame(waiting_result)
     df_waiting_result1 = pd.DataFrame(waiting_result3)
     # df_waiting_result.to_csv('waiting_result 결과.csv')
-    df_waiting_result1.to_csv('퇴근_0.2_1_1_waiting_result 결과.csv')
+    df_waiting_result1.to_csv('퇴근_aco_waiting_result 결과.csv')
 
     # df_left_right_result = pd.DataFrame(left_right_result)
     df_left_right_result1 = pd.DataFrame(left_right_result3)
     # df_left_right_result.to_csv('left_right_result 결과.csv')
-    df_left_right_result1.to_csv('퇴근_0.2_1_1_left_right_result 결과.csv')
+    df_left_right_result1.to_csv('퇴근_aco_left_right_result 결과.csv')
 
     # df_right_left_result = pd.DataFrame(right_left_result)
     df_right_left_result1 = pd.DataFrame(right_left_result3)
     # df_right_left_result.to_csv('right_left_result 결과.csv')
-    df_right_left_result1.to_csv('퇴근_0.2_1_1_right_left_result 결과.csv')
+    df_right_left_result1.to_csv('퇴근_aco_right_left_result 결과.csv')
 
     # df_up_down_result = pd.DataFrame(up_down_result)
     df_up_down_result1 = pd.DataFrame(up_down_result3)
     # df_up_down_result.to_csv('up_down_result 결과.csv')
-    df_up_down_result1.to_csv('퇴근_0.2_1_1_up_down_result 결과.csv')
+    df_up_down_result1.to_csv('퇴근_aco_up_down_result 결과.csv')
 
     # df_down_up_result = pd.DataFrame(down_up_result)
     df_down_up_result1 = pd.DataFrame(down_up_result3)
     # df_down_up_result.to_csv('down_up_result 결과.csv')
-    df_down_up_result1.to_csv('퇴근_0.2_1_1_down_up_result 결과.csv')
+    df_down_up_result1.to_csv('퇴근_aco_down_up_result 결과.csv')
 
     # df_current = pd.DataFrame(data_list)
     df_pso = pd.DataFrame(data_list3)
     # df_current.to_csv('기존 신호 시뮬레이션 결과.csv')
-    df_pso.to_csv('퇴근_0.2_1_1_신호 시뮬레이션 결과.csv')
+    df_pso.to_csv('퇴근_aco_신호 시뮬레이션 결과.csv')
     
 if __name__ == "__main__":
     main()

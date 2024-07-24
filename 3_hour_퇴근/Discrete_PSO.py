@@ -94,6 +94,7 @@ class Particle:
         x3_normalized = [x / x3_sum for x in x3]
         x3_adjusted = [int(x * 165) for x in x3_normalized]
         self.position = x1_adjusted + x2_adjusted + x3_adjusted
+        print(self.position)
 
         while True: # 합이 495될때까지 반복
             x1_sum = int(round(sum(self.position[:5])))
