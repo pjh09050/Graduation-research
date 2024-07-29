@@ -30,11 +30,14 @@ def run():
     while step < max_step+1:
         traci.simulationStep()
         if step > 3600:
+            start_time = time.time()
             target_score, right_left, left_right, up_down, down_up = calculate_target_index()
             list_cycle.append(target_score)
             average = sum(list_cycle)/len(list_cycle)
             if step % 180 == 0:
                 print("{} Average_waiting_time : {:.2f}".format(step, average))
+            end_time = time.time()
+            print('단위 스텝(Sec): ', end_time-start_time)
         step += 1
     print("Average_waiting_time: {:.2f}".format(average))
     traci.close()

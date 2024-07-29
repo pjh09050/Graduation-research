@@ -1,14 +1,14 @@
 import numpy as np
 import random
 
-W1_car = 5400
-N1_car = 1365
-S1_car = 1074
-N2_car = 384
-S2_car = 459
-N3_car = 3441
-S3_car = 5863
-E3_car = 2160
+W1_car = 5400 # A에서 등장
+N1_car = 1365  # B1에서 등장
+S1_car = 1074 # C1에서 등장
+N2_car = 384 # B2에서 등장
+S2_car = 459 # C2에서 등장
+N3_car = 3441 # B3에서 등장
+S3_car = 5863 # C3에서 등장
+E3_car = 2160 # D에서 등장
 time = 10800
 
 # W1_car = 4468
