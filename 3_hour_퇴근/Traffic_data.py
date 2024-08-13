@@ -1,25 +1,25 @@
 import numpy as np
 import random
 
-W1_car = 5400 # A에서 등장
-N1_car = 1365  # B1에서 등장
-S1_car = 1074 # C1에서 등장
-N2_car = 384 # B2에서 등장
-S2_car = 459 # C2에서 등장
-N3_car = 3441 # B3에서 등장
-S3_car = 5863 # C3에서 등장
-E3_car = 2160 # D에서 등장
-time = 10800
-
-# W1_car = 4468
-# N1_car = 1537
-# S1_car = 1258
-# N2_car = 456
-# S2_car = 609
-# N3_car = 3375
-# S3_car = 5632
-# E3_car = 2402
+# W1_car = 5400 # A에서 등장
+# N1_car = 1365  # B1에서 등장
+# S1_car = 1074 # C1에서 등장
+# N2_car = 384 # B2에서 등장
+# S2_car = 459 # C2에서 등장
+# N3_car = 3441 # B3에서 등장
+# S3_car = 5863 # C3에서 등장
+# E3_car = 2160 # D에서 등장
 # time = 10800
+
+W1_car = 7150
+N1_car = 1770
+S1_car = 1382
+N2_car = 502
+S2_car = 602
+N3_car = 4538
+S3_car = 7758
+E3_car = 2830
+time = 14400
 
 def total_traffic():
     np.random.seed(1234)

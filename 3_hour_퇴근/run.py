@@ -12,6 +12,7 @@ from performance import calculate_target_index
 import matplotlib.pyplot as plt
 plt.rc('font', family='Malgun Gothic')
 import pandas as pd
+import time
 
 # $SUMO_HOME/tools directory에서 python module 가져와야 실행 가능
 if 'SUMO_HOME' in os.environ:
@@ -22,7 +23,8 @@ else:
 
 def run():
     step = 0
-    max_step = 10800
+    max_step = 14400
+    total_departed_vehicles = 0
     all_direction_list = []
     right_left_waiting_time = []
     left_right_waiting_time = []
@@ -34,6 +36,7 @@ def run():
     del_lane()
 
     while step < max_step+1:
+        start_time = time.time()
         traci.simulationStep()
         step += 1
 
@@ -48,6 +51,10 @@ def run():
 
         if step > 3600:
             # 평균 뽑아오기
+            # 현재 스텝에서 퇴출된 차량 ID 목록을 가져옴
+            arrived_vehicles = traci.simulation.getArrivedIDList()
+            # 퇴출된 차량 수를 카운트에 추가
+            total_departed_vehicles += len(arrived_vehicles)
             all_direction, right_left, left_right, up_down, down_up = calculate_target_index()
             # 모든 방향 평균 
             all_direction_list.append(all_direction)
@@ -76,7 +83,9 @@ def run():
                 print("{}초 48 -> 49 평균 대기 시간 : {:.2f}".format(step, up_down_list_average))
                 print("{}초 48 <- 49 평균 대기 시간 : {:.2f}".format(step, down_up_list_average))
                 # print("{}초 총 이탈 차량 수 : {}, 평균 이동 시간 : {}".format(step, len(vehicle_travel_times), travel_time_average))
-
+        end_time = time.time()
+    print('1회 시뮬레이션 시간', end_time-start_time)
+    print(f"총 통과한 차량 수: {total_departed_vehicles}")
     print("평균 대기 시간 : {:.3f}".format(all_direction_average))
     traci.close()
     # plt.plot(range(3780, step), average_waiting_time_list[180:])
@@ -93,30 +102,10 @@ def main():
     current_phases1 = [33, 3, 17, 3, 22, 3, 32, 3, 61, 3] 
     current_phases2 = [66, 3, 22, 3, 18, 4, 3, 55, 3, 3] 
 
-    # 경험 신호주기
-    # current_phases0 = [26, 3, 17, 3, 27, 3, 43, 3, 52, 3]
-    # current_phases1 = [26, 3, 17, 3, 22, 3, 39, 3, 61, 3]
-    # current_phases2 = [60, 3, 22, 3, 18, 4, 3, 61, 3, 3]
-
-    # 3시간 PSO
-    # current_phases3 = [26, 3, 15, 3, 25, 3, 48, 3, 51, 3]
-    # current_phases4 = [26, 3, 22, 3, 17, 3, 42, 3, 58, 3]
-    # current_phases5 = [56, 3, 15, 3, 21, 8, 3, 65, 3, 3]
-
-    # 3시간 Discrete_PSO
-    # current_phases6 = [25, 3, 16, 3, 22, 3, 40, 3, 62, 3]
-    # current_phases7 = [25, 3, 20, 3, 27, 3, 41, 3, 52, 3] 
-    # current_phases8 = [56, 3, 19, 3, 21, 4, 3, 65, 3, 3]
-
     # 0.5_1_1
-    # current_phases6 = [24, 3, 21, 3, 22, 3, 47, 3, 51, 3]
-    # current_phases7 = [32, 3, 12, 3, 27, 3, 42, 3, 52, 3] 
-    # current_phases8 = [56, 3, 18, 3, 19, 8, 3, 64, 3, 3]
-
-    # 0.2_1_1
-    # current_phases6 = [24, 3, 21, 3, 22, 3, 48, 3, 50, 3]
-    # current_phases7 = [40, 3, 12, 3, 23, 3, 40, 3, 50, 3] 
-    # current_phases8 = [57, 3, 18, 3, 22, 5, 3, 63, 3, 3]
+    current_phases6 = [24, 3, 21, 3, 22, 3, 47, 3, 51, 3]
+    current_phases7 = [32, 3, 12, 3, 27, 3, 42, 3, 52, 3] 
+    current_phases8 = [56, 3, 18, 3, 19, 8, 3, 64, 3, 3]
 
     # ga1
     #current_phases6 = [27, 3, 17, 3, 23, 3, 47, 3, 51, 3]
@@ -129,9 +118,9 @@ def main():
     # current_phases8 = [61, 3, 16, 3, 19, 8, 3, 61, 3, 3]
 
     # aco
-    current_phases6 = [35, 3, 17, 3, 23, 3, 41, 3, 49, 3]
-    current_phases7 = [33, 3, 19, 3, 23, 3, 36, 3, 54, 3]
-    current_phases8 = [56, 3, 22, 3, 20, 8, 3, 59, 3, 3]
+    # current_phases6 = [35, 3, 17, 3, 23, 3, 41, 3, 49, 3]
+    # current_phases7 = [33, 3, 19, 3, 23, 3, 36, 3, 54, 3]
+    # current_phases8 = [56, 3, 22, 3, 20, 8, 3, 59, 3, 3]
 
     options = True
     if options == True:
@@ -257,7 +246,7 @@ def main():
     data_list3 = []
 
     while run_step < 100:
-        print('{}번째 aco 신호 시뮬레이션'.format(run_step+1))
+        print('{}번째 pso 신호 시뮬레이션'.format(run_step+1))
         generate_routefile() # 교통량 생성
 
         # traci를 사용하여 sumo와 python을 연결

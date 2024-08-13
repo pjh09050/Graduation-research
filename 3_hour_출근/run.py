@@ -12,7 +12,7 @@ from performance import calculate_target_index
 import matplotlib.pyplot as plt
 plt.rc('font', family='Malgun Gothic')
 import pandas as pd
-
+import time
 # $SUMO_HOME/tools directory에서 python module 가져와야 실행 가능
 if 'SUMO_HOME' in os.environ:
     tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
@@ -22,7 +22,8 @@ else:
 
 def run():
     step = 0
-    max_step = 10800
+    max_step = 14400
+    total_departed_vehicles = 0
     all_direction_list = []
     right_left_waiting_time = []
     left_right_waiting_time = []
@@ -34,9 +35,13 @@ def run():
     del_lane()
 
     while step < max_step+1:
+        start_time = time.time()
         traci.simulationStep()
         step += 1
-
+        # 현재 스텝에서 퇴출된 차량 ID 목록을 가져옴
+        arrived_vehicles = traci.simulation.getArrivedIDList()
+        # 퇴출된 차량 수를 카운트에 추가
+        total_departed_vehicles += len(arrived_vehicles)
         # if step > 100:
         #     vehicle_ids = traci.vehicle.getIDList()
         #     for vehicle_id in vehicle_ids:
@@ -77,6 +82,9 @@ def run():
                 print("{}초 48 <- 49 평균 대기 시간 : {:.2f}".format(step, down_up_list_average))
                 # print("{}초 총 이탈 차량 수 : {}, 평균 이동 시간 : {}".format(step, len(vehicle_travel_times), travel_time_average))
 
+        end_time = time.time()
+    print('1회 시뮬레이션 시간', end_time-start_time)
+    print(f"총 통과한 차량 수: {total_departed_vehicles}")
     print("평균 대기 시간 : {:.3f}".format(all_direction_average))
     traci.close()
     # plt.plot(range(3780, step), average_waiting_time_list[180:])
@@ -104,39 +112,39 @@ def main():
     else:
         sumoBinary = checkBinary('sumo-gui')
 #####################################################################################################################################################################################
-    # waiting_result = []
-    # left_right_result = []
-    # left_right_max_waiting_result = []
-    # right_left_result = []
-    # right_left_max_waiting_result = []
-    # up_down_result = []
-    # down_up_result = []
-    # # travel_result = []
-    # data_list = []
+    waiting_result = []
+    left_right_result = []
+    left_right_max_waiting_result = []
+    right_left_result = []
+    right_left_max_waiting_result = []
+    up_down_result = []
+    down_up_result = []
+    # travel_result = []
+    data_list = []
     
-    # while run_step < 100:
-    #     print('{}번째 기존 신호 시뮬레이션'.format(run_step+1))
-    #     generate_routefile() # 교통량 생성
+    while run_step < 100:
+        print('{}번째 기존 신호 시뮬레이션'.format(run_step+1))
+        generate_routefile() # 교통량 생성
 
-    #     # traci를 사용하여 sumo와 python을 연결
-    #     traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
-    #     # traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--no-warnings"])
-    #     # sumo에서 신호 세팅해주는 부분
-    #     current_phases0, current_phases1, current_phases2 = modify_phase(current_phases0, current_phases1, current_phases2)
+        # traci를 사용하여 sumo와 python을 연결
+        traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end","--start", "--no-warnings"])
+        # traci.start([sumoBinary, "-c", "new1.sumocfg", "--tripinfo-output", "tripinfo.xml", "--quit-on-end", "--no-warnings"])
+        # sumo에서 신호 세팅해주는 부분
+        current_phases0, current_phases1, current_phases2 = modify_phase(current_phases0, current_phases1, current_phases2)
 
-    #     # sumo 시뮬레이션  성능 추출하는 부분
-    #     average_waiting_time_list, all_direction_average, left_right_list_average, max_waiting_time, right_left_list_average, left_right_waiting_time, up_down_list_average, down_up_list_average = run()
+        # sumo 시뮬레이션  성능 추출하는 부분
+        average_waiting_time_list, all_direction_average, left_right_list_average, max_waiting_time, right_left_list_average, left_right_waiting_time, up_down_list_average, down_up_list_average = run()
 
-    #     waiting_result.append(all_direction_average)
-    #     left_right_result.append(left_right_list_average)
-    #     # left_right_max_waiting_result.append(max_waiting_time)
-    #     right_left_result.append(right_left_list_average)
-    #     # right_left_max_waiting_result.append(left_right_waiting_time)
-    #     up_down_result.append(up_down_list_average)
-    #     down_up_result.append(down_up_list_average)
-    #     # travel_result.append(average_travel_time)
-    #     data_list.append(average_waiting_time_list)
-    #     run_step += 1
+        waiting_result.append(all_direction_average)
+        left_right_result.append(left_right_list_average)
+        # left_right_max_waiting_result.append(max_waiting_time)
+        right_left_result.append(right_left_list_average)
+        # right_left_max_waiting_result.append(left_right_waiting_time)
+        up_down_result.append(up_down_list_average)
+        down_up_result.append(down_up_list_average)
+        # travel_result.append(average_travel_time)
+        data_list.append(average_waiting_time_list)
+        run_step += 1
 #####################################################################################################################################################################################
 
     # run_step = 0
